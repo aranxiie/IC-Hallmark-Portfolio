@@ -1,0 +1,910 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Netflix Portfolio</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+    @import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css');
+
+    body {
+      margin: 0;
+      font-family: 'Roboto', Arial, sans-serif;
+      background: #141414;
+      color: #fff;
+      scroll-behavior: smooth;
+      overflow: hidden; /* Hide scrollbar while welcome screen is active */
+    }
+
+    /* --- Welcome Overlay --- */
+    #welcome-overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: #141414;
+        z-index: 9999;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        opacity: 1;
+        transition: opacity 0.5s ease-out;
+    }
+
+    #welcome-overlay.hidden {
+        opacity: 0;
+        pointer-events: none;
+    }
+
+    .welcome-content {
+        max-width: 800px;
+        padding: 40px;
+    }
+    
+    .netflix-logo-font {
+      color: #e50914;
+      font-size: 3rem;
+      font-weight: bold;
+      text-transform: uppercase;
+      margin-bottom: 25px;
+    }
+
+    .welcome-content p {
+        font-size: 1rem;
+        line-height: 1.7;
+        color: #e0e0e0;
+        margin-bottom: 20px;
+    }
+
+    .enter-btn {
+        background: #e50914;
+        color: #fff;
+        border: none;
+        padding: 15px 40px;
+        font-size: 1.2rem;
+        font-weight: bold;
+        border-radius: 4px;
+        cursor: pointer;
+        transition: background 0.2s;
+        text-transform: uppercase;
+        margin-top: 20px;
+    }
+
+    .enter-btn:hover {
+        background: #f40612;
+    }
+
+
+    /* --- Header --- */
+    header {
+      background: linear-gradient(to bottom, rgba(0,0,0,0.7), transparent);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 40px;
+      position: fixed;
+      top: 0;
+      width: calc(100% - 80px);
+      z-index: 1000;
+      transition: background 0.3s;
+    }
+
+    header.scrolled {
+      background: #141414;
+    }
+
+    header h1 {
+      color: #e50914;
+      font-size: 1.8rem;
+      margin: 0;
+      font-weight: bold;
+      text-transform: uppercase;
+    }
+
+    nav {
+      display: flex;
+      gap: 20px;
+      flex-grow: 1;
+      margin-left: 30px;
+    }
+
+    nav a {
+      color: #e0e0e0;
+      text-decoration: none;
+      font-size: 0.9rem;
+      font-weight: bold;
+      transition: color 0.2s;
+    }
+
+    nav a:hover {
+      color: #fff;
+    }
+
+    .header-right {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .search-bar {
+      background: rgba(0,0,0,0.7);
+      border: 1px solid #555;
+      padding: 5px 10px;
+      border-radius: 4px;
+      color: #fff;
+    }
+
+    .notification-bell {
+      font-size: 1.5rem;
+      cursor: pointer;
+    }
+
+    .profile-section {
+      position: relative;
+    }
+    
+    .profile-icon {
+      cursor: pointer;
+      width: 40px;
+      height: 40px;
+      border-radius: 4px;
+      background: url('https://i.pinimg.com/564x/cf/c6/c1/cfc6c1387df739b384ca13292edb9b23e.jpg') center/cover no-repeat;
+    }
+
+    .profile-dropdown {
+      display: none;
+      position: absolute;
+      right: 0;
+      top: 50px;
+      background: rgba(0,0,0,0.9);
+      border: 1px solid #333;
+      padding: 10px;
+      border-radius: 4px;
+    }
+
+    .profile-dropdown a {
+      display: block;
+      color: #fff;
+      padding: 8px 12px;
+      text-decoration: none;
+      font-size: 0.9rem;
+    }
+
+    .profile-section:hover .profile-dropdown {
+      display: block;
+    }
+
+    /* --- Sections --- */
+    main {
+        padding-top: 80px;
+    }
+
+    .section {
+      padding: 20px 40px;
+    }
+
+    .section h2 {
+      font-size: 1.4rem;
+      margin-bottom: 15px;
+    }
+
+    .movies-row {
+      display: flex;
+      overflow-x: auto;
+      gap: 15px;
+      padding-bottom: 15px;
+      scrollbar-width: none;
+    }
+    .movies-row::-webkit-scrollbar {
+      display: none;
+    }
+
+    .movie-card {
+      background: #222;
+      min-width: 250px;
+      height: 140px;
+      border-radius: 4px;
+      overflow: hidden;
+      position: relative;
+      cursor: pointer;
+      flex-shrink: 0;
+      transition: all 0.2s ease-in-out;
+      background-size: cover;
+      background-position: center;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+    }
+
+    .movie-card:hover {
+      transform: scale(1.1);
+      z-index: 10;
+    }
+    
+    .movie-card-overlay {
+        background: linear-gradient(to top, rgba(0,0,0,0.9) 10%, transparent);
+        height: 100%;
+        width: 100%;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+    }
+
+    .movie-card:hover .movie-card-content {
+      opacity: 1;
+    }
+
+    .movie-card-content {
+      padding: 10px;
+      position: relative;
+      z-index: 2;
+      opacity: 0;
+      transition: opacity 0.3s;
+    }
+    
+    .movie-card-title {
+      font-weight: bold;
+      position: absolute;
+      bottom: 10px;
+      left: 10px;
+      z-index: 1;
+    }
+    
+    .movie-card:hover .movie-card-title {
+        opacity: 0;
+    }
+
+    .card-controls {
+      display: flex;
+      gap: 10px;
+    }
+    
+    .card-controls span {
+      background: rgba(42,42,42,0.6);
+      border: 2px solid #fff;
+      border-radius: 50%;
+      width: 30px;
+      height: 30px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.2rem;
+    }
+
+    /* --- Hero & Fullscreen --- */
+    .movie-banner {
+      position: relative;
+      height: 80vh;
+      background-size: cover;
+      background-position: center;
+      display: flex;
+      align-items: center;
+      padding: 60px;
+      color: #fff;
+    }
+
+    .movie-banner::after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 150px;
+      background: linear-gradient(to top, #141414, transparent);
+    }
+
+    .movie-info {
+      position: relative;
+      z-index: 2;
+      max-width: 600px;
+    }
+
+    .movie-info h2 {
+      font-size: 3rem;
+      margin: 0 0 15px 0;
+    }
+
+    .movie-meta {
+      font-size: 1rem;
+      margin-bottom: 20px;
+      color: #bbb;
+    }
+
+    .hero-buttons {
+        display: flex;
+        gap: 15px;
+        margin-top: 20px;
+    }
+
+    .play-btn {
+      background: #fff;
+      border: none;
+      padding: 12px 25px;
+      font-size: 1.1rem;
+      color: #000;
+      font-weight: bold;
+      border-radius: 4px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      transition: background 0.2s;
+    }
+
+    .play-btn:hover {
+        background: rgba(255,255,255,0.8);
+    }
+
+    .about-btn {
+      background: rgba(109, 109, 110, 0.7);
+      color: #fff;
+      border: none;
+      padding: 12px 25px;
+      font-size: 1.1rem;
+      font-weight: bold;
+      border-radius: 4px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      transition: background 0.2s;
+    }
+
+    .about-btn:hover {
+        background: rgba(109, 109, 110, 0.9);
+    }
+
+    /* --- Fullscreen Overlays --- */
+    .movie-full {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      height: 100vh;
+      width: 100%;
+      background: #141414;
+      z-index: 2000;
+      overflow-y: auto;
+      opacity: 0;
+      transition: opacity 0.4s ease-in-out;
+    }
+    
+    .movie-full.active {
+      display: block;
+      opacity: 1;
+    }
+
+    .details-content {
+      padding: 20px 60px 60px 60px;
+      line-height: 1.7;
+      max-width: 900px;
+      transform: translateY(-50px);
+    }
+    
+    .details-content h3 {
+        color: #e50914;
+        font-size: 1.5rem;
+        border-left: 4px solid #e50914;
+        padding-left: 10px;
+        margin-top: 30px;
+    }
+    
+    .details-content h4 {
+        color: #fff;
+        font-size: 1.2rem;
+        margin-top: 20px;
+        margin-bottom: 10px;
+        border-bottom: 1px solid #333;
+        padding-bottom: 5px;
+    }
+
+    .details-content blockquote {
+        background: #222;
+        border-left: 3px solid #555;
+        padding: 15px;
+        margin: 20px 0;
+        font-style: italic;
+    }
+    
+    .assessment-summary {
+        border: 1px solid #333;
+        background: #1f1f1f;
+        padding: 25px;
+        border-radius: 8px;
+        margin-top: 25px;
+    }
+    
+    .assessment-summary h4 {
+        margin-top: 0;
+        border-bottom: 2px solid #e50914;
+        padding-bottom: 10px;
+    }
+    
+    .assessment-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 20px 40px;
+    }
+    
+    .assessment-category ul, .questionnaire-summary ul {
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
+    }
+    
+    .assessment-category li, .questionnaire-summary li {
+        padding: 8px 0;
+        color: #e0e0e0;
+        border-bottom: 1px solid #2a2a2a;
+    }
+
+    .questionnaire-summary li {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+     .questionnaire-summary .question {
+        padding-right: 15px;
+    }
+
+     .questionnaire-summary .score {
+        color: #fff;
+        font-weight: bold;
+        background-color: #e50914;
+        padding: 2px 8px;
+        border-radius: 4px;
+        white-space: nowrap;
+    }
+    
+    .assessment-category h5 {
+        color: #fff;
+        font-size: 1.1rem;
+        margin-bottom: 10px;
+    }
+    
+    .main-concern-box {
+        grid-column: 1 / -1;
+        background: #222;
+        padding: 15px;
+        border-left: 3px solid #e50914;
+        margin-top: 20px;
+    }
+    
+    .main-concern-box h5 {
+        margin-top: 0;
+    }
+    
+    .main-concern-box p {
+        margin-bottom: 0;
+        font-style: italic;
+        color: #ccc;
+    }
+
+    /* --- Gallery Styles --- */
+    .gallery-container {
+        margin-top: 40px;
+    }
+    .main-image-display {
+        width: 100%;
+        height: 500px;
+        background-color: #000;
+        border-radius: 8px;
+        margin-bottom: 15px;
+        overflow: hidden;
+    }
+    .main-image-display img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+        transition: opacity 0.3s ease-in-out;
+    }
+    .gallery-thumbnail {
+        min-width: 180px;
+        height: 100px;
+        position: relative;
+        cursor: pointer;
+        border: 2px solid transparent;
+        border-radius: 4px;
+        overflow: hidden;
+        transition: all 0.2s ease-in-out;
+        background-size: cover;
+        background-position: center;
+    }
+    .gallery-thumbnail:hover {
+        transform: scale(1.05);
+        border: 2px solid #fff;
+    }
+    .gallery-thumbnail .movie-card-overlay {
+        background: linear-gradient(to top, rgba(0,0,0,0.8) 20%, transparent);
+    }
+    .gallery-thumbnail .movie-card-title {
+        font-size: 0.9rem;
+    }
+    
+    /* --- About Me Fullscreen --- */
+    #about-me-full .details-content {
+        max-width: 1200px;
+        display: flex;
+        gap: 40px;
+        align-items: center;
+        transform: translateY(0);
+        padding: 80px 60px;
+    }
+    
+    #about-me-full .about-left {
+        flex-basis: 35%;
+        text-align: center;
+        opacity: 0;
+        transform: translateX(-30px);
+        transition: all 0.6s 0.2s ease-out;
+    }
+    
+    #about-me-full.active .about-left {
+        opacity: 1;
+        transform: translateX(0);
+    }
+
+    .about-profile-pic {
+        width: 200px;
+        height: 200px;
+        border-radius: 50%;
+        background: url('https://i.pinimg.com/564x/cf/c6/c1/cfc6c1387df739b384ca13292edb9b23e.jpg') center/cover no-repeat;
+        border: 4px solid #e50914;
+        margin: 0 auto 20px;
+    }
+
+    .about-socials {
+        display: flex;
+        justify-content: center;
+        gap: 15px;
+        font-size: 1.5rem;
+    }
+
+    .about-socials a {
+        color: #bbb;
+        transition: color 0.2s;
+    }
+
+    .about-socials a:hover {
+        color: #e50914;
+    }
+    
+    #about-me-full .about-right {
+        flex-basis: 65%;
+        opacity: 0;
+        transform: translateX(30px);
+        transition: all 0.6s 0.4s ease-out;
+    }
+    
+    #about-me-full .about-right p {
+      margin-bottom: 1.5em;
+    }
+
+    #about-me-full.active .about-right {
+        opacity: 1;
+        transform: translateX(0);
+    }
+
+    .back-btn {
+      position: absolute;
+      top: 30px;
+      left: 30px;
+      background: rgba(0,0,0,0.7);
+      border: none;
+      width: 40px;
+      height: 40px;
+      color: #fff;
+      font-size: 1.5rem;
+      border-radius: 50%;
+      cursor: pointer;
+      z-index: 10;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Welcome Overlay -->
+  <div id="welcome-overlay">
+      <div class="welcome-content">
+          <div class="netflix-logo-font">Welcome</div>
+          <p>Welcome to my portfolio website! This site is a collection of my school activities, reflections, and experiences. It was made to organize my work in one place, so it is easier to share and look back on everything I have done.</p>
+          <p>Here, you will find different activities that I completed in class. Each one includes a short description of what the task was about and a reflection where I explain what I learned from it. This way, the portfolio is not only a record of my work but also a record of my growth as a student.</p>
+          <p>The portfolio is arranged in a way that makes it simple to explore. You can go through the activities one by one, just like browsing through a collection. Each section tells a story about my progress—what I was asked to do, how I responded, and what lessons I took with me afterward.</p>
+          <p>This portfolio is more than just a requirement for school. It also serves as a guide for me to see how much I have improved and what I still need to work on. It shows how I am slowly building my knowledge, skills, and character, step by step, as I continue my studies.</p>
+          <p>Feel free to explore and read through my activities and reflections. I hope this portfolio gives you a clear picture of my journey as a student and how I am working toward my goals.</p>
+          <button class="enter-btn" id="enter-btn">Enter Portfolio</button>
+      </div>
+  </div>
+  
+  <audio id="hover-sound" src="https://assets.mixkit.co/sfx/preview/mixkit-interface-hint-notification-911.mp3" preload="auto"></audio>
+
+  <!-- Header -->
+  <header id="main-header">
+    <h1>Portfolio</h1>
+    <nav>
+      <a href="#">Home</a>
+      <a href="#activities">Activities</a>
+      <a href="#reflections">Reflections</a>
+      <a href="#" onclick="openMovie('about-me-full'); return false;">About Me</a>
+    </nav>
+    <div class="header-right">
+        <input type="text" class="search-bar" placeholder="Titles, topics...">
+        <span class="notification-bell">🔔</span>
+        <div class="profile-section">
+            <div class="profile-icon"></div>
+            <div class="profile-dropdown">
+                <a href="#">Manage Profiles</a>
+                <a href="#">Account</a>
+                <a href="#">Sign Out</a>
+            </div>
+        </div>
+    </div>
+  </header>
+  
+  <!-- Hero Section -->
+  <div class="movie-banner" style="background-image:url('https://i.pinimg.com/1200x/89/96/0c/89960c808b61f0148faf270fd69819ce.jpg');">
+    <div class="movie-info">
+      <h2 id="home">Welcome to My Portfolio</h2>
+      <div class="movie-meta">2025 • Personal Journey • Student Life</div>
+      <p id="trailer-text" style="display:none; min-height: 40px; font-weight: bold;"></p>
+      
+      <div class="hero-buttons">
+        <a href="#activities" class="play-btn">▶ Explore</a>
+        <button class="about-btn" onclick="openMovie('about-me-full')"><i class="fas fa-info-circle"></i> More Info</button>
+      </div>
+
+    </div>
+  </div>
+
+
+  <main>
+    <!-- My List Section (Initially Hidden) -->
+    <div id="myListSection" class="section" style="display:none;">
+        <h2>My List</h2>
+        <div class="movies-row" id="my-list-row"></div>
+    </div>
+  
+    <!-- Main Sections -->
+    <div id="activities" class="section">
+      <h2>📚 IC Activities</h2>
+      <div class="movies-row">
+        <div id="card-activity1" class="movie-card" style="background-image:url('https://i.pinimg.com/1200x/b9/59/8e/b9598e398a486e6f3be396e4d913e792.jpg');" onclick="openMovie('activity1')">
+          <div class="movie-card-overlay"></div><div class="movie-card-title">Discussion Forum 1</div><div class="movie-card-content"><div class="card-controls"><span title="View Details">▶</span><span title="Add to My List" onclick="toggleMyList(event, 'activity1')">+</span><span title="Like">👍</span></div></div>
+        </div>
+        <div id="card-activity2" class="movie-card" style="background-image:url('https://i.pinimg.com/1200x/b0/16/3a/b0163a93d05a19fbb79790c751b43927.jpg');" onclick="openMovie('activity2')">
+          <div class="movie-card-overlay"></div><div class="movie-card-title">Needs Assessment</div><div class="movie-card-content"><div class="card-controls"><span>▶</span> <span onclick="toggleMyList(event, 'activity2')">+</span> <span>👍</span></div></div>
+        </div>
+        <div id="card-activity3" class="movie-card" style="background-image:url('https://i.pinimg.com/1200x/31/8d/ed/318dedd6095c9b80f86a8c2b23a91341.jpg');" onclick="openMovie('activity3')">
+          <div class="movie-card-overlay"></div><div class="movie-card-title">TOWPEP Questionnaire</div><div class="movie-card-content"><div class="card-controls"><span>▶</span> <span onclick="toggleMyList(event, 'activity3')">+</span> <span>👍</span></div></div>
+        </div>
+      </div>
+    </div>
+
+    <div id="reflections" class="section">
+      <h2>🎬 Reflections</h2>
+      <div class="movies-row">
+        <div id="card-activity4" class="movie-card" style="background-image:url('https://i.pinimg.com/1200x/0c/c1/a3/0cc1a3f78c65efaa6c7772deabb922f1.jpg');" onclick="openMovie('activity4')">
+          <div class="movie-card-overlay"></div><div class="movie-card-title">Psalm 23 of My Life</div><div class="movie-card-content"><div class="card-controls"><span>▶</span> <span onclick="toggleMyList(event, 'activity4')">+</span> <span>👍</span></div></div>
+        </div>
+        <div id="card-activity5" class="movie-card" style="background-image:url('https://i.pinimg.com/1200x/e7/a5/25/e7a525fb5c242f964d563eb373b973fe.jpg');" onclick="openMovie('activity5')">
+          <div class="movie-card-overlay"></div><div class="movie-card-title">5S in My Life</div><div class="movie-card-content"><div class="card-controls"><span>▶</span> <span onclick="toggleMyList(event, 'activity5')">+</span> <span>👍</span></div></div>
+        </div>
+        <div id="card-activity6" class="movie-card" style="background-image:url('https://i.pinimg.com/1200x/aa/44/8c/aa448c70cf77a312d84413d16206ac2f.jpg');" onclick="openMovie('activity6')">
+          <div class="movie-card-overlay"></div><div class="movie-card-title">My 5C's Reflections</div><div class="movie-card-content"><div class="card-controls"><span>▶</span> <span onclick="toggleMyList(event, 'activity6')">+</span> <span>👍</span></div></div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Activity Fullscreen Views -->
+  <div id="activity1" class="movie-full">
+    <button class="back-btn" onclick="closeMovie('activity1')">←</button>
+    <div class="movie-banner" style="background-image:url('https://i.pinimg.com/1200x/b9/59/8e/b9598e398a486e6f3be396e4d913e792.jpg');"><div class="movie-info"><h2>Discussion Forum 1: My Journey Begins</h2><div class="movie-meta">Reflection • Beginnings • Goal Setting</div></div></div>
+    <div class="details-content">
+      <h3>Activity Description</h3>
+      <p>This discussion forum asked us to reflect on two questions: "Why did you choose Southville?" and "What are your expectations for this class?"</p>
+      <blockquote><b>1. Why did you choose Southville?</b><br>I chose Southville because it has always been my dream school. I’ve admired the uniform for a long time; it really suits my style. On a practical note, Southville is also the closest school to my home, which makes commuting much more convenient and less of a hassle. And lastly, I believe Southville offers a quality education since it is an international school with a good academic reputation.<br><br><b>2. What are my expectations for this class?</b><br>I hope to have a meaningful learning experience this semester. I look forward to gaining new knowledge. I also hope the class will be enjoyable, not too stressful or overwhelming, something a bit more relaxed and fun, while still being productive and engaging.</blockquote>
+      <h3>Reflection</h3>
+      <p>Participating in this discussion forum gave me the chance to look back at why I am here in Southville and what I truly want to achieve in this class. Writing my answer helped me realize that my decision to study here was not just based on convenience, but also on admiration, values, and trust in the school’s quality education. It reminded me that I am in the right place to grow, both academically and personally.</p>
+      <p>Reflecting on my expectations also helped me set the tone for the semester. I realized that while I want to challenge myself and gain new knowledge, I also value a learning environment that is balanced—fun, interactive, and engaging, without being overly stressful. This shows that I am aware of my own learning style: I do best when I feel comfortable, motivated, and connected to my classmates and professors.</p>
+      <p>Through this activity, I also saw how important it is to have clear goals and a positive outlook at the start of a course. By knowing what I want from this class, I can stay focused and make the most out of every lesson. It also motivated me to actively participate, not just as a student who listens, but as someone who contributes to making the class atmosphere enjoyable for everyone.</p>
+    </div>
+  </div>
+
+  <div id="activity2" class="movie-full">
+    <button class="back-btn" onclick="closeMovie('activity2')">←</button>
+    <div class="movie-banner" style="background-image:url('https://i.pinimg.com/1200x/b0/16/3a/b0163a93d05a19fbb79790c751b43927.jpg');"><div class="movie-info"><h2>Online Needs Assessment</h2><div class="movie-meta">Self-Awareness • Analysis • Personal Growth</div></div></div>
+    <div class="details-content">
+      <h3>Activity Description</h3>
+      <p>The purpose of this assessment was to gather information from students regarding their health, academic, family, personal, and peer concerns. Below is a summary of my responses.</p>
+      <div class="assessment-summary">
+        <h4>Online Needs Assessment Summary</h4>
+        <p><b>Name:</b> Sahagun, Sophia Rodina G. <br> <b>Course:</b> BS Information Technology <br> <b>Date of Birth:</b> 04/13/2007</p>
+        <hr style="border-color: #333; margin: 20px 0;">
+        <div class="assessment-grid">
+            <div class="assessment-category"><h5>Health Concerns</h5><ul><li>✔ Often have headaches</li><li>✔ Not enough sleep</li><li>✔ Gets tired easily</li><li>✔ Cannot see very well</li><li>✔ Often gets sick</li></ul></div>
+            <div class="assessment-category"><h5>Academic Concerns</h5><ul><li>✔ Cannot finish given assignment</li><li>✔ Interested only in some school subjects</li></ul></div>
+            <div class="assessment-category"><h5>Personal Concerns</h5><ul><li>✔ Easily angered at times</li><li>✔ Afraid to make mistakes</li><li>✔ Feels timid and shy</li><li>✔ Gets irritated easily</li><li>✔ Afraid to recite and unable to express oneself</li></ul></div>
+            <div class="assessment-category"><h5>Peer Concerns</h5><ul><li>✔ Feels shy with boy/girl admirers</li><li>✔ Feels embarrassed when with other people</li></ul></div>
+            <div class="main-concern-box"><h5>Main Concern</h5><p>"It's being shy with people / admirers. Being shy makes it difficult to interact with people as I'm unable to approach them and express my thoughts."</p></div>
+        </div>
+      </div>
+      <h3>Reflection</h3>
+      <p>Answering the needs assessment made me more aware of the areas in my life that need improvement. By reflecting on my answers, I realized that many of my struggles are connected, such as lack of sleep leading to tiredness, which then affects my focus on academics. My personal shyness also makes it harder for me to engage in class and build confidence when speaking in front of others.</p>
+      <p>At first, I felt nervous about being honest in the form, but I understood that it was meant to help me, not judge me. By sharing my challenges, I opened the door to possible support from teachers, counselors, and mentors.</p>
+      <p>This activity taught me that it is okay to recognize and admit weaknesses because it is the first step to self-growth. I also realized that shyness and fear of making mistakes are normal, but they can be overcome through practice, self-confidence, and guidance.</p>
+    </div>
+  </div>
+
+  <div id="activity3" class="movie-full">
+    <button class="back-btn" onclick="closeMovie('activity3')">←</button>
+    <div class="movie-banner" style="background-image:url('https://i.pinimg.com/1200x/31/8d/ed/318dedd6095c9b80f86a8c2b23a91341.jpg');"><div class="movie-info"><h2>TOWPEP Questionnaire</h2><div class="movie-meta">Self-Assessment • Wellness • Effectiveness</div></div></div>
+    <div class="details-content">
+      <h3>Activity Description</h3>
+      <p>TOWPEP stands for Transcript of Well-being and Personal Effectiveness. This assessment was designed to measure how students perceive their personal growth, effectiveness, and wellness. I was asked to rate myself from 1 (lowest) to 5 (highest) in different areas such as honesty, open-mindedness, adaptability, gratitude, perseverance, relationships, and responsibility. I gave myself high ratings across all items, particularly in being open to new ideas, truthful, hardworking, respectful, adaptable, and consistent.</p>
+      
+      <h3>Reflection</h3>
+      <p>Completing the TOWPEP Questionnaire made me realize the importance of self-assessment and self-awareness. By rating myself, I was able to see how I value qualities like honesty, perseverance, gratitude, and responsibility. I noticed that I often strive to give my best in every task, show respect to others, and remain truthful even in difficult situations.</p>
+      <p>This reflection gave me a sense of pride because it showed that I am aware of my personal strengths. At the same time, it reminded me that there is always room for growth. For example, while I scored myself high in adaptability and perseverance, I know that real-life challenges may test these traits, and I must continue to practice them in different situations.</p>
+      <p>Another insight I gained is that personal effectiveness is not only about academic performance but also about character and attitude. It is about how I treat others, how I manage challenges, and how I stay true to my values. This activity encouraged me to keep nurturing these qualities so I can be more resilient, compassionate, and effective both in school and in life.</p>
+      
+      <!-- GALLERY SECTION -->
+      <div class="gallery-container">
+        <h3>Event Gallery</h3>
+        <div class="main-image-display"><img id="main-gallery-image" src="https://cdn.discordapp.com/attachments/981254035568996394/1420990687398068224/image-3.png?ex=68d76834&is=68d616b4&hm=0990d6953b69fcb47429889e78ba7efb128f577b105684031be2f82c8eecb575" alt="Main gallery view"></div>
+        <div class="movies-row">
+          <div class="gallery-thumbnail" style="background-image:url('https://cdn.discordapp.com/attachments/981254035568996394/1420990687398068224/image-3.png?ex=68d76834&is=68d616b4&hm=0990d6953b69fcb47429889e78ba7efb128f577b105684031be2f82c8eecb575')" onclick="updateImage(this)"><div class="movie-card-overlay"></div><div class="movie-card-title">CITE Family</div></div>
+          <div class="gallery-thumbnail" style="background-image:url('https://cdn.discordapp.com/attachments/981254035568996394/1420991560631324752/20250807_174240.jpg?ex=68d76904&is=68d61784&hm=34d84e6802d5792dda9e3339e2bc186700c3bb56fa2cd9871372b6222b5087fa')" onclick="updateImage(this)"><div class="movie-card-overlay"></div><div class="movie-card-title">Freedom Board</div></div>
+          <div class="gallery-thumbnail" style="background-image:url('https://cdn.discordapp.com/attachments/981254035568996394/1420991567140880384/20250807_173305.jpg?ex=68d76906&is=68d61786&hm=9343f31e5ee26705e53a312521a88a66d90ffdb6b3cda4ebdd46c0e924ab69d6')" onclick="updateImage(this)"><div class="movie-card-overlay"></div><div class="movie-card-title">Certificate</div></div>
+          <div class="gallery-thumbnail" style="background-image:url('https://media.discordapp.net/attachments/981254035568996394/1420990807871193180/20250807_142358.jpg?ex=68d76851&is=68d616d1&hm=f3a52447c91a332d29b0d74ad5f600fe6a90a534f5f39c5a16560cb2479105be&=&format=webp&width=813&height=457')" onclick="updateImage(this)"><div class="movie-card-overlay"></div><div class="movie-card-title">Moments</div></div>
+          <div class="gallery-thumbnail" style="background-image:url('https://media.discordapp.net/attachments/981254035568996394/1420990808789876756/20250807_133730.jpg?ex=68d76851&is=68d616d1&hm=ce73d7ca863e59b368276c4dc40cdf9cb1032d7c00ae6ba3765255b579ef86a5&=&format=webp&width=813&height=457')" onclick="updateImage(this)"><div class="movie-card-overlay"></div><div class="movie-card-title">Moments</div></div>
+          <div class="gallery-thumbnail" style="background-image:url('https://media.discordapp.net/attachments/981254035568996394/1420991561239494707/20250807_164047.jpg?ex=68d76904&is=68d61784&hm=919cb9ded999002305f3a148d361a5d9119d44e3d6fa3000f0b1d6a9b28fecc9&=&format=webp&width=813&height=457')" onclick="updateImage(this)"><div class="movie-card-overlay"></div><div class="movie-card-title">Moments</div></div>
+          <div class="gallery-thumbnail" style="background-image:url('https://media.discordapp.net/attachments/981254035568996394/1420991562103525499/20250807_164044.jpg?ex=68d76905&is=68d61785&hm=50727c058dbfc792118c42d203b075401ed4ee01a155b70006bedca4d32c8d4a&=&format=webp&width=813&height=457')" onclick="updateImage(this)"><div class="movie-card-overlay"></div><div class="movie-card-title">Moments</div></div>
+          <div class="gallery-thumbnail" style="background-image:url('https://cdn.discordapp.com/attachments/981254035568996394/1420991563961733190/20250807_162110.jpg?ex=68d76905&is=68d61785&hm=e403247954898716652404f745ee586ba7250665370ff413346aa0eb88099f64&')" onclick="updateImage(this)"><div class="movie-card-overlay"></div><div class="movie-card-title">Moments</div></div>
+          <div class="gallery-thumbnail" style="background-image:url('https://cdn.discordapp.com/attachments/981254035568996394/1420991563252629564/20250807_162113.jpg?ex=68d76905&is=68d61785&hm=6fb1bde7169ae6347610410cbfe9a29140aa8c6581b53d63c3da247a6aa78fee&')" onclick="updateImage(this)"><div class="movie-card-overlay"></div><div class="movie-card-title">Moments</div></div>
+          <div class="gallery-thumbnail" style="background-image:url('https://cdn.discordapp.com/attachments/981254035568996394/1420991564460593242/20250807_162107.jpg?ex=68d76905&is=68d61785&hm=c5be9b58ab4881f858d95210b5d46f70e9024ce7aee6abe14608ace5920baa71&')" onclick="updateImage(this)"><div class="movie-card-overlay"></div><div class="movie-card-title">Moments</div></div>
+          <div class="gallery-thumbnail" style="background-image:url('https://media.discordapp.net/attachments/981254035568996394/1420991566037913650/20250807_160538.jpg?ex=68d76906&is=68d61786&hm=9e3b571ae5d18c99b5823d9e643a88af8d8a5038cc5f8b67bd5cdd3040dbfe0f&=&format=webp&width=813&height=457')" onclick="updateImage(this)"><div class="movie-card-overlay"></div><div class="movie-card-title">Moments</div></div>
+          <div class="gallery-thumbnail" style="background-image:url('https://media.discordapp.net/attachments/981254035568996394/1420991566641631252/20250807_160548.jpg?ex=68d76906&is=68d61786&hm=ef9b7b691f901228d877ea0f2c375ba08cda76ba44df0215d0723e3dbabb171d&=&format=webp&width=813&height=457')" onclick="updateImage(this)"><div class="movie-card-overlay"></div><div class="movie-card-title">Moments</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="activity4" class="movie-full"><!-- Full content for Activity 4 --></div>
+  <div id="activity5" class="movie-full"><!-- Full content for Activity 5 --></div>
+  <div id="activity6" class="movie-full"><!-- Full content for Activity 6 --></div>
+  <div id="about-me-full" class="movie-full"><!-- Full content for About Me --></div>
+
+  <script>
+    // --- Gallery Image Update Function ---
+    function updateImage(thumbnail) {
+        const mainImage = document.getElementById('main-gallery-image');
+        const newImageUrl = thumbnail.style.backgroundImage.slice(5, -2);
+        
+        mainImage.style.opacity = 0;
+        setTimeout(() => {
+            mainImage.src = newImageUrl;
+            mainImage.style.opacity = 1;
+        }, 300);
+    }
+
+    // --- Welcome Screen Script ---
+    document.addEventListener('DOMContentLoaded', () => {
+        const welcomeOverlay = document.getElementById('welcome-overlay');
+        const enterBtn = document.getElementById('enter-btn');
+
+        enterBtn.addEventListener('click', () => {
+            document.body.style.overflow = 'auto';
+            welcomeOverlay.classList.add('hidden');
+            setTimeout(() => {
+                welcomeOverlay.style.display = 'none';
+            }, 500);
+        });
+    });
+  
+    // --- Rest of the Site's JavaScript ---
+    const hoverSound = document.getElementById('hover-sound');
+    const allCards = document.querySelectorAll('.movie-card, .gallery-thumbnail');
+
+    allCards.forEach(card => {
+        card.addEventListener('mouseenter', () => {
+            hoverSound.currentTime = 0;
+            hoverSound.play().catch(e => {}); 
+        });
+    });
+    
+    window.onscroll = function() {
+        const header = document.getElementById('main-header');
+        if (window.pageYOffset > 50) {
+            header.classList.add('scrolled');
+        } else {
+            header.classList.remove('scrolled');
+        }
+    };
+    
+    function openMovie(id) {
+        document.body.style.overflow = 'hidden';
+        const movieElement = document.getElementById(id);
+        movieElement.style.display = "block";
+        setTimeout(() => {
+          movieElement.classList.add('active');
+        }, 10);
+    }
+    
+    function closeMovie(id) {
+        const anyActiveModals = document.querySelectorAll('.movie-full.active').length > 1;
+        if (!anyActiveModals) {
+            document.body.style.overflow = 'auto';
+        }
+
+        const movieElement = document.getElementById(id);
+        movieElement.classList.remove('active');
+        setTimeout(() => {
+          movieElement.style.display = "none";
+        }, 400);
+    }
+    
+    const myList = new Set();
+    
+    function toggleMyList(event, activityId) {
+        event.stopPropagation();
+        const card = document.getElementById(`card-${activityId}`);
+        const listButton = card.querySelector('span:nth-child(2)');
+
+        if (myList.has(activityId)) {
+            myList.delete(activityId);
+            listButton.textContent = '+';
+            listButton.title = "Add to My List";
+            updateMyList();
+        } else {
+            myList.add(activityId);
+            listButton.textContent = '✓';
+            listButton.title = "Remove from My List";
+            updateMyList();
+        }
+    }
+
+    function updateMyList() {
+        const myListRow = document.getElementById('my-list-row');
+        const myListSection = document.getElementById('myListSection');
+        myListRow.innerHTML = '';
+        
+        if (myList.size > 0) {
+            myListSection.style.display = 'block';
+            myList.forEach(activityId => {
+                const originalCard = document.getElementById(`card-${activityId}`);
+                const cloneCard = originalCard.cloneNode(true);
+                cloneCard.onclick = () => openMovie(activityId);
+                const listButton = cloneCard.querySelector('span:nth-child(2)');
+                listButton.textContent = '✓';
+                listButton.title = "Remove from My List";
+                listButton.onclick = (event) => toggleMyList(event, activityId);
+                
+                myListRow.appendChild(cloneCard);
+            });
+        } else {
+            myListSection.style.display = 'none';
+        }
+    }
+
+    function playTrailer() {
+        const trailerText = document.getElementById('trailer-text');
+        trailerText.style.display = 'block';
+        const messages = ["Analyzing skills...", "Compiling projects...", "Loading journey..."];
+        let i = 0;
+        const interval = setInterval(() => {
+            trailerText.textContent = messages[i];
+            i++;
+            if (i >= messages.length) {
+                clearInterval(interval);
+                 setTimeout(() => { trailerText.innerHTML = "<b>Welcome!</b> Feel free to look around."; }, 1000);
+            }
+        }, 1500);
+    }
+  </script>
+</body>
+</html>
