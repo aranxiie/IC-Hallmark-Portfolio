@@ -603,7 +603,7 @@
       cursor: pointer;
       z-index: 10;
     }
-    
+
     /* --- Psalm 23 Specific Styles --- */
     #activity4 .details-content {
         padding: 0;
@@ -628,7 +628,7 @@
       color: #ccc;
     }
     #activity4 .psalm-container {
-      padding: 20px;
+      padding: 20px 60px; /* Matched horizontal padding */
       max-width: 1000px;
       margin: auto;
     }
@@ -682,6 +682,7 @@
       line-height: 1.7;
       background: none;
       padding: 0;
+      margin: 1em 0;
     }
     #activity4 .psalm-footer {
       text-align: center;
@@ -693,6 +694,7 @@
       width: 100%;
       box-sizing: border-box;
     }
+
   </style>
 </head>
 <body>
@@ -909,7 +911,6 @@
 
   <div id="activity4" class="movie-full">
     <button class="back-btn" onclick="closeMovie('activity4')">←</button>
-    <!-- No movie-banner div here, content will fill the space -->
     <div class="details-content">
       <header class="psalm-header">
         <h1>Psalm 23 of My Life</h1>
