@@ -603,14 +603,14 @@
       cursor: pointer;
       z-index: 10;
     }
-    
+
     /* --- Psalm 23 Specific Styles --- */
-    #activity4 .details-content {
+    #activity4 .details-content, #activity7 .details-content {
         padding: 0;
         max-width: none;
         transform: translateY(0);
     }
-    #activity4 .psalm-header {
+    #activity4 .psalm-header, #activity7 .towpep-header {
       background: #000;
       padding: 20px;
       text-align: center;
@@ -618,27 +618,27 @@
       width: 100%;
       box-sizing: border-box;
     }
-    #activity4 .psalm-header h1 {
+    #activity4 .psalm-header h1, #activity7 .towpep-header h1 {
       color: #e50914;
       font-size: 2.2rem;
       margin-bottom: 5px;
     }
-    #activity4 .psalm-header p {
+    #activity4 .psalm-header p, #activity7 .towpep-header p {
       margin: 3px 0;
       color: #ccc;
     }
-    #activity4 .psalm-container {
+    #activity4 .psalm-container, #activity7 .towpep-container {
       padding: 20px 60px;
       max-width: 1000px;
       margin: auto;
     }
-    #activity4 .psalm-container h2 {
+    #activity4 .psalm-container h2, #activity7 .towpep-container h2 {
       color: #e50914;
       border-left: 5px solid #e50914;
       padding-left: 10px;
       margin-top: 30px;
     }
-    #activity4 .psalm-container h3 {
+    #activity4 .psalm-container h3, #activity7 .towpep-container h3 {
       margin-top: 20px;
       color: #fff;
     }
@@ -664,7 +664,7 @@
       color: #ddd;
       line-height: 1.6;
     }
-    #activity4 .highlight {
+    #activity4 .highlight, #activity7 .highlight {
       background: #e50914;
       color: #fff;
       padding: 25px;
@@ -672,20 +672,20 @@
       margin-top: 40px;
       box-shadow: 0 4px 12px rgba(0,0,0,0.6);
     }
-    #activity4 .highlight h2 {
+    #activity4 .highlight h2, #activity7 .highlight h2 {
       border: none;
       color: #fff;
       font-size: 1.8rem;
       margin-bottom: 15px;
     }
-    #activity4 .highlight p {
+    #activity4 .highlight p, #activity7 .highlight p {
       color: #fff;
       line-height: 1.7;
       background: none;
       padding: 0;
       margin-bottom: 15px;
     }
-    #activity4 .psalm-footer {
+    #activity4 .psalm-footer, #activity7 .towpep-footer {
       text-align: center;
       padding: 20px;
       margin-top: 40px;
@@ -694,6 +694,99 @@
       border-top: 3px solid #e50914;
       width: 100%;
       box-sizing: border-box;
+    }
+
+    /* --- TOWPEP Reflection Specific Styles --- */
+    #activity7 .towpep-nav {
+      background: #000;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 14px 30px;
+      border-bottom: 3px solid #e50914;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+    #activity7 .towpep-nav .title {
+      font-size: 1.8rem;
+      font-weight: bold;
+      color: #e50914;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      text-shadow: 0 0 12px rgba(229, 9, 20, 0.7);
+    }
+    #activity7 .towpep-header {
+        background: url('https://i.pinimg.com/1200x/71/a6/72/71a6723214d3581dbf0534f98f85675c.jpg') no-repeat center center/cover;
+        border-bottom: 4px solid #e50914;
+    }
+    #activity7 .section-card {
+      background: #1c1c1c;
+      padding: 20px;
+      margin-bottom: 25px;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.6);
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+    #activity7 .section-card:hover {
+      transform: scale(1.01);
+      box-shadow: 0 0 20px rgba(229, 9, 20, 0.7);
+    }
+    #activity7 table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 15px;
+      border-radius: 8px;
+      overflow: hidden;
+    }
+    #activity7 th, #activity7 td {
+      padding: 14px;
+      text-align: left;
+    }
+    #activity7 th {
+      background: #e50914;
+      color: #fff;
+      font-weight: bold;
+      font-size: 1rem;
+      letter-spacing: 0.5px;
+    }
+    #activity7 tr {
+      transition: background 0.3s, transform 0.3s;
+    }
+    #activity7 tr:nth-child(even) {
+      background: #222;
+    }
+    #activity7 tr:nth-child(odd) {
+      background: #2a2a2a;
+    }
+    #activity7 tr:hover {
+      background: #333;
+      transform: scale(1.01);
+      box-shadow: 0 0 12px rgba(229, 9, 20, 0.7);
+    }
+    #activity7 td {
+      color: #ddd;
+      font-size: 0.95rem;
+    }
+    #activity7 .reflection {
+      background: #e50914;
+      padding: 20px;
+      border-radius: 12px;
+      margin-top: 35px;
+      color: #fff;
+      box-shadow: 0 0 15px rgba(229, 9, 20, 0.8);
+    }
+    #activity7 .reflection h2 {
+      border: none;
+      padding-left: 0;
+      color: #fff;
+    }
+    #activity7 .reflection p {
+      line-height: 1.7;
+      font-size: 1rem;
+      margin-bottom: 15px;
+      background: none;
+      padding: 0;
     }
 
   </style>
@@ -788,6 +881,9 @@
         </div>
         <div id="card-activity6" class="movie-card" style="background-image:url('https://i.pinimg.com/1200x/aa/44/8c/aa448c70cf77a312d84413d16206ac2f.jpg');" onclick="openMovie('activity6')">
           <div class="movie-card-overlay"></div><div class="movie-card-title">My 5C's Reflections</div><div class="movie-card-content"><div class="card-controls"><span>▶</span> <span onclick="toggleMyList(event, 'activity6')">+</span> <span>👍</span></div></div>
+        </div>
+        <div id="card-activity7" class="movie-card" style="background-image:url('https://i.pinimg.com/1200x/71/a6/72/71a6723214d3581dbf0534f98f85675c.jpg');" onclick="openMovie('activity7')">
+          <div class="movie-card-overlay"></div><div class="movie-card-title">TOWPEP Reflection</div><div class="movie-card-content"><div class="card-controls"><span>▶</span> <span onclick="toggleMyList(event, 'activity7')">+</span> <span>👍</span></div></div>
         </div>
       </div>
     </div>
@@ -912,6 +1008,7 @@
 
   <div id="activity4" class="movie-full">
     <button class="back-btn" onclick="closeMovie('activity4')">←</button>
+    <div class="movie-banner" style="background-image:url('https://i.pinimg.com/1200x/0c/c1/a3/0cc1a3f78c65efaa6c7772deabb922f1.jpg');"><div class="movie-info"><h2>The Psalm 23 of My Life</h2><div class="movie-meta">Spiritual • Reflection • Personal Growth</div></div></div>
     <div class="details-content">
       <header class="psalm-header">
         <h1>Psalm 23 of My Life</h1>
@@ -975,7 +1072,7 @@
 
   <div id="activity6" class="movie-full">
     <button class="back-btn" onclick="closeMovie('activity6')">←</button>
-    <div class="movie-banner" style="background-image:url('https://i.pinimg.com/1200x/aa/44/8c/aa448c70cf77a312d84413d16206ac2f.jpg');"><div class="movie-info"><h2>My 5C's Reflections</h2><div class="movie-meta">Character • Competence • Commitment to achieve • Creativity • Collaboration</div></div></div>
+    <div class="movie-banner" style="background-image:url('https://i.pinimg.com/1200x/aa/44/8c/aa448c70cf77a312d84413d16206ac2f.jpg');"><div class="movie-info"><h2>My 5C's Reflections</h2><div class="movie-meta">Character • Competence • Commitment • Creativity • Collaboration</div></div></div>
     <div class="details-content">
         <h3>Reflection on the 5C’s</h3>
         <h4>1. Character</h4>
@@ -984,8 +1081,8 @@
         <h4>2. Competence</h4>
         <p>Competence is about being capable and having the knowledge and skills to do tasks well. In my journey as a BSIT student, I am still building my competence step by step. I may not know everything yet, but I show competence by finishing my assignments, learning new tools, and applying lessons in practical ways. For example, when I reflected on Psalm 23, I learned to connect values to real life, showing competence not only in academics but also in deeper understanding.</p>
         <p>I also see competence in how I apply the 5S principles in my work as a student assistant—sorting, organizing, cleaning, and sustaining order. These habits may seem simple, but they show that I can handle responsibilities effectively. Competence is not just about grades; it is about doing your best and being prepared to grow more each day.</p>
-        <h4>3. Commitment to Achieve</h4>
-        <p>Commitment to achieve means being dedicated and consistent in what I do, even when it gets difficult. I show commitment by taking my studies seriously and by being responsible with my duties, whether in class or in the office. When I joined the discussion forums, I reflected honestly on why I chose Southville and what I expect from my classes. This shows my commitment to make the most out of my education and to stay motivated despite challenges.</p>
+        <h4>3. Commitment</h4>
+        <p>Commitment means being dedicated and consistent in what I do, even when it gets difficult. I show commitment by taking my studies seriously and by being responsible with my duties, whether in class or in the office. When I joined the discussion forums, I reflected honestly on why I chose Southville and what I expect from my classes. This shows my commitment to make the most out of my education and to stay motivated despite challenges.</p>
         <p>I also see commitment in how I keep practicing habits like cleaning, organizing, and finishing tasks early. It’s not always easy to stay disciplined, especially when I feel tired or shy, but my commitment reminds me of my goals. If I stay consistent now, I know I’ll be more prepared for bigger responsibilities in the future.</p>
         <h4>4. Creativity</h4>
         <p>Creativity has always been one of my strengths. Even before college, I enjoyed designing pages and creating visuals. Now that I am studying IT, I want to use my creativity not just in art but also in programming and development. Creativity helps me think of new ways to solve problems and make tasks more engaging.</p>
@@ -994,12 +1091,44 @@
         <p>Collaboration is about working well with others. I admit this is one area I still need to grow in, since I sometimes feel shy or afraid to make mistakes when communicating. In the Online Needs Assessment, I shared that being shy is one of my personal struggles. However, reflecting on it helped me see that collaboration is important if I want to succeed in both school and work.</p>
         <p>As a student assistant, I practice collaboration by helping organize documents, cleaning with others, and making sure tasks are done smoothly as a team. Even if I am quiet at times, I try to support my classmates and coworkers in simple ways, like being reliable and respectful. Collaboration also means listening to others’ ideas, sharing my own when I can, and building trust. I believe that with practice, I can grow more confident in this area and learn to collaborate more actively.</p>
         <h3>🌟 Final Reflection on the 5C’s</h3>
-        <p>Looking back at the 5C’s—Character, Competence, Commitment to achieve, Creativity, and Collaboration—I realized that they are all connected to my journey as a student and as a person. Character reminds me to live with values, competence pushes me to keep learning, commitment motivates me to stay consistent, creativity inspires me to think differently, and collaboration teaches me the value of teamwork.</p>
+        <p>Looking back at the 5C’s—Character, Competence, Commitment, Creativity, and Collaboration—I realized that they are all connected to my journey as a student and as a person. Character reminds me to live with values, competence pushes me to keep learning, commitment motivates me to stay consistent, creativity inspires me to think differently, and collaboration teaches me the value of teamwork.</p>
         <p>Through my activities and reflections in this portfolio, I can see how I have practiced these 5C’s in different ways. Some areas, like creativity and character, feel natural to me, while others, like collaboration and confidence, are things I still need to improve. But that is the point of reflection—to see where I am strong and where I need growth.</p>
         <p>The 5C’s remind me that education is not only about academics but also about becoming a well-rounded person.</p>
     </div>
   </div>
   
+  <div id="activity7" class="movie-full">
+    <button class="back-btn" onclick="closeMovie('activity7')">←</button>
+    <div class="details-content">
+      <nav class="towpep-nav">
+        <div class="title">TOWPEP Reflection</div>
+      </nav>
+      <header class="towpep-header">
+        <h1>TOWPEP Profile</h1>
+        <p><strong>Name:</strong> Sahagun, Sophia Rodina G.</p>
+        <p><strong>Course:</strong> BS Information Technology | <strong>Year Level:</strong> First Year</p>
+        <p><strong>Test Date:</strong> July 22, 2025</p>
+      </header>
+      <div class="towpep-container">
+        <div class="section-card"><h2>A. Growth Mindset</h2><table><tr><th>Category</th><th>Score</th><th>Remarks</th></tr><tr><td>Adaptability</td><td>5.00</td><td>Very High</td></tr><tr><td>Openness to Learn</td><td>5.00</td><td>Very High</td></tr></table></div>
+        <div class="section-card"><h2>B. Character</h2><table><tr><th>Category</th><th>Score</th><th>Remarks</th></tr><tr><td>Authenticity</td><td>5.00</td><td>Very High</td></tr><tr><td>Empathy</td><td>5.00</td><td>Very High</td></tr><tr><td>Good Manners / Professionalism</td><td>5.00</td><td>Very High</td></tr><tr><td>Humility</td><td>5.00</td><td>Very High</td></tr><tr><td>Integrity</td><td>5.00</td><td>Very High</td></tr><tr><td>Responsibility</td><td>5.00</td><td>Very High</td></tr><tr><td>Trustworthiness</td><td>5.00</td><td>Very High</td></tr></table></div>
+        <div class="section-card"><h2>C. Collaboration</h2><table><tr><th>Category</th><th>Score</th><th>Remarks</th></tr><tr><td>Emotional Stability / Stress Tolerance</td><td>5.00</td><td>Very High</td></tr><tr><td>Flexibility</td><td>5.00</td><td>Very High</td></tr><tr><td>Interpersonal Sensitivity / Care</td><td>5.00</td><td>Very High</td></tr></table></div>
+        <div class="section-card"><h2>D. Grit / Commitment to Achieve</h2><table><tr><th>Category</th><th>Score</th><th>Remarks</th></tr><tr><td>Drive</td><td>5.00</td><td>Very High</td></tr><tr><td>Output Driven</td><td>5.00</td><td>Very High</td></tr><tr><td>Perseverance</td><td>5.00</td><td>Very High</td></tr><tr><td>Resilience</td><td>5.00</td><td>Very High</td></tr><tr><td>Sense of Urgency</td><td>5.00</td><td>Very High</td></tr></table></div>
+        <div class="section-card"><h2>E. Wellness</h2><table><tr><th>Category</th><th>Score</th><th>Remarks</th></tr><tr><td>Gratitude</td><td>5.00</td><td>Very High</td></tr><tr><td>Sense of Purpose</td><td>5.00</td><td>Very High</td></tr></table></div>
+        <div class="reflection">
+          <h2>Overall Reflection</h2>
+          <p>My TOWPEP results remind me that I have strong qualities like adaptability, empathy, integrity, perseverance, and a clear sense of purpose. These results give me confidence that I am on the right path, but they also remind me to stay humble and open to learning.</p>
+          <p>I realize that being "Very High" in all areas does not mean I am perfect—it means I must use these strengths to help others, keep growing, and manage challenges with balance. I should not only focus on achievements but also on maintaining my wellness and gratitude every day.</p>
+          <p>Overall, this reflection motivates me to continue developing both my character and mindset so that I can succeed in my studies, future career, and personal life while staying true to my values.</p>
+        </div>
+      </div>
+      <footer class="towpep-footer">
+        <p>Prepared by: Ramcis M. Yana | Checked by: Avelina L. Mandin</p>
+        <p>Counseling and Psychological Services</p>
+      </footer>
+    </div>
+  </div>
+
   <!-- About Me Fullscreen -->
   <div id="about-me-full" class="movie-full">
     <button class="back-btn" onclick="closeMovie('about-me-full')">←</button>
@@ -1153,4 +1282,4 @@
     }
   </script>
 </body>
-</html>
+  </html>
