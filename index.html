@@ -176,6 +176,57 @@
     .profile-section:hover .profile-dropdown {
       display: block;
     }
+    
+    /* --- Creative Portfolio Directory --- */
+    .directory-section {
+        padding: 40px 40px;
+        background: #181818;
+    }
+
+    .directory-section h2 {
+        font-size: 1.6rem;
+        margin-bottom: 25px;
+        color: #e0e0e0;
+        font-weight: bold;
+    }
+
+    .directory-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+        gap: 20px;
+    }
+
+    .directory-link {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        background: #222;
+        color: #e0e0e0;
+        text-decoration: none;
+        padding: 25px 20px;
+        border-radius: 4px;
+        font-weight: bold;
+        text-align: center;
+        border: 1px solid #333;
+        transition: all 0.3s ease;
+    }
+
+    .directory-link:hover {
+        background: #e50914;
+        transform: translateY(-8px) scale(1.03);
+        color: #fff;
+        box-shadow: 0 8px 20px rgba(0,0,0,0.5);
+    }
+
+    .directory-link i {
+        font-size: 2.5rem;
+        margin-bottom: 15px;
+    }
+
+    .directory-link span {
+        font-size: 1rem;
+    }
 
     /* --- Sections --- */
     main {
@@ -382,6 +433,7 @@
       line-height: 1.7;
       max-width: 900px;
       transform: translateY(-50px);
+      margin: auto;
     }
     
     .details-content h3 {
@@ -696,6 +748,70 @@
       box-sizing: border-box;
     }
 
+    /* --- TOWPEP Profile Specific Styles (FIXED) --- */
+    #towpep-profile .details-content {
+        max-width: 1200px;
+        transform: translateY(0);
+        padding: 0;
+    }
+    #towpep-profile .towpep-header {
+      text-align: center;
+      padding: 40px 20px;
+      background: url('https://i.pinimg.com/1200x/71/a6/72/71a6723214d3581dbf0534f98f85675c.jpg') no-repeat center center/cover;
+      border-bottom: 4px solid #e50914;
+    }
+    #towpep-profile .towpep-header h1 {
+      color: #e50914;
+      font-size: 2.5rem;
+      margin-bottom: 8px;
+      text-shadow: 0 0 15px rgba(229, 9, 20, 0.8);
+    }
+    #towpep-profile .towpep-header p {
+      color: #ddd; margin: 6px 0; font-size: 1rem;
+    }
+    #towpep-profile .container {
+      max-width: 1100px; margin: auto; padding: 20px;
+    }
+    #towpep-profile .section-card {
+      background: #1c1c1c; padding: 20px; margin-bottom: 25px;
+      border-radius: 10px; box-shadow: 0 4px 12px rgba(0,0,0,0.6);
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+    #towpep-profile .section-card:hover {
+      transform: scale(1.01); box-shadow: 0 0 20px rgba(229, 9, 20, 0.7);
+    }
+    #towpep-profile h2 {
+      color: #e50914; margin-bottom: 15px; border-left: 6px solid #e50914;
+      padding-left: 12px; font-size: 1.4rem; letter-spacing: 1px;
+    }
+    #towpep-profile table {
+      width: 100%; border-collapse: collapse; margin-bottom: 15px;
+      border-radius: 8px; overflow: hidden;
+    }
+    #towpep-profile th, #towpep-profile td {
+      padding: 14px; text-align: left;
+    }
+    #towpep-profile th {
+      background: #e50914; color: #fff; font-weight: bold;
+      font-size: 1rem; letter-spacing: 0.5px;
+    }
+    #towpep-profile tr { transition: background 0.3s; }
+    #towpep-profile tr:nth-child(even) { background: #222; }
+    #towpep-profile tr:nth-child(odd) { background: #2a2a2a; }
+    #towpep-profile tr:hover { background: #333; }
+    #towpep-profile td { color: #ddd; font-size: 0.95rem; }
+    #towpep-profile .reflection {
+      background: #e50914; padding: 20px; border-radius: 12px;
+      margin-top: 35px; color: #fff; box-shadow: 0 0 15px rgba(229, 9, 20, 0.8);
+    }
+    #towpep-profile .reflection h2 { border: none; padding-left: 0; color: #fff; }
+    #towpep-profile .reflection p { line-height: 1.7; font-size: 1rem; margin-bottom: 15px; }
+    #towpep-profile .towpep-footer {
+      text-align: center; padding: 25px; margin-top: 40px;
+      background: #000; color: #777; border-top: 4px solid #e50914;
+      font-size: 0.9rem;
+    }
+
   </style>
 </head>
 <body>
@@ -746,15 +862,37 @@
       <p id="trailer-text" style="display:none; min-height: 40px; font-weight: bold;"></p>
       
       <div class="hero-buttons">
-        <a href="#activities" class="play-btn">▶ Explore</a>
+        <a href="#directory" class="play-btn">▶ Explore</a>
         <button class="about-btn" onclick="openMovie('about-me-full')"><i class="fas fa-info-circle"></i> More Info</button>
       </div>
 
     </div>
   </div>
 
-
   <main>
+    <!-- Creative Directory Section -->
+    <div id="directory" class="directory-section">
+      <h2>Browse My Journey</h2>
+      <div class="directory-grid">
+        <a href="#activities" class="directory-link">
+          <i class="fas fa-book-open"></i>
+          <span>IC Activities</span>
+        </a>
+        <a href="#reflections" class="directory-link">
+          <i class="fas fa-film"></i>
+          <span>Personal Reflections</span>
+        </a>
+        <a href="#" class="directory-link" onclick="openMovie('about-me-full'); return false;">
+          <i class="fas fa-user-circle"></i>
+          <span>About The Author</span>
+        </a>
+        <a href="#" class="directory-link" onclick="openMovie('activity6'); return false;">
+          <i class="fas fa-star"></i>
+          <span>Core Values (5C's)</span>
+        </a>
+      </div>
+    </div>
+    
     <!-- My List Section (Initially Hidden) -->
     <div id="myListSection" class="section" style="display:none;">
         <h2>My List</h2>
@@ -773,6 +911,9 @@
         </div>
         <div id="card-activity3" class="movie-card" style="background-image:url('https://i.pinimg.com/1200x/31/8d/ed/318dedd6095c9b80f86a8c2b23a91341.jpg');" onclick="openMovie('activity3')">
           <div class="movie-card-overlay"></div><div class="movie-card-title">TOWPEP Questionnaire</div><div class="movie-card-content"><div class="card-controls"><span>▶</span> <span onclick="toggleMyList(event, 'activity3')">+</span> <span>👍</span></div></div>
+        </div>
+        <div id="card-towpep-profile" class="movie-card" style="background-image:url('https://i.pinimg.com/1200x/71/a6/72/71a6723214d3581dbf0534f98f85675c.jpg');" onclick="openMovie('towpep-profile')">
+          <div class="movie-card-overlay"></div><div class="movie-card-title">TOWPEP Profile Reflection</div><div class="movie-card-content"><div class="card-controls"><span>▶</span> <span onclick="toggleMyList(event, 'towpep-profile')">+</span> <span>👍</span></div></div>
         </div>
       </div>
     </div>
@@ -909,6 +1050,81 @@
       </div>
     </div>
   </div>
+
+  <!-- TOWPEP Profile Fullscreen -->
+  <div id="towpep-profile" class="movie-full">
+    <button class="back-btn" onclick="closeMovie('towpep-profile')">←</button>
+    <div class="details-content">
+      <header class="towpep-header">
+        <h1>TOWPEP Profile</h1>
+        <p><strong>Name:</strong> Sahagun, Sophia Rodina G.</p>
+        <p><strong>Course:</strong> BS Information Technology | <strong>Year Level:</strong> First Year</p>
+        <p><strong>Test Date:</strong> July 22, 2025</p>
+      </header>
+      <div class="container">
+        <div class="section-card">
+          <h2>A. Growth Mindset</h2>
+          <table>
+            <tr><th>Category</th><th>Score</th><th>Remarks</th></tr>
+            <tr><td>Adaptability</td><td>5.00</td><td>Very High</td></tr>
+            <tr><td>Openness to Learn</td><td>5.00</td><td>Very High</td></tr>
+          </table>
+        </div>
+        <div class="section-card">
+          <h2>B. Character</h2>
+          <table>
+            <tr><th>Category</th><th>Score</th><th>Remarks</th></tr>
+            <tr><td>Authenticity</td><td>5.00</td><td>Very High</td></tr>
+            <tr><td>Empathy</td><td>5.00</td><td>Very High</td></tr>
+            <tr><td>Good Manners / Professionalism</td><td>5.00</td><td>Very High</td></tr>
+            <tr><td>Humility</td><td>5.00</td><td>Very High</td></tr>
+            <tr><td>Integrity</td><td>5.00</td><td>Very High</td></tr>
+            <tr><td>Responsibility</td><td>5.00</td><td>Very High</td></tr>
+            <tr><td>Trustworthiness</td><td>5.00</td><td>Very High</td></tr>
+          </table>
+        </div>
+        <div class="section-card">
+          <h2>C. Collaboration</h2>
+          <table>
+            <tr><th>Category</th><th>Score</th><th>Remarks</th></tr>
+            <tr><td>Emotional Stability / Stress Tolerance</td><td>5.00</td><td>Very High</td></tr>
+            <tr><td>Flexibility</td><td>5.00</td><td>Very High</td></tr>
+            <tr><td>Interpersonal Sensitivity / Care</td><td>5.00</td><td>Very High</td></tr>
+          </table>
+        </div>
+        <div class="section-card">
+          <h2>D. Grit / Commitment to Achieve</h2>
+          <table>
+            <tr><th>Category</th><th>Score</th><th>Remarks</th></tr>
+            <tr><td>Drive</td><td>5.00</td><td>Very High</td></tr>
+            <tr><td>Output Driven</td><td>5.00</td><td>Very High</td></tr>
+            <tr><td>Perseverance</td><td>5.00</td><td>Very High</td></tr>
+            <tr><td>Resilience</td><td>5.00</td><td>Very High</td></tr>
+            <tr><td>Sense of Urgency</td><td>5.00</td><td>Very High</td></tr>
+          </table>
+        </div>
+        <div class="section-card">
+          <h2>E. Wellness</h2>
+          <table>
+            <tr><th>Category</th><th>Score</th><th>Remarks</th></tr>
+            <tr><td>Gratitude</td><td>5.00</td><td>Very High</td></tr>
+            <tr><td>Sense of Purpose</td><td>5.00</td><td>Very High</td></tr>
+          </table>
+        </div>
+        <div class="reflection">
+          <h2>Overall Reflection</h2>
+          <p>My TOWPEP results remind me that I have strong qualities like adaptability, empathy, integrity, perseverance, and a clear sense of purpose. These results give me confidence that I am on the right path, but they also remind me to stay humble and open to learning.</p>
+          <p>I realize that being "Very High" in all areas does not mean I am perfect—it means I must use these strengths to help others, keep growing, and manage challenges with balance. I should not only focus on achievements but also on maintaining my wellness and gratitude every day.</p>
+          <p>Overall, this reflection motivates me to continue developing both my character and mindset so that I can succeed in my studies, future career, and personal life while staying true to my values.</p>
+        </div>
+      </div>
+      <footer class="towpep-footer">
+        <p>Prepared by: Ramcis M. Yana | Checked by: Avelina L. Mandin</p>
+        <p>Counseling and Psychological Services</p>
+      </footer>
+    </div>
+  </div>
+
 
   <div id="activity4" class="movie-full">
     <button class="back-btn" onclick="closeMovie('activity4')">←</button>
@@ -1054,7 +1270,7 @@
   
     // --- Rest of the Site's JavaScript ---
     const hoverSound = document.getElementById('hover-sound');
-    const allCards = document.querySelectorAll('.movie-card, .gallery-thumbnail');
+    const allCards = document.querySelectorAll('.movie-card, .gallery-thumbnail, .directory-link');
 
     allCards.forEach(card => {
         card.addEventListener('mouseenter', () => {
@@ -1091,6 +1307,8 @@
         movieElement.classList.remove('active');
         setTimeout(() => {
           movieElement.style.display = "none";
+          // Ensure the modal scrolls back to the top for next time
+          movieElement.scrollTop = 0;
         }, 400);
     }
     
@@ -1098,7 +1316,8 @@
     
     function toggleMyList(event, activityId) {
         event.stopPropagation();
-        const card = document.getElementById(`card-${activityId}`);
+        const cardId = `card-${activityId}`;
+        const card = document.getElementById(cardId);
         const listButton = card.querySelector('span:nth-child(2)');
 
         if (myList.has(activityId)) {
@@ -1122,7 +1341,8 @@
         if (myList.size > 0) {
             myListSection.style.display = 'block';
             myList.forEach(activityId => {
-                const originalCard = document.getElementById(`card-${activityId}`);
+                const cardId = `card-${activityId}`;
+                const originalCard = document.getElementById(cardId);
                 const cloneCard = originalCard.cloneNode(true);
                 cloneCard.onclick = () => openMovie(activityId);
                 const listButton = cloneCard.querySelector('span:nth-child(2)');
