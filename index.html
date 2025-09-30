@@ -606,13 +606,13 @@ main {
   z-index: 10;
 }
 
-/* --- Psalm 23 Specific Styles --- */
-#activity4 .details-content {
+/* --- Psalm 23 Specific Styles (Now activity5) --- */
+#activity5 .details-content {
     padding: 0;
     max-width: none;
     transform: translateY(0);
 }
-#activity4 .psalm-header {
+#activity5 .psalm-header {
   background: #000;
   padding: 20px;
   text-align: center;
@@ -620,45 +620,45 @@ main {
   width: 100%;
   box-sizing: border-box;
 }
-#activity4 .psalm-header h1 {
+#activity5 .psalm-header h1 {
   color: #e50914;
   font-size: 2.2rem;
   margin-bottom: 5px;
 }
-#activity4 .psalm-header p {
+#activity5 .psalm-header p {
   margin: 3px 0;
   color: #ccc;
 }
-#activity4 .psalm-container {
+#activity5 .psalm-container {
   padding: 20px 60px;
   max-width: 1000px;
   margin: auto;
 }
-#activity4 .psalm-container h2 {
+#activity5 .psalm-container h2 {
   color: #e50914;
   border-left: 5px solid #e50914;
   padding-left: 10px;
   margin-top: 30px;
 }
-#activity4 .psalm-container h3 {
+#activity5 .psalm-container h3 {
   margin-top: 20px;
   color: #fff;
 }
-#activity4 .psalm-container ul {
+#activity5 .psalm-container ul {
   list-style-type: none;
   padding-left: 0;
 }
-#activity4 .psalm-container ul li {
+#activity5 .psalm-container ul li {
   background: #222;
   padding: 10px;
   margin: 8px 0;
   border-radius: 8px;
   transition: 0.3s;
 }
-#activity4 .psalm-container ul li:hover {
+#activity5 .psalm-container ul li:hover {
   background: #333;
 }
-#activity4 .psalm-container p {
+#activity5 .psalm-container p {
   background: #1c1c1c;
   padding: 12px;
   border-radius: 8px;
@@ -666,7 +666,7 @@ main {
   color: #ddd;
   line-height: 1.6;
 }
-#activity4 .highlight {
+#activity5 .highlight {
   background: #e50914;
   color: #fff;
   padding: 25px;
@@ -674,20 +674,20 @@ main {
   margin-top: 40px;
   box-shadow: 0 4px 12px rgba(0,0,0,0.6);
 }
-#activity4 .highlight h2 {
+#activity5 .highlight h2 {
   border: none;
   color: #fff;
   font-size: 1.8rem;
   margin-bottom: 15px;
 }
-#activity4 .highlight p {
+#activity5 .highlight p {
   color: #fff;
   line-height: 1.7;
   background: none;
   padding: 0;
   margin-bottom: 15px;
 }
-#activity4 .psalm-footer {
+#activity5 .psalm-footer {
   text-align: center;
   padding: 20px;
   margin-top: 40px;
@@ -696,6 +696,103 @@ main {
   border-top: 3px solid #e50914;
   width: 100%;
   box-sizing: border-box;
+}
+
+/* --- New TOWPEP Convocation Styles (Activity 4) --- */
+#activity4 .details-content {
+    max-width: 1100px;
+    padding: 20px;
+    transform: translateY(0); /* Remove the default -50px transform */
+}
+#activity4 .convocation-header {
+  text-align: center;
+  padding: 40px 20px;
+  background: url('https://i.pinimg.com/1200x/71/a6/72/71a6723214d3581dbf0534f98f85675c.jpg') no-repeat center center/cover;
+  border-bottom: 4px solid #e50914;
+  margin-bottom: 20px;
+}
+#activity4 .convocation-header h1 {
+  color: #e50914;
+  font-size: 2.5rem;
+  margin-bottom: 8px;
+  text-shadow: 0 0 15px rgba(229, 9, 20, 0.8);
+}
+#activity4 .convocation-header p {
+  color: #ddd;
+  margin: 6px 0;
+  font-size: 1rem;
+}
+#activity4 .section-card {
+  background: #1c1c1c;
+  padding: 20px;
+  margin-bottom: 25px;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.6);
+}
+#activity4 .section-card h3 { /* Using h3 for internal section titles */
+  color: #e50914;
+  margin-bottom: 15px;
+  border-left: 6px solid #e50914;
+  padding-left: 12px;
+  font-size: 1.4rem;
+  letter-spacing: 1px;
+}
+#activity4 table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 15px;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.4);
+}
+#activity4 th, #activity4 td {
+    padding: 14px;
+    text-align: left;
+}
+#activity4 th {
+    background: #e50914;
+    color: #fff;
+    font-weight: bold;
+    font-size: 1rem;
+    letter-spacing: 0.5px;
+}
+#activity4 tr:nth-child(even) {
+    background: #222;
+}
+#activity4 tr:nth-child(odd) {
+    background: #2a2a2a;
+}
+#activity4 td {
+    color: #ddd;
+    font-size: 0.95rem;
+}
+#activity4 .reflection-box { /* Renamed from .reflection to avoid conflict */
+    background: #e50914;
+    padding: 20px;
+    border-radius: 12px;
+    margin-top: 35px;
+    color: #fff;
+    box-shadow: 0 0 15px rgba(229, 9, 20, 0.8);
+}
+#activity4 .reflection-box h3 {
+    border: none;
+    padding-left: 0;
+    color: #fff;
+    font-size: 1.5rem;
+}
+#activity4 .reflection-box p {
+    line-height: 1.7;
+    font-size: 1rem;
+    margin-bottom: 15px;
+}
+#activity4 .convocation-footer {
+    text-align: center;
+    padding: 25px;
+    margin-top: 40px;
+    background: #000;
+    color: #777;
+    border-top: 4px solid #e50914;
+    font-size: 0.9rem;
 }
   </style>
 </head>
@@ -778,20 +875,27 @@ main {
     <div id="card-activity3" class="movie-card" style="background-image:url('https://i.pinimg.com/1200x/31/8d/ed/318dedd6095c9b80f86a8c2b23a91341.jpg');" onclick="openMovie('activity3')">
       <div class="movie-card-overlay"></div><div class="movie-card-title">TOWPEP Questionnaire</div><div class="movie-card-content"><div class="card-controls"><span>▶</span> <span onclick="toggleMyList(event, 'activity3')">+</span> <span>👍</span></div></div>
     </div>
+    <!-- NEW ACTIVITY 4 - TOWPEP Convocation -->
+    <div id="card-activity4" class="movie-card" style="background-image:url('https://i.pinimg.com/1200x/71/a6/72/71a6723214d3581dbf0534f98f85675c.jpg');" onclick="openMovie('activity4')">
+      <div class="movie-card-overlay"></div><div class="movie-card-title">TOWPEP Convocation</div><div class="movie-card-content"><div class="card-controls"><span>▶</span> <span onclick="toggleMyList(event, 'activity4')">+</span> <span>👍</span></div></div>
+    </div>
   </div>
 </div>
 
 <div id="reflections" class="section">
   <h2>🎬 Reflections</h2>
   <div class="movies-row">
-    <div id="card-activity4" class="movie-card" style="background-image:url('https://i.pinimg.com/1200x/0c/c1/a3/0cc1a3f78c65efaa6c7772deabb922f1.jpg');" onclick="openMovie('activity4')">
-      <div class="movie-card-overlay"></div><div class="movie-card-title">Psalm 23 of My Life</div><div class="movie-card-content"><div class="card-controls"><span>▶</span> <span onclick="toggleMyList(event, 'activity4')">+</span> <span>👍</span></div></div>
+    <!-- SHIFTED: Old Activity 4 -> New Activity 5 -->
+    <div id="card-activity5" class="movie-card" style="background-image:url('https://i.pinimg.com/1200x/0c/c1/a3/0cc1a3f78c65efaa6c7772deabb922f1.jpg');" onclick="openMovie('activity5')">
+      <div class="movie-card-overlay"></div><div class="movie-card-title">Psalm 23 of My Life</div><div class="movie-card-content"><div class="card-controls"><span>▶</span> <span onclick="toggleMyList(event, 'activity5')">+</span> <span>👍</span></div></div>
     </div>
-    <div id="card-activity5" class="movie-card" style="background-image:url('https://i.pinimg.com/1200x/e7/a5/25/e7a525fb5c242f964d563eb373b973fe.jpg');" onclick="openMovie('activity5')">
-      <div class="movie-card-overlay"></div><div class="movie-card-title">5S in My Life</div><div class="movie-card-content"><div class="card-controls"><span>▶</span> <span onclick="toggleMyList(event, 'activity5')">+</span> <span>👍</span></div></div>
+    <!-- SHIFTED: Old Activity 5 -> New Activity 6 -->
+    <div id="card-activity6" class="movie-card" style="background-image:url('https://i.pinimg.com/1200x/e7/a5/25/e7a525fb5c242f964d563eb373b973fe.jpg');" onclick="openMovie('activity6')">
+      <div class="movie-card-overlay"></div><div class="movie-card-title">5S in My Life</div><div class="movie-card-content"><div class="card-controls"><span>▶</span> <span onclick="toggleMyList(event, 'activity6')">+</span> <span>👍</span></div></div>
     </div>
-    <div id="card-activity6" class="movie-card" style="background-image:url('https://i.pinimg.com/1200x/aa/44/8c/aa448c70cf77a312d84413d16206ac2f.jpg');" onclick="openMovie('activity6')">
-      <div class="movie-card-overlay"></div><div class="movie-card-title">My 5C's Reflections</div><div class="movie-card-content"><div class="card-controls"><span>▶</span> <span onclick="toggleMyList(event, 'activity6')">+</span> <span>👍</span></div></div>
+    <!-- SHIFTED: Old Activity 6 -> New Activity 7 -->
+    <div id="card-activity7" class="movie-card" style="background-image:url('https://i.pinimg.com/1200x/aa/44/8c/aa448c70cf77a312d84413d16206ac2f.jpg');" onclick="openMovie('activity7')">
+      <div class="movie-card-overlay"></div><div class="movie-card-title">My 5C's Reflections</div><div class="movie-card-content"><div class="card-controls"><span>▶</span> <span onclick="toggleMyList(event, 'activity7')">+</span> <span>👍</span></div></div>
     </div>
   </div>
 </div>
@@ -896,27 +1000,154 @@ main {
   <!-- GALLERY SECTION (UPDATED LINKS) -->
   <div class="gallery-container">
     <h3>Event Gallery</h3>
-    <!-- MAIN IMAGE with updated link: dl=0 changed to dl=1 -->
-    <div class="main-image-display"><img id="main-gallery-image" src="https://www.dropbox.com/scl/fi/gnt93g8fxq9q4zwiv63z1/image-3.png?rlkey=4sbkzho1mw5xcv4tn53eknlk2&st=xgjh0ftb&dl=1" alt="Main gallery view"></div>
+    <!-- MAIN IMAGE with updated link -->
+    <div class="main-image-display"><img id="main-gallery-image" src="https://cdn.discordapp.com/attachments/981254035568996394/1420990687398068224/image-3.png?ex=68dc0574&is=68dab3f4&hm=9877bde0adada1f19e0317a966fae9d29c5c5afe6e664575f8ec733f50233739" alt="Main gallery view"></div>
     <div class="movies-row">
-      <!-- THUMBNAILS with updated links: dl=0 changed to dl=1 -->
-      <div class="gallery-thumbnail" style="background-image:url('https://www.dropbox.com/scl/fi/un4gt5uozygk2ck87o2xl/20250807_133730.jpg?rlkey=hv3wdalv1pvwxe8gjnwn0sb4a&st=vm51k74w&dl=1')" onclick="updateImage(this)"><div class="movie-card-overlay"></div><div class="movie-card-title">CITE Family</div></div>
-      <div class="gallery-thumbnail" style="background-image:url('https://www.dropbox.com/scl/fi/p8rgbcr744hbj7u18td9x/20250807_133735.jpg?rlkey=x5i0yfo9cbqi3mfunyuhgawwj&st=nsnxdze1&dl=1')" onclick="updateImage(this)"><div class="movie-card-overlay"></div><div class="movie-card-title">Freedom Board</div></div>
-      <div class="gallery-thumbnail" style="background-image:url('https://www.dropbox.com/scl/fi/iz7z4f1gwqznpgsz8bdvv/20250807_142358.jpg?rlkey=b3o7jem3trnqzhkr5olxy98x9&st=u9e7kqlw&dl=1')" onclick="updateImage(this)"><div class="movie-card-overlay"></div><div class="movie-card-title">Certificate</div></div>
-      <div class="gallery-thumbnail" style="background-image:url('https://www.dropbox.com/scl/fi/2vm5qzmee6uzonmaocng3/20250807_160538.jpg?rlkey=5fqwnib2w7znf8otorwpek0z1&st=gzybyesm&dl=1')" onclick="updateImage(this)"><div class="movie-card-overlay"></div><div class="movie-card-title">Moments</div></div>
-      <div class="gallery-thumbnail" style="background-image:url('https://www.dropbox.com/scl/fi/y5mrvcjzrrnqcwzqqjvcn/20250807_160548.jpg?rlkey=09ybhowzxgqaq8zd6c9u5hr3x&st=deuhju0g&dl=1')" onclick="updateImage(this)"><div class="movie-card-overlay"></div><div class="movie-card-title">Moments</div></div>
-      <div class="gallery-thumbnail" style="background-image:url('https://www.dropbox.com/scl/fi/q68s7rfx23117f3if1bst/20250807_162104.jpg?rlkey=h0e5ctw0jl58x52tdrpc6leek&st=wfk1kmqk&dl=1')" onclick="updateImage(this)"><div class="movie-card-overlay"></div><div class="movie-card-title">Moments</div></div>
-      <div class="gallery-thumbnail" style="background-image:url('https://www.dropbox.com/scl/fi/gz0pk58dap3p3e7iayrt2/20250807_162107.jpg?rlkey=a0vvkoswio2qv4snsn2p3qqp7&st=1l13fcya&dl=1')" onclick="updateImage(this)"><div class="movie-card-overlay"></div><div class="movie-card-title">Moments</div></div>
-      <div class="gallery-thumbnail" style="background-image:url('https://www.dropbox.com/scl/fi/m3x7vb57w9qap4f3qy8gj/20250807_162113-1.jpg?rlkey=bpjr5wv6b4x53umd8niewlpdp&st=et7gi7vv&dl=1')" onclick="updateImage(this)"><div class="movie-card-overlay"></div><div class="movie-card-title">Moments</div></div>
-      <div class="gallery-thumbnail" style="background-image:url('https://www.dropbox.com/scl/fi/o8st9wm631jyrl13uk2ca/20250807_162113.jpg?rlkey=w47ht1gbbp6fb9id02mhatkya&st=ci29jif9&dl=1')" onclick="updateImage(this)"><div class="movie-card-overlay"></div><div class="movie-card-title">Moments</div></div>
-      <div class="gallery-thumbnail" style="background-image:url('https://www.dropbox.com/scl/fi/v60xe7vg0g9igpavzcr2f/20250807_164044.jpg?rlkey=8vznapfq0koee17qwwyt7f1w1&st=1h7tfw16&dl=1')" onclick="updateImage(this)"><div class="movie-card-overlay"></div><div class="movie-card-title">Moments</div></div>
+      <!-- THUMBNAILS with updated links -->
+      <div class="gallery-thumbnail" style="background-image:url('https://cdn.discordapp.com/attachments/981254035568996394/1420999187549651045/MYXJ_20250926125039544_save.jpg?ex=68dc0d5f&is=68dabbdf&hm=bc18fe9a13b962cac9c5008de464d6b2698e1c3038dc260b88ec505835da2747')" onclick="updateImage(this)"><div class="movie-card-overlay"></div><div class="movie-card-title">CITE Family</div></div>
+      <div class="gallery-thumbnail" style="background-image:url('https://cdn.discordapp.com/attachments/981254035568996394/1420990808303210527/20250807_133735.jpg?ex=68dc0591&is=68dab411&hm=13d670302b5a7be9937e6ec1580531997f5c2e9e021103bef5ec6dc8a674ccfc&')" onclick="updateImage(this)"><div class="movie-card-overlay"></div><div class="movie-card-title">Freedom Board</div></div>
+      <div class="gallery-thumbnail" style="background-image:url('https://cdn.discordapp.com/attachments/981254035568996394/1420990808789876756/20250807_133730.jpg?ex=68dc0591&is=68dab411&hm=5da06113c1a9a59686f2a8d847db7c6914e73d42a93de5a07f26c7b5e6b66131&')" onclick="updateImage(this)"><div class="movie-card-overlay"></div><div class="movie-card-title">Certificate</div></div>
+      <div class="gallery-thumbnail" style="background-image:url('https://cdn.discordapp.com/attachments/981254035568996394/1420990809230147605/20250807_133724.jpg?ex=68dc0591&is=68dab411&hm=546b7d827dd020c4bac74688151cf1783be3a126626b50d4be744c7d50a486c9&')" onclick="updateImage(this)"><div class="movie-card-overlay"></div><div class="movie-card-title">Moments</div></div>
+      <div class="gallery-thumbnail" style="background-image:url('https://cdn.discordapp.com/attachments/981254035568996394/1420991560631324752/20250807_174240.jpg?ex=68dc0644&is=68dab4c4&hm=3d20fa3399ba52d8600473b96b1f4f4db867ee1af7f8d3be2b07b2d268d2cc57&')" onclick="updateImage(this)"><div class="movie-card-overlay"></div><div class="movie-card-title">Moments</div></div>
+      <div class="gallery-thumbnail" style="background-image:url('https://cdn.discordapp.com/attachments/981254035568996394/1420991561239494707/20250807_164047.jpg?ex=68dc0644&is=68dab4c4&hm=c6693c299fbd5fdd2df052fb07310cb9238ac278930e516cd46220ef5535a194&')" onclick="updateImage(this)"><div class="movie-card-overlay"></div><div class="movie-card-title">Moments</div></div>
+      <div class="gallery-thumbnail" style="background-image:url('https://cdn.discordapp.com/attachments/981254035568996394/1420991562103525499/20250807_164044.jpg?ex=68dc0645&is=68dab4c5&hm=3c65e1476fced122b060e8b9ff453dde9b359980514326b48859a09360ee5a89&')" onclick="updateImage(this)"><div class="movie-card-overlay"></div><div class="movie-card-title">Moments</div></div>
+      <div class="gallery-thumbnail" style="background-image:url('https://cdn.discordapp.com/attachments/981254035568996394/1420991563252629564/20250807_162113.jpg?ex=68dc0645&is=68dab4c5&hm=c8aeb0e5b527be185e179116291c90228f7f90b4cfe19c2ad17012c19017caa4&')" onclick="updateImage(this)"><div class="movie-card-overlay"></div><div class="movie-card-title">Moments</div></div>
+      <div class="gallery-thumbnail" style="background-image:url('https://cdn.discordapp.com/attachments/981254035568996394/1420991563961733190/20250807_162110.jpg?ex=68dc0645&is=68dab4c5&hm=1ca80976a0cafdc7f832b48b02f63a5465327ed3ccf20c9b132ace67bdebdeaf&')" onclick="updateImage(this)"><div class="movie-card-overlay"></div><div class="movie-card-title">Moments</div></div>
+      <div class="gallery-thumbnail" style="background-image:url('https://cdn.discordapp.com/attachments/981254035568996394/1420991564460593242/20250807_162107.jpg?ex=68dc0645&is=68dab4c5&hm=017ffbfccf89f024de39a203ccd5091c5e45cda55e58101e7c2e60824b6a6359&')" onclick="updateImage(this)"><div class="movie-card-overlay"></div><div class="movie-card-title">Moments</div></div>
+      <div class="gallery-thumbnail" style="background-image:url('https://cdn.discordapp.com/attachments/981254035568996394/1420991565366558820/20250807_162104.jpg?ex=68dc0645&is=68dab4c5&hm=ff900757a9c081106c18025a6f3a70c761ba78c4176dde7eb147ff3c1c0f7559&')" onclick="updateImage(this)"><div class="movie-card-overlay"></div><div class="movie-card-title">Moments</div></div>
+      <div class="gallery-thumbnail" style="background-image:url('https://cdn.discordapp.com/attachments/981254035568996394/1420991566037913650/20250807_160538.jpg?ex=68dc0646&is=68dab4c6&hm=77e613062b15fa7df8d897e72fb857e7c7e535b06ae004f80486b00bd70537f9f&')" onclick="updateImage(this)"><div class="movie-card-overlay"></div><div class="movie-card-title">Moments</div></div>
+      <div class="gallery-thumbnail" style="background-image:url('https://cdn.discordapp.com/attachments/981254035568996394/1420991566641631252/20250807_160548.jpg?ex=68dc0646&is=68dab4c6&hm=fb32fce32c755e96dfb470d2c9f3a39c0297a6d8dfb34c3fd53c89d8cca70d92&')" onclick="updateImage(this)"><div class="movie-card-overlay"></div><div class="movie-card-title">Moments</div></div>
+      <div class="gallery-thumbnail" style="background-image:url('https://cdn.discordapp.com/attachments/981254035568996394/1420991567140880384/20250807_173305.jpg?ex=68dc0646&is=68dab4c6&hm=8464c558410b3829958ba16d80fef5cba7c621147c95a4739fb324832ca264b9&')" onclick="updateImage(this)"><div class="movie-card-overlay"></div><div class="movie-card-title">Moments</div></div>
     </div>
   </div>
 </div>
   </div>
 
+  <!-- NEW ACTIVITY 4 - TOWPEP Convocation -->
   <div id="activity4" class="movie-full">
     <button class="back-btn" onclick="closeMovie('activity4')">←</button>
+    <!-- Use a simple banner for the convocation, and put the detailed header inside details-content for structure -->
+    <div class="movie-banner" style="background-image:url('https://i.pinimg.com/1200x/71/a6/72/71a6723214d3581dbf0534f98f85675c.jpg');"><div class="movie-info"><h2>TOWPEP Convocation: The 5C's Journey</h2><div class="movie-meta">Event Documentation • Achievement • Self-Assessment</div></div></div>
+    <div class="details-content">
+        <!-- Header Content -->
+        <div class="convocation-header" style="background: none; border: none; padding: 0; text-align: left;">
+            <h1>TOWPEP Convocation Documentation</h1>
+            <p><strong>Name:</strong> Sahagun, Sophia Rodina G. | <strong>Course:</strong> BS Information Technology | <strong>Year Level:</strong> First Year</p>
+            <p><strong>Date:</strong> July 22, 2025</p>
+        </div>
+
+        <!-- Convocation Overview -->
+        <div class="section-card">
+          <h3>Convocation Experience</h3>
+          <p>
+            The TOWPEP Convocation was a meaningful event that brought together students, mentors, and faculty to focus on growth, reflection, and community. 
+            The program highlighted the importance of not just academics but also values, discipline, and self-discovery. 
+            I felt inspired by how the event connected directly to the 5Cs—Character, Competence, Commitment, Creativity, and Collaboration—and encouraged us to see them as lifelong guides in both studies and life.
+          </p>
+        </div>
+
+        <!-- TOWPEP Tables -->
+        <div class="section-card">
+          <h3>A. Growth Mindset</h3>
+          <table>
+            <tr><th>Category</th><th>Score</th><th>Remarks</th></tr>
+            <tr><td>Adaptability</td><td>5.00</td><td>Very High</td></tr>
+            <tr><td>Openness to Learn</td><td>5.00</td><td>Very High</td></tr>
+          </table>
+        </div>
+
+        <div class="section-card">
+          <h3>B. Character</h3>
+          <table>
+            <tr><th>Category</th><th>Score</th><th>Remarks</th></tr>
+            <tr><td>Authenticity</td><td>5.00</td><td>Very High</td></tr>
+            <tr><td>Empathy</td><td>5.00</td><td>Very High</td></tr>
+            <tr><td>Good Manners / Professionalism</td><td>5.00</td><td>Very High</td></tr>
+            <tr><td>Humility</td><td>5.00</td><td>Very High</td></tr>
+            <tr><td>Integrity</td><td>5.00</td><td>Very High</td></tr>
+            <tr><td>Responsibility</td><td>5.00</td><td>Very High</td></tr>
+            <tr><td>Trustworthiness</td><td>5.00</td><td>Very High</td></tr>
+          </table>
+        </div>
+
+        <div class="section-card">
+          <h3>C. Collaboration</h3>
+          <table>
+            <tr><th>Category</th><th>Score</th><th>Remarks</th></tr>
+            <tr><td>Emotional Stability / Stress Tolerance</td><td>5.00</td><td>Very High</td></tr>
+            <tr><td>Flexibility</td><td>5.00</td><td>Very High</td></tr>
+            <tr><td>Interpersonal Sensitivity / Care</td><td>5.00</td><td>Very High</td></tr>
+          </table>
+        </div>
+
+        <div class="section-card">
+          <h3>D. Grit / Commitment to Achieve</h3>
+          <table>
+            <tr><th>Category</th><th>Score</th><th>Remarks</th></tr>
+            <tr><td>Drive</td><td>5.00</td><td>Very High</td></tr>
+            <tr><td>Output Driven</td><td>5.00</td><td>Very High</td></tr>
+            <tr><td>Perseverance</td><td>5.00</td><td>Very High</td></tr>
+            <tr><td>Resilience</td><td>5.00</td><td>Very High</td></tr>
+            <tr><td>Sense of Urgency</td><td>5.00</td><td>Very High</td></tr>
+          </table>
+        </div>
+
+        <div class="section-card">
+          <h3>E. Wellness</h3>
+          <table>
+            <tr><th>Category</th><th>Score</th><th>Remarks</th></tr>
+            <tr><td>Gratitude</td><td>5.00</td><td>Very High</td></tr>
+            <tr><td>Sense of Purpose</td><td>5.00</td><td>Very High</td></tr>
+          </table>
+        </div>
+
+        <!-- Achievements Section -->
+        <div class="section-card">
+          <h3>Achievements</h3>
+          <p>
+            One of my proudest achievements during this event was performing as part of the <strong>SYNC:D Dance Troupe</strong>. 
+            We worked hard during practices, training for long hours to perfect our routine. Performing in front of the assembly was both exciting and nerve-wracking, 
+            but in the end, it was incredibly fulfilling. Our group gave its best performance, and I learned the value of teamwork, discipline, and confidence. 
+            More importantly, I realized that achievements are not only about the applause but also about the joy of working together and growing as a group.
+          </p>
+          <p>
+            I also had the chance to join the <strong>Peer Mentor Organization</strong>, managed partly by Sir Ramcis. 
+            This experience was equally meaningful because it brought students from different courses together. 
+            It was not only fun and engaging but also gave me a chance to meet new people and form connections outside my circle. 
+            Talking, bonding, and building friendships during this activity showed me that collaboration and communication are just as important as academic excellence.
+          </p>
+          <p>
+            Both experiences—the dance intermission and peer mentoring—showed me that achievements are not only about personal success but also about building confidence, 
+            friendships, and community spirit. These are lessons that I will carry with me as I continue my journey in Southville.
+          </p>
+        </div>
+
+        <!-- Reflection Box -->
+        <div class="reflection-box">
+          <h3>Overall Reflection</h3>
+          <p>
+            Looking back at the TOWPEP Convocation, I see it as more than an event—it was a celebration of growth, values, and community. 
+            The results of my TOWPEP profile remind me that I have strong qualities such as adaptability, empathy, and perseverance, but they also remind me to stay humble and keep improving.
+          </p>
+          <p>
+            My achievements, including dancing with SYNC:D and joining the Peer Mentor Organization, made me realize that learning extends beyond the classroom. 
+            It is found in experiences that build confidence, strengthen collaboration, and help me grow as an individual. 
+          </p>
+          <p>
+            This documentation encourages me to continue exploring opportunities both in academics and in extracurricular activities so that I can become not just a skilled IT student, 
+            but also a well-rounded person ready for the future.
+          </p>
+        </div>
+    </div>
+    <footer class="convocation-footer">
+        <p>Prepared by: Sahagun, Sophia Rodina G.</p>
+        <p>Guided by: Counseling and Psychological Services</p>
+    </footer>
+  </div>
+  
+  <div id="activity5" class="movie-full">
+    <button class="back-btn" onclick="closeMovie('activity5')">←</button>
+    <div class="movie-banner" style="background-image:url('https://i.pinimg.com/1200x/0c/c1/a3/0cc1a3f78c65efaa6c7772deabb922f1.jpg');"><div class="movie-info"><h2>Psalm 23 of My Life</h2><div class="movie-meta">Reflection • Beginnings • Goal Setting</div></div></div>
     <div class="details-content">
       <header class="psalm-header">
         <h1>Psalm 23 of My Life</h1>
@@ -965,8 +1196,8 @@ main {
     </div>
   </div>
 
-  <div id="activity5" class="movie-full">
-    <button class="back-btn" onclick="closeMovie('activity5')">←</button>
+  <div id="activity6" class="movie-full">
+    <button class="back-btn" onclick="closeMovie('activity6')">←</button>
     <div class="movie-banner" style="background-image:url('https://i.pinimg.com/1200x/e7/a5/25/e7a525fb5c242f964d563eb373b973fe.jpg');"><div class="movie-info"><h2>5S in My Life</h2><div class="movie-meta">Organization • Productivity • Discipline</div></div></div>
     <div class="details-content">
       <h3>Activity Description</h3>
@@ -978,8 +1209,8 @@ main {
     </div>
   </div>
 
-  <div id="activity6" class="movie-full">
-    <button class="back-btn" onclick="closeMovie('activity6')">←</button>
+  <div id="activity7" class="movie-full">
+    <button class="back-btn" onclick="closeMovie('activity7')">←</button>
     <div class="movie-banner" style="background-image:url('https://i.pinimg.com/1200x/aa/44/8c/aa448c70cf77a312d84413d16206ac2f.jpg');"><div class="movie-info"><h2>My 5C's Reflections</h2><div class="movie-meta">Character • Competence • Commitment to achieve • Creativity • Collaboration</div></div></div>
     <div class="details-content">
         <h3>Reflection on the 5C’s</h3>
