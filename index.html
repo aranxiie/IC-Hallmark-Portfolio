@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
   <meta charset="UTF-8"/>
@@ -8,699 +9,700 @@
     @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
     @import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css');
 
-    body {
-      margin: 0;
-      font-family: 'Roboto', Arial, sans-serif;
-      background: #141414;
-      color: #fff;
-      scroll-behavior: smooth;
-      overflow: hidden; /* Hide scrollbar while welcome screen is active */
-    }
+body {
+  margin: 0;
+  font-family: 'Roboto', Arial, sans-serif;
+  background: #141414;
+  color: #fff;
+  scroll-behavior: smooth;
+  overflow: hidden; /* Hide scrollbar while welcome screen is active */
+}
 
-    /* --- Welcome Overlay --- */
-    #welcome-overlay {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background: #141414;
-        z-index: 9999;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        text-align: center;
-        opacity: 1;
-        transition: opacity 0.5s ease-out;
-    }
+/* --- Welcome Overlay --- */
+#welcome-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #141414;
+    z-index: 9999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    opacity: 1;
+    transition: opacity 0.5s ease-out;
+}
 
-    #welcome-overlay.hidden {
-        opacity: 0;
-        pointer-events: none;
-    }
+#welcome-overlay.hidden {
+    opacity: 0;
+    pointer-events: none;
+}
 
-    .welcome-content {
-        max-width: 800px;
-        padding: 40px;
-    }
-    
-    .netflix-logo-font {
-      color: #e50914;
-      font-size: 3rem;
-      font-weight: bold;
-      text-transform: uppercase;
-      margin-bottom: 25px;
-    }
+.welcome-content {
+    max-width: 800px;
+    padding: 40px;
+}
 
-    .welcome-content p {
-        font-size: 1rem;
-        line-height: 1.7;
-        color: #e0e0e0;
-        margin-bottom: 20px;
-    }
+.netflix-logo-font {
+  color: #e50914;
+  font-size: 3rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  margin-bottom: 25px;
+}
 
-    .enter-btn {
-        background: #e50914;
-        color: #fff;
-        border: none;
-        padding: 15px 40px;
-        font-size: 1.2rem;
-        font-weight: bold;
-        border-radius: 4px;
-        cursor: pointer;
-        transition: background 0.2s;
-        text-transform: uppercase;
-        margin-top: 20px;
-    }
+.welcome-content p {
+    font-size: 1rem;
+    line-height: 1.7;
+    color: #e0e0e0;
+    margin-bottom: 20px;
+}
 
-    .enter-btn:hover {
-        background: #f40612;
-    }
+.enter-btn {
+    background: #e50914;
+    color: #fff;
+    border: none;
+    padding: 15px 40px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background 0.2s;
+    text-transform: uppercase;
+    margin-top: 20px;
+}
+
+.enter-btn:hover {
+    background: #f40612;
+}
 
 
-    /* --- Header --- */
-    header {
-      background: linear-gradient(to bottom, rgba(0,0,0,0.7), transparent);
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 15px 40px;
-      position: fixed;
-      top: 0;
-      width: calc(100% - 80px);
-      z-index: 1000;
-      transition: background 0.3s;
-    }
+/* --- Header --- */
+header {
+  background: linear-gradient(to bottom, rgba(0,0,0,0.7), transparent);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 40px;
+  position: fixed;
+  top: 0;
+  width: calc(100% - 80px);
+  z-index: 1000;
+  transition: background 0.3s;
+}
 
-    header.scrolled {
-      background: #141414;
-    }
+header.scrolled {
+  background: #141414;
+}
 
-    header h1 {
-      color: #e50914;
-      font-size: 1.8rem;
-      margin: 0;
-      font-weight: bold;
-      text-transform: uppercase;
-    }
+header h1 {
+  color: #e50914;
+  font-size: 1.8rem;
+  margin: 0;
+  font-weight: bold;
+  text-transform: uppercase;
+}
 
-    nav {
-      display: flex;
-      gap: 20px;
-      flex-grow: 1;
-      margin-left: 30px;
-    }
+nav {
+  display: flex;
+  gap: 20px;
+  flex-grow: 1;
+  margin-left: 30px;
+}
 
-    nav a {
-      color: #e0e0e0;
-      text-decoration: none;
-      font-size: 0.9rem;
-      font-weight: bold;
-      transition: color 0.2s;
-    }
+nav a {
+  color: #e0e0e0;
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: bold;
+  transition: color 0.2s;
+}
 
-    nav a:hover {
-      color: #fff;
-    }
+nav a:hover {
+  color: #fff;
+}
 
-    .header-right {
-      display: flex;
-      align-items: center;
-      gap: 20px;
-    }
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
 
-    .search-bar {
-      background: rgba(0,0,0,0.7);
-      border: 1px solid #555;
-      padding: 5px 10px;
-      border-radius: 4px;
-      color: #fff;
-    }
+.search-bar {
+  background: rgba(0,0,0,0.7);
+  border: 1px solid #555;
+  padding: 5px 10px;
+  border-radius: 4px;
+  color: #fff;
+}
 
-    .notification-bell {
-      font-size: 1.5rem;
-      cursor: pointer;
-    }
+.notification-bell {
+  font-size: 1.5rem;
+  cursor: pointer;
+}
 
-    .profile-section {
-      position: relative;
-    }
-    
-    .profile-icon {
-      cursor: pointer;
-      width: 40px;
-      height: 40px;
-      border-radius: 4px;
-      background: url('https://cdn.discordapp.com/attachments/981254035568996394/1421149956395372595/Screenshot_20250926_230216_Gallery.jpg?ex=68d7fc89&is=68d6ab09&hm=cff2fc5ce09d6216ed0e9e9e114b43fcfc28f81073a6e1a3bb42a75e7c6ce2e3&') center/cover no-repeat;
-    }
+.profile-section {
+  position: relative;
+}
 
-    .profile-dropdown {
-      display: none;
-      position: absolute;
-      right: 0;
-      top: 50px;
-      background: rgba(0,0,0,0.9);
-      border: 1px solid #333;
-      padding: 10px;
-      border-radius: 4px;
-    }
+.profile-icon {
+  cursor: pointer;
+  width: 40px;
+  height: 40px;
+  border-radius: 4px;
+  background: url('https://cdn.discordapp.com/attachments/981254035568996394/1421149956395372595/Screenshot_20250926_230216_Gallery.jpg?ex=68d7fc89&is=68d6ab09&hm=cff2fc5ce09d6216ed0e9e9e114b43fcfc28f81073a6e1a3bb42a75e7c6ce2e3&') center/cover no-repeat;
+}
 
-    .profile-dropdown a {
-      display: block;
-      color: #fff;
-      padding: 8px 12px;
-      text-decoration: none;
-      font-size: 0.9rem;
-    }
+.profile-dropdown {
+  display: none;
+  position: absolute;
+  right: 0;
+  top: 50px;
+  background: rgba(0,0,0,0.9);
+  border: 1px solid #333;
+  padding: 10px;
+  border-radius: 4px;
+}
 
-    .profile-section:hover .profile-dropdown {
-      display: block;
-    }
+.profile-dropdown a {
+  display: block;
+  color: #fff;
+  padding: 8px 12px;
+  text-decoration: none;
+  font-size: 0.9rem;
+}
 
-    /* --- Sections --- */
-    main {
-        padding-top: 80px;
-    }
+.profile-section:hover .profile-dropdown {
+  display: block;
+}
 
-    .section {
-      padding: 20px 40px;
-    }
+/* --- Sections --- */
+main {
+    padding-top: 80px;
+}
 
-    .section h2 {
-      font-size: 1.4rem;
-      margin-bottom: 15px;
-    }
+.section {
+  padding: 20px 40px;
+}
 
-    .movies-row {
-      display: flex;
-      overflow-x: auto;
-      gap: 15px;
-      padding-bottom: 15px;
-      scrollbar-width: none;
-    }
-    .movies-row::-webkit-scrollbar {
-      display: none;
-    }
+.section h2 {
+  font-size: 1.4rem;
+  margin-bottom: 15px;
+}
 
-    .movie-card {
-      background: #222;
-      min-width: 250px;
-      height: 140px;
-      border-radius: 4px;
-      overflow: hidden;
-      position: relative;
-      cursor: pointer;
-      flex-shrink: 0;
-      transition: all 0.2s ease-in-out;
-      background-size: cover;
-      background-position: center;
-      display: flex;
-      flex-direction: column;
-      justify-content: flex-end;
-    }
+.movies-row {
+  display: flex;
+  overflow-x: auto;
+  gap: 15px;
+  padding-bottom: 15px;
+  scrollbar-width: none;
+}
+.movies-row::-webkit-scrollbar {
+  display: none;
+}
 
-    .movie-card:hover {
-      transform: scale(1.1);
-      z-index: 10;
-    }
-    
-    .movie-card-overlay {
-        background: linear-gradient(to top, rgba(0,0,0,0.9) 10%, transparent);
-        height: 100%;
-        width: 100%;
-        position: absolute;
-        bottom: 0;
-        left: 0;
-    }
+.movie-card {
+  background: #222;
+  min-width: 250px;
+  height: 140px;
+  border-radius: 4px;
+  overflow: hidden;
+  position: relative;
+  cursor: pointer;
+  flex-shrink: 0;
+  transition: all 0.2s ease-in-out;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
 
-    .movie-card:hover .movie-card-content {
-      opacity: 1;
-    }
+.movie-card:hover {
+  transform: scale(1.1);
+  z-index: 10;
+}
 
-    .movie-card-content {
-      padding: 10px;
-      position: relative;
-      z-index: 2;
-      opacity: 0;
-      transition: opacity 0.3s;
-    }
-    
-    .movie-card-title {
-      font-weight: bold;
-      position: absolute;
-      bottom: 10px;
-      left: 10px;
-      z-index: 1;
-    }
-    
-    .movie-card:hover .movie-card-title {
-        opacity: 0;
-    }
+.movie-card-overlay {
+    background: linear-gradient(to top, rgba(0,0,0,0.9) 10%, transparent);
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
 
-    .card-controls {
-      display: flex;
-      gap: 10px;
-    }
-    
-    .card-controls span {
-      background: rgba(42,42,42,0.6);
-      border: 2px solid #fff;
-      border-radius: 50%;
-      width: 30px;
-      height: 30px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 1.2rem;
-    }
+.movie-card:hover .movie-card-content {
+  opacity: 1;
+}
 
-    /* --- Hero & Fullscreen --- */
-    .movie-banner {
-      position: relative;
-      height: 80vh;
-      background-size: cover;
-      background-position: center;
-      display: flex;
-      align-items: center;
-      padding: 60px;
-      color: #fff;
-    }
+.movie-card-content {
+  padding: 10px;
+  position: relative;
+  z-index: 2;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
 
-    .movie-banner::after {
-      content: "";
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      width: 100%;
-      height: 150px;
-      background: linear-gradient(to top, #141414, transparent);
-    }
+.movie-card-title {
+  font-weight: bold;
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  z-index: 1;
+}
 
-    .movie-info {
-      position: relative;
-      z-index: 2;
-      max-width: 600px;
-    }
+.movie-card:hover .movie-card-title {
+    opacity: 0;
+}
 
-    .movie-info h2 {
-      font-size: 3rem;
-      margin: 0 0 15px 0;
-    }
+.card-controls {
+  display: flex;
+  gap: 10px;
+}
 
-    .movie-meta {
-      font-size: 1rem;
-      margin-bottom: 20px;
-      color: #bbb;
-    }
+.card-controls span {
+  background: rgba(42,42,42,0.6);
+  border: 2px solid #fff;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+}
 
-    .hero-buttons {
-        display: flex;
-        gap: 15px;
-        margin-top: 20px;
-    }
+/* --- Hero & Fullscreen --- */
+.movie-banner {
+  position: relative;
+  height: 80vh;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  padding: 60px;
+  color: #fff;
+}
 
-    .play-btn {
-      background: #fff;
-      border: none;
-      padding: 12px 25px;
-      font-size: 1.1rem;
-      color: #000;
-      font-weight: bold;
-      border-radius: 4px;
-      cursor: pointer;
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      transition: background 0.2s;
-    }
+.movie-banner::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 150px;
+  background: linear-gradient(to top, #141414, transparent);
+}
 
-    .play-btn:hover {
-        background: rgba(255,255,255,0.8);
-    }
+.movie-info {
+  position: relative;
+  z-index: 2;
+  max-width: 600px;
+}
 
-    .about-btn {
-      background: rgba(109, 109, 110, 0.7);
-      color: #fff;
-      border: none;
-      padding: 12px 25px;
-      font-size: 1.1rem;
-      font-weight: bold;
-      border-radius: 4px;
-      cursor: pointer;
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      transition: background 0.2s;
-    }
+.movie-info h2 {
+  font-size: 3rem;
+  margin: 0 0 15px 0;
+}
 
-    .about-btn:hover {
-        background: rgba(109, 109, 110, 0.9);
-    }
+.movie-meta {
+  font-size: 1rem;
+  margin-bottom: 20px;
+  color: #bbb;
+}
 
-    /* --- Fullscreen Overlays --- */
-    .movie-full {
-      display: none;
-      position: fixed;
-      top: 0;
-      left: 0;
-      height: 100vh;
-      width: 100%;
-      background: #141414;
-      z-index: 2000;
-      overflow-y: auto;
-      opacity: 0;
-      transition: opacity 0.4s ease-in-out;
-    }
-    
-    .movie-full.active {
-      display: block;
-      opacity: 1;
-    }
+.hero-buttons {
+    display: flex;
+    gap: 15px;
+    margin-top: 20px;
+}
 
-    .details-content {
-      padding: 20px 60px 60px 60px;
-      line-height: 1.7;
-      max-width: 900px;
-      transform: translateY(-50px);
-    }
-    
-    .details-content h3 {
-        color: #e50914;
-        font-size: 1.5rem;
-        border-left: 4px solid #e50914;
-        padding-left: 10px;
-        margin-top: 30px;
-    }
-    
-    .details-content h4 {
-        color: #fff;
-        font-size: 1.2rem;
-        margin-top: 20px;
-        margin-bottom: 10px;
-        border-bottom: 1px solid #333;
-        padding-bottom: 5px;
-    }
+.play-btn {
+  background: #fff;
+  border: none;
+  padding: 12px 25px;
+  font-size: 1.1rem;
+  color: #000;
+  font-weight: bold;
+  border-radius: 4px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  transition: background 0.2s;
+}
 
-    .details-content blockquote {
-        background: #222;
-        border-left: 3px solid #555;
-        padding: 15px;
-        margin: 20px 0;
-        font-style: italic;
-    }
-    
-    .assessment-summary {
-        border: 1px solid #333;
-        background: #1f1f1f;
-        padding: 25px;
-        border-radius: 8px;
-        margin-top: 25px;
-    }
-    
-    .assessment-summary h4 {
-        margin-top: 0;
-        border-bottom: 2px solid #e50914;
-        padding-bottom: 10px;
-    }
-    
-    .assessment-grid {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 20px 40px;
-    }
-    
-    .assessment-category ul, .questionnaire-summary ul {
-        list-style-type: none;
-        padding: 0;
-        margin: 0;
-    }
-    
-    .assessment-category li, .questionnaire-summary li {
-        padding: 8px 0;
-        color: #e0e0e0;
-        border-bottom: 1px solid #2a2a2a;
-    }
+.play-btn:hover {
+    background: rgba(255,255,255,0.8);
+}
 
-    .questionnaire-summary li {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-    }
+.about-btn {
+  background: rgba(109, 109, 110, 0.7);
+  color: #fff;
+  border: none;
+  padding: 12px 25px;
+  font-size: 1.1rem;
+  font-weight: bold;
+  border-radius: 4px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  transition: background 0.2s;
+}
 
-     .questionnaire-summary .question {
-        padding-right: 15px;
-    }
+.about-btn:hover {
+    background: rgba(109, 109, 110, 0.9);
+}
 
-     .questionnaire-summary .score {
-        color: #fff;
-        font-weight: bold;
-        background-color: #e50914;
-        padding: 2px 8px;
-        border-radius: 4px;
-        white-space: nowrap;
-    }
-    
-    .assessment-category h5 {
-        color: #fff;
-        font-size: 1.1rem;
-        margin-bottom: 10px;
-    }
-    
-    .main-concern-box {
-        grid-column: 1 / -1;
-        background: #222;
-        padding: 15px;
-        border-left: 3px solid #e50914;
-        margin-top: 20px;
-    }
-    
-    .main-concern-box h5 {
-        margin-top: 0;
-    }
-    
-    .main-concern-box p {
-        margin-bottom: 0;
-        font-style: italic;
-        color: #ccc;
-    }
+/* --- Fullscreen Overlays --- */
+.movie-full {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100%;
+  background: #141414;
+  z-index: 2000;
+  overflow-y: auto;
+  opacity: 0;
+  transition: opacity 0.4s ease-in-out;
+}
 
-    /* --- Gallery Styles --- */
-    .gallery-container {
-        margin-top: 40px;
-    }
-    .main-image-display {
-        width: 100%;
-        height: 500px;
-        background-color: #000;
-        border-radius: 8px;
-        margin-bottom: 15px;
-        overflow: hidden;
-    }
-    .main-image-display img {
-        width: 100%;
-        height: 100%;
-        object-fit: contain;
-        transition: opacity 0.3s ease-in-out;
-    }
-    .gallery-thumbnail {
-        min-width: 180px;
-        height: 100px;
-        position: relative;
-        cursor: pointer;
-        border: 2px solid transparent;
-        border-radius: 4px;
-        overflow: hidden;
-        transition: all 0.2s ease-in-out;
-        background-size: cover;
-        background-position: center;
-    }
-    .gallery-thumbnail:hover {
-        transform: scale(1.05);
-        border: 2px solid #fff;
-    }
-    .gallery-thumbnail .movie-card-overlay {
-        background: linear-gradient(to top, rgba(0,0,0,0.8) 20%, transparent);
-    }
-    .gallery-thumbnail .movie-card-title {
-        font-size: 0.9rem;
-    }
-    
-    /* --- About Me Fullscreen --- */
-    #about-me-full .details-content {
-        max-width: 1200px;
-        display: flex;
-        gap: 40px;
-        align-items: center;
-        transform: translateY(0);
-        padding: 80px 60px;
-    }
-    
-    #about-me-full .about-left {
-        flex-basis: 35%;
-        text-align: center;
-        opacity: 0;
-        transform: translateX(-30px);
-        transition: all 0.6s 0.2s ease-out;
-    }
-    
-    #about-me-full.active .about-left {
-        opacity: 1;
-        transform: translateX(0);
-    }
+.movie-full.active {
+  display: block;
+  opacity: 1;
+}
 
-    .about-profile-pic {
-        width: 200px;
-        height: 200px;
-        border-radius: 50%;
-        background: url('https://cdn.discordapp.com/attachments/981254035568996394/1421149956395372595/Screenshot_20250926_230216_Gallery.jpg?ex=68d7fc89&is=68d6ab09&hm=cff2fc5ce09d6216ed0e9e9e114b43fcfc28f81073a6e1a3bb42a75e7c6ce2e3&') center/cover no-repeat;
-        border: 4px solid #e50914;
-        margin: 0 auto 20px;
-    }
+.details-content {
+  padding: 20px 60px 60px 60px;
+  line-height: 1.7;
+  max-width: 900px;
+  transform: translateY(-50px);
+}
 
-    .about-socials {
-        display: flex;
-        justify-content: center;
-        gap: 15px;
-        font-size: 1.5rem;
-    }
+.details-content h3 {
+    color: #e50914;
+    font-size: 1.5rem;
+    border-left: 4px solid #e50914;
+    padding-left: 10px;
+    margin-top: 30px;
+}
 
-    .about-socials a {
-        color: #bbb;
-        transition: color 0.2s;
-    }
+.details-content h4 {
+    color: #fff;
+    font-size: 1.2rem;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    border-bottom: 1px solid #333;
+    padding-bottom: 5px;
+}
 
-    .about-socials a:hover {
-        color: #e50914;
-    }
-    
-    #about-me-full .about-right {
-        flex-basis: 65%;
-        opacity: 0;
-        transform: translateX(30px);
-        transition: all 0.6s 0.4s ease-out;
-    }
-    
-    #about-me-full .about-right p {
-      margin-bottom: 1.5em;
-    }
+.details-content blockquote {
+    background: #222;
+    border-left: 3px solid #555;
+    padding: 15px;
+    margin: 20px 0;
+    font-style: italic;
+}
 
-    #about-me-full.active .about-right {
-        opacity: 1;
-        transform: translateX(0);
-    }
+.assessment-summary {
+    border: 1px solid #333;
+    background: #1f1f1f;
+    padding: 25px;
+    border-radius: 8px;
+    margin-top: 25px;
+}
 
-    .back-btn {
-      position: absolute;
-      top: 30px;
-      left: 30px;
-      background: rgba(0,0,0,0.7);
-      border: none;
-      width: 40px;
-      height: 40px;
-      color: #fff;
-      font-size: 1.5rem;
-      border-radius: 50%;
-      cursor: pointer;
-      z-index: 10;
-    }
-    
-    /* --- Psalm 23 Specific Styles --- */
-    #activity4 .details-content {
-        padding: 0;
-        max-width: none;
-        transform: translateY(0);
-    }
-    #activity4 .psalm-header {
-      background: #000;
-      padding: 20px;
-      text-align: center;
-      border-bottom: 3px solid #e50914;
-      width: 100%;
-      box-sizing: border-box;
-    }
-    #activity4 .psalm-header h1 {
-      color: #e50914;
-      font-size: 2.2rem;
-      margin-bottom: 5px;
-    }
-    #activity4 .psalm-header p {
-      margin: 3px 0;
-      color: #ccc;
-    }
-    #activity4 .psalm-container {
-      padding: 20px 60px;
-      max-width: 1000px;
-      margin: auto;
-    }
-    #activity4 .psalm-container h2 {
-      color: #e50914;
-      border-left: 5px solid #e50914;
-      padding-left: 10px;
-      margin-top: 30px;
-    }
-    #activity4 .psalm-container h3 {
-      margin-top: 20px;
-      color: #fff;
-    }
-    #activity4 .psalm-container ul {
-      list-style-type: none;
-      padding-left: 0;
-    }
-    #activity4 .psalm-container ul li {
-      background: #222;
-      padding: 10px;
-      margin: 8px 0;
-      border-radius: 8px;
-      transition: 0.3s;
-    }
-    #activity4 .psalm-container ul li:hover {
-      background: #333;
-    }
-    #activity4 .psalm-container p {
-      background: #1c1c1c;
-      padding: 12px;
-      border-radius: 8px;
-      margin: 12px 0;
-      color: #ddd;
-      line-height: 1.6;
-    }
-    #activity4 .highlight {
-      background: #e50914;
-      color: #fff;
-      padding: 25px;
-      border-radius: 10px;
-      margin-top: 40px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.6);
-    }
-    #activity4 .highlight h2 {
-      border: none;
-      color: #fff;
-      font-size: 1.8rem;
-      margin-bottom: 15px;
-    }
-    #activity4 .highlight p {
-      color: #fff;
-      line-height: 1.7;
-      background: none;
-      padding: 0;
-      margin-bottom: 15px;
-    }
-    #activity4 .psalm-footer {
-      text-align: center;
-      padding: 20px;
-      margin-top: 40px;
-      background: #000;
-      color: #777;
-      border-top: 3px solid #e50914;
-      width: 100%;
-      box-sizing: border-box;
-    }
+.assessment-summary h4 {
+    margin-top: 0;
+    border-bottom: 2px solid #e50914;
+    padding-bottom: 10px;
+}
 
+.assessment-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px 40px;
+}
+
+.assessment-category ul, .questionnaire-summary ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.assessment-category li, .questionnaire-summary li {
+    padding: 8px 0;
+    color: #e0e0e0;
+    border-bottom: 1px solid #2a2a2a;
+}
+
+.questionnaire-summary li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+ .questionnaire-summary .question {
+    padding-right: 15px;
+}
+
+ .questionnaire-summary .score {
+    color: #fff;
+    font-weight: bold;
+    background-color: #e50914;
+    padding: 2px 8px;
+    border-radius: 4px;
+    white-space: nowrap;
+}
+
+.assessment-category h5 {
+    color: #fff;
+    font-size: 1.1rem;
+    margin-bottom: 10px;
+}
+
+.main-concern-box {
+    grid-column: 1 / -1;
+    background: #222;
+    padding: 15px;
+    border-left: 3px solid #e50914;
+    margin-top: 20px;
+}
+
+.main-concern-box h5 {
+    margin-top: 0;
+}
+
+.main-concern-box p {
+    margin-bottom: 0;
+    font-style: italic;
+    color: #ccc;
+}
+
+/* --- Gallery Styles --- */
+.gallery-container {
+    margin-top: 40px;
+}
+.main-image-display {
+    width: 100%;
+    height: 500px;
+    background-color: #000;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    overflow: hidden;
+}
+.main-image-display img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    /* Added transform for a smoother, more dynamic "Netflix style" transition */
+    transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+.gallery-thumbnail {
+    min-width: 180px;
+    height: 100px;
+    position: relative;
+    cursor: pointer;
+    border: 2px solid transparent;
+    border-radius: 4px;
+    overflow: hidden;
+    transition: all 0.2s ease-in-out;
+    background-size: cover;
+    background-position: center;
+}
+.gallery-thumbnail:hover {
+    transform: scale(1.05);
+    border: 2px solid #fff;
+}
+.gallery-thumbnail .movie-card-overlay {
+    background: linear-gradient(to top, rgba(0,0,0,0.8) 20%, transparent);
+}
+.gallery-thumbnail .movie-card-title {
+    font-size: 0.9rem;
+}
+
+/* --- About Me Fullscreen --- */
+#about-me-full .details-content {
+    max-width: 1200px;
+    display: flex;
+    gap: 40px;
+    align-items: center;
+    transform: translateY(0);
+    padding: 80px 60px;
+}
+
+#about-me-full .about-left {
+    flex-basis: 35%;
+    text-align: center;
+    opacity: 0;
+    transform: translateX(-30px);
+    transition: all 0.6s 0.2s ease-out;
+}
+
+#about-me-full.active .about-left {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.about-profile-pic {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    background: url('https://cdn.discordapp.com/attachments/981254035568996394/1421149956395372595/Screenshot_20250926_230216_Gallery.jpg?ex=68d7fc89&is=68d6ab09&hm=cff2fc5ce09d6216ed0e9e9e114b43fcfc28f81073a6e1a3bb42a75e7c6ce2e3&') center/cover no-repeat;
+    border: 4px solid #e50914;
+    margin: 0 auto 20px;
+}
+
+.about-socials {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    font-size: 1.5rem;
+}
+
+.about-socials a {
+    color: #bbb;
+    transition: color 0.2s;
+}
+
+.about-socials a:hover {
+    color: #e50914;
+}
+
+#about-me-full .about-right {
+    flex-basis: 65%;
+    opacity: 0;
+    transform: translateX(30px);
+    transition: all 0.6s 0.4s ease-out;
+}
+
+#about-me-full .about-right p {
+  margin-bottom: 1.5em;
+}
+
+#about-me-full.active .about-right {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.back-btn {
+  position: absolute;
+  top: 30px;
+  left: 30px;
+  background: rgba(0,0,0,0.7);
+  border: none;
+  width: 40px;
+  height: 40px;
+  color: #fff;
+  font-size: 1.5rem;
+  border-radius: 50%;
+  cursor: pointer;
+  z-index: 10;
+}
+
+/* --- Psalm 23 Specific Styles --- */
+#activity4 .details-content {
+    padding: 0;
+    max-width: none;
+    transform: translateY(0);
+}
+#activity4 .psalm-header {
+  background: #000;
+  padding: 20px;
+  text-align: center;
+  border-bottom: 3px solid #e50914;
+  width: 100%;
+  box-sizing: border-box;
+}
+#activity4 .psalm-header h1 {
+  color: #e50914;
+  font-size: 2.2rem;
+  margin-bottom: 5px;
+}
+#activity4 .psalm-header p {
+  margin: 3px 0;
+  color: #ccc;
+}
+#activity4 .psalm-container {
+  padding: 20px 60px;
+  max-width: 1000px;
+  margin: auto;
+}
+#activity4 .psalm-container h2 {
+  color: #e50914;
+  border-left: 5px solid #e50914;
+  padding-left: 10px;
+  margin-top: 30px;
+}
+#activity4 .psalm-container h3 {
+  margin-top: 20px;
+  color: #fff;
+}
+#activity4 .psalm-container ul {
+  list-style-type: none;
+  padding-left: 0;
+}
+#activity4 .psalm-container ul li {
+  background: #222;
+  padding: 10px;
+  margin: 8px 0;
+  border-radius: 8px;
+  transition: 0.3s;
+}
+#activity4 .psalm-container ul li:hover {
+  background: #333;
+}
+#activity4 .psalm-container p {
+  background: #1c1c1c;
+  padding: 12px;
+  border-radius: 8px;
+  margin: 12px 0;
+  color: #ddd;
+  line-height: 1.6;
+}
+#activity4 .highlight {
+  background: #e50914;
+  color: #fff;
+  padding: 25px;
+  border-radius: 10px;
+  margin-top: 40px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.6);
+}
+#activity4 .highlight h2 {
+  border: none;
+  color: #fff;
+  font-size: 1.8rem;
+  margin-bottom: 15px;
+}
+#activity4 .highlight p {
+  color: #fff;
+  line-height: 1.7;
+  background: none;
+  padding: 0;
+  margin-bottom: 15px;
+}
+#activity4 .psalm-footer {
+  text-align: center;
+  padding: 20px;
+  margin-top: 40px;
+  background: #000;
+  color: #777;
+  border-top: 3px solid #e50914;
+  width: 100%;
+  box-sizing: border-box;
+}
   </style>
 </head>
 <body>
 
   <!-- Welcome Overlay -->
+
   <div id="welcome-overlay">
       <div class="welcome-content">
           <div class="netflix-logo-font">Welcome</div>
@@ -712,10 +714,12 @@
           <button class="enter-btn" id="enter-btn">Enter Portfolio</button>
       </div>
   </div>
-  
-  <audio id="hover-sound" src="https://assets.mixkit.co/sfx/preview/mixkit-interface-hint-notification-911.mp3" preload="auto"></audio>
+
+
+<audio id="hover-sound" src="https://assets.mixkit.co/sfx/preview/mixkit-interface-hint-notification-911.mp3" preload="auto"></audio>
 
   <!-- Header -->
+
   <header id="main-header">
     <h1>Portfolio</h1>
     <nav>
@@ -737,22 +741,22 @@
         </div>
     </div>
   </header>
-  
+
   <!-- Hero Section -->
+
   <div class="movie-banner" style="background-image:url('https://i.pinimg.com/1200x/89/96/0c/89960c808b61f0148faf270fd69819ce.jpg');">
     <div class="movie-info">
       <h2 id="home">Welcome to My Portfolio</h2>
       <div class="movie-meta">2025 • Personal Journey • Student Life</div>
       <p id="trailer-text" style="display:none; min-height: 40px; font-weight: bold;"></p>
-      
-      <div class="hero-buttons">
-        <a href="#activities" class="play-btn">▶ Explore</a>
-        <button class="about-btn" onclick="openMovie('about-me-full')"><i class="fas fa-info-circle"></i> More Info</button>
-      </div>
 
-    </div>
+<div class="hero-buttons">
+    <a href="#activities" class="play-btn">▶ Explore</a>
+    <button class="about-btn" onclick="openMovie('about-me-full')"><i class="fas fa-info-circle"></i> More Info</button>
   </div>
 
+</div>
+  </div>
 
   <main>
     <!-- My List Section (Initially Hidden) -->
@@ -760,40 +764,41 @@
         <h2>My List</h2>
         <div class="movies-row" id="my-list-row"></div>
     </div>
-  
-    <!-- Main Sections -->
-    <div id="activities" class="section">
-      <h2>📚 IC Activities</h2>
-      <div class="movies-row">
-        <div id="card-activity1" class="movie-card" style="background-image:url('https://i.pinimg.com/1200x/b9/59/8e/b9598e398a486e6f3be396e4d913e792.jpg');" onclick="openMovie('activity1')">
-          <div class="movie-card-overlay"></div><div class="movie-card-title">Discussion Forum 1</div><div class="movie-card-content"><div class="card-controls"><span title="View Details">▶</span><span title="Add to My List" onclick="toggleMyList(event, 'activity1')">+</span><span title="Like">👍</span></div></div>
-        </div>
-        <div id="card-activity2" class="movie-card" style="background-image:url('https://i.pinimg.com/1200x/b0/16/3a/b0163a93d05a19fbb79790c751b43927.jpg');" onclick="openMovie('activity2')">
-          <div class="movie-card-overlay"></div><div class="movie-card-title">Needs Assessment</div><div class="movie-card-content"><div class="card-controls"><span>▶</span> <span onclick="toggleMyList(event, 'activity2')">+</span> <span>👍</span></div></div>
-        </div>
-        <div id="card-activity3" class="movie-card" style="background-image:url('https://i.pinimg.com/1200x/31/8d/ed/318dedd6095c9b80f86a8c2b23a91341.jpg');" onclick="openMovie('activity3')">
-          <div class="movie-card-overlay"></div><div class="movie-card-title">TOWPEP Questionnaire</div><div class="movie-card-content"><div class="card-controls"><span>▶</span> <span onclick="toggleMyList(event, 'activity3')">+</span> <span>👍</span></div></div>
-        </div>
-      </div>
-    </div>
 
-    <div id="reflections" class="section">
-      <h2>🎬 Reflections</h2>
-      <div class="movies-row">
-        <div id="card-activity4" class="movie-card" style="background-image:url('https://i.pinimg.com/1200x/0c/c1/a3/0cc1a3f78c65efaa6c7772deabb922f1.jpg');" onclick="openMovie('activity4')">
-          <div class="movie-card-overlay"></div><div class="movie-card-title">Psalm 23 of My Life</div><div class="movie-card-content"><div class="card-controls"><span>▶</span> <span onclick="toggleMyList(event, 'activity4')">+</span> <span>👍</span></div></div>
-        </div>
-        <div id="card-activity5" class="movie-card" style="background-image:url('https://i.pinimg.com/1200x/e7/a5/25/e7a525fb5c242f964d563eb373b973fe.jpg');" onclick="openMovie('activity5')">
-          <div class="movie-card-overlay"></div><div class="movie-card-title">5S in My Life</div><div class="movie-card-content"><div class="card-controls"><span>▶</span> <span onclick="toggleMyList(event, 'activity5')">+</span> <span>👍</span></div></div>
-        </div>
-        <div id="card-activity6" class="movie-card" style="background-image:url('https://i.pinimg.com/1200x/aa/44/8c/aa448c70cf77a312d84413d16206ac2f.jpg');" onclick="openMovie('activity6')">
-          <div class="movie-card-overlay"></div><div class="movie-card-title">My 5C's Reflections</div><div class="movie-card-content"><div class="card-controls"><span>▶</span> <span onclick="toggleMyList(event, 'activity6')">+</span> <span>👍</span></div></div>
-        </div>
-      </div>
+<!-- Main Sections -->
+<div id="activities" class="section">
+  <h2>📚 IC Activities</h2>
+  <div class="movies-row">
+    <div id="card-activity1" class="movie-card" style="background-image:url('https://i.pinimg.com/1200x/b9/59/8e/b9598e398a486e6f3be396e4d913e792.jpg');" onclick="openMovie('activity1')">
+      <div class="movie-card-overlay"></div><div class="movie-card-title">Discussion Forum 1</div><div class="movie-card-content"><div class="card-controls"><span title="View Details">▶</span><span title="Add to My List" onclick="toggleMyList(event, 'activity1')">+</span><span title="Like">👍</span></div></div>
     </div>
+    <div id="card-activity2" class="movie-card" style="background-image:url('https://i.pinimg.com/1200x/b0/16/3a/b0163a93d05a19fbb79790c751b43927.jpg');" onclick="openMovie('activity2')">
+      <div class="movie-card-overlay"></div><div class="movie-card-title">Needs Assessment</div><div class="movie-card-content"><div class="card-controls"><span>▶</span> <span onclick="toggleMyList(event, 'activity2')">+</span> <span>👍</span></div></div>
+    </div>
+    <div id="card-activity3" class="movie-card" style="background-image:url('https://i.pinimg.com/1200x/31/8d/ed/318dedd6095c9b80f86a8c2b23a91341.jpg');" onclick="openMovie('activity3')">
+      <div class="movie-card-overlay"></div><div class="movie-card-title">TOWPEP Questionnaire</div><div class="movie-card-content"><div class="card-controls"><span>▶</span> <span onclick="toggleMyList(event, 'activity3')">+</span> <span>👍</span></div></div>
+    </div>
+  </div>
+</div>
+
+<div id="reflections" class="section">
+  <h2>🎬 Reflections</h2>
+  <div class="movies-row">
+    <div id="card-activity4" class="movie-card" style="background-image:url('https://i.pinimg.com/1200x/0c/c1/a3/0cc1a3f78c65efaa6c7772deabb922f1.jpg');" onclick="openMovie('activity4')">
+      <div class="movie-card-overlay"></div><div class="movie-card-title">Psalm 23 of My Life</div><div class="movie-card-content"><div class="card-controls"><span>▶</span> <span onclick="toggleMyList(event, 'activity4')">+</span> <span>👍</span></div></div>
+    </div>
+    <div id="card-activity5" class="movie-card" style="background-image:url('https://i.pinimg.com/1200x/e7/a5/25/e7a525fb5c242f964d563eb373b973fe.jpg');" onclick="openMovie('activity5')">
+      <div class="movie-card-overlay"></div><div class="movie-card-title">5S in My Life</div><div class="movie-card-content"><div class="card-controls"><span>▶</span> <span onclick="toggleMyList(event, 'activity5')">+</span> <span>👍</span></div></div>
+    </div>
+    <div id="card-activity6" class="movie-card" style="background-image:url('https://i.pinimg.com/1200x/aa/44/8c/aa448c70cf77a312d84413d16206ac2f.jpg');" onclick="openMovie('activity6')">
+      <div class="movie-card-overlay"></div><div class="movie-card-title">My 5C's Reflections</div><div class="movie-card-content"><div class="card-controls"><span>▶</span> <span onclick="toggleMyList(event, 'activity6')">+</span> <span>👍</span></div></div>
+    </div>
+  </div>
+</div>
   </main>
 
   <!-- Activity Fullscreen Views -->
+
   <div id="activity1" class="movie-full">
     <button class="back-btn" onclick="closeMovie('activity1')">←</button>
     <div class="movie-banner" style="background-image:url('https://i.pinimg.com/1200x/b9/59/8e/b9598e398a486e6f3be396e4d913e792.jpg');"><div class="movie-info"><h2>Discussion Forum 1: My Journey Begins</h2><div class="movie-meta">Reflection • Beginnings • Goal Setting</div></div></div>
@@ -839,73 +844,75 @@
     <div class="details-content">
       <h3>Activity Description</h3>
       <p>TOWPEP stands for Transcript of Well-being and Personal Effectiveness. This assessment was designed to measure how students perceive their personal growth, effectiveness, and wellness. I was asked to rate myself from 1 (lowest) to 5 (highest) in different areas such as honesty, open-mindedness, adaptability, gratitude, perseverance, relationships, and responsibility. I gave myself high ratings across all items, particularly in being open to new ideas, truthful, hardworking, respectful, adaptable, and consistent.</p>
-      
-      <div class="assessment-summary questionnaire-summary">
-        <h4>TOWPEP Questionnaire Responses</h4>
-        <p><b>Name:</b> Sahagun, Sophia Rodina, G. <br> <b>Course:</b> BS Information Technology <br> <b>Year Level:</b> First Year</p>
-        <hr style="border-color: #333; margin: 20px 0;">
-        <ul>
-            <li><span class="question">1. Demonstrates open-mindedness to new things, fresh ideas, and experiences.</span><span class="score">5 / 5</span></li>
-            <li><span class="question">2. Shows candor and truthfulness in thoughts, words and actions even in difficult and challenging situations.</span><span class="score">5 / 5</span></li>
-            <li><span class="question">3. Shows effective personal relations and interpersonal sensitivity.</span><span class="score">5 / 5</span></li>
-            <li><span class="question">4. Exerts extra effort to accomplish tasks even when conditions are difficult or deadlines are tight.</span><span class="score">5 / 5</span></li>
-            <li><span class="question">5. Shows thankfulness for small and big things in life.</span><span class="score">5 / 5</span></li>
-            <li><span class="question">6. Handles smoothly multiple demands, shifting priorities, and rapid changes.</span><span class="score">5 / 5</span></li>
-            <li><span class="question">7. Demonstrates honesty with oneself and others.</span><span class="score">5 / 5</span></li>
-            <li><span class="question">8. Accommodates changes in plans based on feedback and suggestions of others.</span><span class="score">5 / 5</span></li>
-            <li><span class="question">9. Exerts effort toward task mastery and accomplishment.</span><span class="score">5 / 5</span></li>
-            <li><span class="question">10. Expresses appreciation for what one has and not what one wants.</span><span class="score">5 / 5</span></li>
-            <li><span class="question">11. Shifts strategy or approach in response to demands of a situation.</span><span class="score">5 / 5</span></li>
-            <li><span class="question">12. Demonstrates to be true to be who he / she really is.</span><span class="score">5 / 5</span></li>
-            <li><span class="question">13. Accommodates various perspectives, other ideas and options.</span><span class="score">5 / 5</span></li>
-            <li><span class="question">14. Exerts effort toward task mastery and accomplishment.</span><span class="score">5 / 5</span></li>
-            <li><span class="question">15. Lives out one’s passion and directs energy and strengths towards the achievement of one’s goals.</span><span class="score">5 / 5</span></li>
-            <li><span class="question">16. Looks for opportunities to apply learning.</span><span class="score">5 / 5</span></li>
-            <li><span class="question">17. Shows awareness and sensitivity to the feelings and needs of others.</span><span class="score">5 / 5</span></li>
-            <li><span class="question">18. Demonstrates sensitivity and concern for the needs of others.</span><span class="score">5 / 5</span></li>
-            <li><span class="question">19. Finds ways to be efficient for the completion of tasks or projects.</span><span class="score">5 / 5</span></li>
-            <li><span class="question">20. Gets involved in self-directed project(s) or service to others that is both effective and fulfilling.</span><span class="score">5 / 5</span></li>
-            <li><span class="question">21. Demonstrates respect for self and others.</span><span class="score">5 / 5</span></li>
-            <li><span class="question">22. Demonstrates the capacity to work effectively with others from diverse backgrounds.</span><span class="score">5 / 5</span></li>
-            <li><span class="question">23. Works hard and finishes what is started, despite barriers and obstacles that arise.</span><span class="score">5 / 5</span></li>
-            <li><span class="question">24. Demonstrates the drive to keep going when things get tough to pursue own passion.</span><span class="score">5 / 5</span></li>
-            <li><span class="question">25. Shows humility in success by showing gratitude to those who helped in achieving it.</span><span class="score">5 / 5</span></li>
-            <li><span class="question">26. Admits one's mistakes and confronts unethical actions of others.</span><span class="score">5 / 5</span></li>
-            <li><span class="question">27. Works out blocks to achieve short and long term goals and objectives.</span><span class="score">5 / 5</span></li>
-            <li><span class="question">28. Accepts one’s weaknesses and limitations.</span><span class="score">5 / 5</span></li>
-            <li><span class="question">29. Commits to perform an assigned or agreed upon tasks or duties.</span><span class="score">5 / 5</span></li>
-            <li><span class="question">30. Persists at a task or problem despite interruptions, obstacles or setbacks.</span><span class="score">5 / 5</span></li>
-            <li><span class="question">31. Demonstrates consistency in words and actions.</span><span class="score">5 / 5</span></li>
-            <li><span class="question">32. Feels an internal sense of direction, motivation and compulsion to move or act in some way.</span><span class="score">5 / 5</span></li>
-            <li><span class="question">33. Chooses to do what is ethical even in the midst of opposition and common practice.</span><span class="score">5 / 5</span></li>
-            <li><span class="question">34. Gets things done with sense of urgency.</span><span class="score">5 / 5</span></li>
-            <li><span class="question">35. Honors the spoken word by keeping true to promises and fulfilling commitments.</span><span class="score">5 / 5</span></li>
-        </ul>
-      </div>
 
-      <h3>Reflection</h3>
-      <p>Completing the TOWPEP Questionnaire made me realize the importance of self-assessment and self-awareness. By rating myself, I was able to see how I value qualities like honesty, perseverance, gratitude, and responsibility. I noticed that I often strive to give my best in every task, show respect to others, and remain truthful even in difficult situations.</p>
-      <p>This reflection gave me a sense of pride because it showed that I am aware of my personal strengths. At the same time, it reminded me that there is always room for growth. For example, while I scored myself high in adaptability and perseverance, I know that real-life challenges may test these traits, and I must continue to practice them in different situations.</p>
-      <p>Another insight I gained is that personal effectiveness is not only about academic performance but also about character and attitude. It is about how I treat others, how I manage challenges, and how I stay true to my values. This activity encouraged me to keep nurturing these qualities so I can be more resilient, compassionate, and effective both in school and in life.</p>
-      
-      <!-- GALLERY SECTION -->
-      <div class="gallery-container">
-        <h3>Event Gallery</h3>
-        <div class="main-image-display"><img id="main-gallery-image" src="https://drive.google.com/uc?export=view&id=1T430n3OR2xJ2LIdqnvs0ATKRvyGZzWTR" alt="Main gallery view"></div>
-        <div class="movies-row">
-          <div class="gallery-thumbnail" style="background-image:url('https://drive.google.com/uc?export=view&id=1T430n3OR2xJ2LIdqnvs0ATKRvyGZzWTR')" onclick="updateImage(this)"><div class="movie-card-overlay"></div><div class="movie-card-title">CITE Family</div></div>
-          <div class="gallery-thumbnail" style="background-image:url('https://drive.google.com/uc?export=view&id=17JjvQDUQCQVERAlao34L6YDl-godSqR9')" onclick="updateImage(this)"><div class="movie-card-overlay"></div><div class="movie-card-title">Freedom Board</div></div>
-          <div class="gallery-thumbnail" style="background-image:url('https://drive.google.com/uc?export=view&id=1gwgOAIobcQgtTqapxgqa7u6t16x4mEiB')" onclick="updateImage(this)"><div class="movie-card-overlay"></div><div class="movie-card-title">Certificate</div></div>
-          <div class="gallery-thumbnail" style="background-image:url('https://drive.google.com/uc?export=view&id=1vD1z54js8Y1dka0f7LEZD7-YenUNlvFc')" onclick="updateImage(this)"><div class="movie-card-overlay"></div><div class="movie-card-title">Moments</div></div>
-          <div class="gallery-thumbnail" style="background-image:url('https://drive.google.com/uc?export=view&id=1zZV2D3ssxuThEJYN8_1_CaGne1Hn73XG')" onclick="updateImage(this)"><div class="movie-card-overlay"></div><div class="movie-card-title">Moments</div></div>
-          <div class="gallery-thumbnail" style="background-image:url('https://drive.google.com/uc?export=view&id=1LueavewIt7sMxGtecEBfVrwD7syLc23v')" onclick="updateImage(this)"><div class="movie-card-overlay"></div><div class="movie-card-title">Moments</div></div>
-          <div class="gallery-thumbnail" style="background-image:url('https://drive.google.com/uc?export=view&id=1gJIRWaGKMjnn9x8FzxR8bIxHP0OiOmDx')" onclick="updateImage(this)"><div class="movie-card-overlay"></div><div class="movie-card-title">Moments</div></div>
-          <div class="gallery-thumbnail" style="background-image:url('https://drive.google.com/uc?export=view&id=1b0xlqnQ2hzc80fqd1EP1WClkMD-4ZETr')" onclick="updateImage(this)"><div class="movie-card-overlay"></div><div class="movie-card-title">Moments</div></div>
-          <div class="gallery-thumbnail" style="background-image:url('https://drive.google.com/uc?export=view&id=1P8yiVikGCi2RSdVPKIQ1ClBGLKhiICKt')" onclick="updateImage(this)"><div class="movie-card-overlay"></div><div class="movie-card-title">Moments</div></div>
-          <div class="gallery-thumbnail" style="background-image:url('https://drive.google.com/uc?export=view&id=1txI1NuKNgaYXFjXYL97ZvlMJgVHz6ZVG')" onclick="updateImage(this)"><div class="movie-card-overlay"></div><div class="movie-card-title">Moments</div></div>
-        </div>
-      </div>
+<div class="assessment-summary questionnaire-summary">
+    <h4>TOWPEP Questionnaire Responses</h4>
+    <p><b>Name:</b> Sahagun, Sophia Rodina, G. <br> <b>Course:</b> BS Information Technology <br> <b>Year Level:</b> First Year</p>
+    <hr style="border-color: #333; margin: 20px 0;">
+    <ul>
+        <li><span class="question">1. Demonstrates open-mindedness to new things, fresh ideas, and experiences.</span><span class="score">5 / 5</span></li>
+        <li><span class="question">2. Shows candor and truthfulness in thoughts, words and actions even in difficult and challenging situations.</span><span class="score">5 / 5</span></li>
+        <li><span class="question">3. Shows effective personal relations and interpersonal sensitivity.</span><span class="score">5 / 5</span></li>
+        <li><span class="question">4. Exerts extra effort to accomplish tasks even when conditions are difficult or deadlines are tight.</span><span class="score">5 / 5</span></li>
+        <li><span class="question">5. Shows thankfulness for small and big things in life.</span><span class="score">5 / 5</span></li>
+        <li><span class="question">6. Handles smoothly multiple demands, shifting priorities, and rapid changes.</span><span class="score">5 / 5</span></li>
+        <li><span class="question">7. Demonstrates honesty with oneself and others.</span><span class="score">5 / 5</span></li>
+        <li><span class="question">8. Accommodates changes in plans based on feedback and suggestions of others.</span><span class="score">5 / 5</span></li>
+        <li><span class="question">9. Exerts effort toward task mastery and accomplishment.</span><span class="score">5 / 5</span></li>
+        <li><span class="question">10. Expresses appreciation for what one has and not what one wants.</span><span class="score">5 / 5</span></li>
+        <li><span class="question">11. Shifts strategy or approach in response to demands of a situation.</span><span class="score">5 / 5</span></li>
+        <li><span class="question">12. Demonstrates to be true to be who he / she really is.</span><span class="score">5 / 5</span></li>
+        <li><span class="question">13. Accommodates various perspectives, other ideas and options.</span><span class="score">5 / 5</span></li>
+        <li><span class="question">14. Exerts effort toward task mastery and accomplishment.</span><span class="score">5 / 5</span></li>
+        <li><span class="question">15. Lives out one’s passion and directs energy and strengths towards the achievement of one’s goals.</span><span class="score">5 / 5</span></li>
+        <li><span class="question">16. Looks for opportunities to apply learning.</span><span class="score">5 / 5</span></li>
+        <li><span class="question">17. Shows awareness and sensitivity to the feelings and needs of others.</span><span class="score">5 / 5</span></li>
+        <li><span class="question">18. Demonstrates sensitivity and concern for the needs of others.</span><span class="score">5 / 5</span></li>
+        <li><span class="question">19. Finds ways to be efficient for the completion of tasks or projects.</span><span class="score">5 / 5</span></li>
+        <li><span class="question">20. Gets involved in self-directed project(s) or service to others that is both effective and fulfilling.</span><span class="score">5 / 5</span></li>
+        <li><span class="question">21. Demonstrates respect for self and others.</span><span class="score">5 / 5</span></li>
+        <li><span class="question">22. Demonstrates the capacity to work effectively with others from diverse backgrounds.</span><span class="score">5 / 5</span></li>
+        <li><span class="question">23. Works hard and finishes what is started, despite barriers and obstacles that arise.</span><span class="score">5 / 5</span></li>
+        <li><span class="question">24. Demonstrates the drive to keep going when things get tough to pursue own passion.</span><span class="score">5 / 5</span></li>
+        <li><span class="question">25. Shows humility in success by showing gratitude to those who helped in achieving it.</span><span class="score">5 / 5</span></li>
+        <li><span class="question">26. Admits one's mistakes and confronts unethical actions of others.</span><span class="score">5 / 5</span></li>
+        <li><span class="question">27. Works out blocks to achieve short and long term goals and objectives.</span><span class="score">5 / 5</span></li>
+        <li><span class="question">28. Accepts one’s weaknesses and limitations.</span><span class="score">5 / 5</span></li>
+        <li><span class="question">29. Commits to perform an assigned or agreed upon tasks or duties.</span><span class="score">5 / 5</span></li>
+        <li><span class="question">30. Persists at a task or problem despite interruptions, obstacles or setbacks.</span><span class="score">5 / 5</span></li>
+        <li><span class="question">31. Demonstrates consistency in words and actions.</span><span class="score">5 / 5</span></li>
+        <li><span class="question">32. Feels an internal sense of direction, motivation and compulsion to move or act in some way.</span><span class="score">5 / 5</span></li>
+        <li><span class="question">33. Chooses to do what is ethical even in the midst of opposition and common practice.</span><span class="score">5 / 5</span></li>
+        <li><span class="question">34. Gets things done with sense of urgency.</span><span class="score">5 / 5</span></li>
+        <li><span class="question">35. Honors the spoken word by keeping true to promises and fulfilling commitments.</span><span class="score">5 / 5</span></li>
+    </ul>
+  </div>
+
+  <h3>Reflection</h3>
+  <p>Completing the TOWPEP Questionnaire made me realize the importance of self-assessment and self-awareness. By rating myself, I was able to see how I value qualities like honesty, perseverance, gratitude, and responsibility. I noticed that I often strive to give my best in every task, show respect to others, and remain truthful even in difficult situations.</p>
+  <p>This reflection gave me a sense of pride because it showed that I am aware of my personal strengths. At the same time, it reminded me that there is always room for growth. For example, while I scored myself high in adaptability and perseverance, I know that real-life challenges may test these traits, and I must continue to practice them in different situations.</p>
+  <p>Another insight I gained is that personal effectiveness is not only about academic performance but also about character and attitude. It is about how I treat others, how I manage challenges, and how I stay true to my values. This activity encouraged me to keep nurturing these qualities so I can be more resilient, compassionate, and effective both in school and in life.</p>
+  
+  <!-- GALLERY SECTION (UPDATED LINKS) -->
+  <div class="gallery-container">
+    <h3>Event Gallery</h3>
+    <!-- MAIN IMAGE with updated link -->
+    <div class="main-image-display"><img id="main-gallery-image" src="https://www.dropbox.com/scl/fi/gnt93g8fxq9q4zwiv63z1/image-3.png?rlkey=4sbkzho1mw5xcv4tn53eknlk2&st=xgjh0ftb&dl=0" alt="Main gallery view"></div>
+    <div class="movies-row">
+      <!-- THUMBNAILS with updated links -->
+      <div class="gallery-thumbnail" style="background-image:url('https://www.dropbox.com/scl/fi/un4gt5uozygk2ck87o2xl/20250807_133730.jpg?rlkey=hv3wdalv1pvwxe8gjnwn0sb4a&st=vm51k74w&dl=0')" onclick="updateImage(this)"><div class="movie-card-overlay"></div><div class="movie-card-title">CITE Family</div></div>
+      <div class="gallery-thumbnail" style="background-image:url('https://www.dropbox.com/scl/fi/p8rgbcr744hbj7u18td9x/20250807_133735.jpg?rlkey=x5i0yfo9cbqi3mfunyuhgawwj&st=nsnxdze1&dl=0')" onclick="updateImage(this)"><div class="movie-card-overlay"></div><div class="movie-card-title">Freedom Board</div></div>
+      <div class="gallery-thumbnail" style="background-image:url('https://www.dropbox.com/scl/fi/iz7z4f1gwqznpgsz8bdvv/20250807_142358.jpg?rlkey=b3o7jem3trnqzhkr5olxy98x9&st=u9e7kqlw&dl=0')" onclick="updateImage(this)"><div class="movie-card-overlay"></div><div class="movie-card-title">Certificate</div></div>
+      <div class="gallery-thumbnail" style="background-image:url('https://www.dropbox.com/scl/fi/2vm5qzmee6uzonmaocng3/20250807_160538.jpg?rlkey=5fqwnib2w7znf8otorwpek0z1&st=gzybyesm&dl=0')" onclick="updateImage(this)"><div class="movie-card-overlay"></div><div class="movie-card-title">Moments</div></div>
+      <div class="gallery-thumbnail" style="background-image:url('https://www.dropbox.com/scl/fi/y5mrvcjzrrnqcwzqqjvcn/20250807_160548.jpg?rlkey=09ybhowzxgqaq8zd6c9u5hr3x&st=deuhju0g&dl=0')" onclick="updateImage(this)"><div class="movie-card-overlay"></div><div class="movie-card-title">Moments</div></div>
+      <div class="gallery-thumbnail" style="background-image:url('https://www.dropbox.com/scl/fi/q68s7rfx23117f3if1bst/20250807_162104.jpg?rlkey=h0e5ctw0jl58x52tdrpc6leek&st=wfk1kmqk&dl=0')" onclick="updateImage(this)"><div class="movie-card-overlay"></div><div class="movie-card-title">Moments</div></div>
+      <div class="gallery-thumbnail" style="background-image:url('https://www.dropbox.com/scl/fi/gz0pk58dap3p3e7iayrt2/20250807_162107.jpg?rlkey=a0vvkoswio2qv4snsn2p3qqp7&st=1l13fcya&dl=0')" onclick="updateImage(this)"><div class="movie-card-overlay"></div><div class="movie-card-title">Moments</div></div>
+      <div class="gallery-thumbnail" style="background-image:url('https://www.dropbox.com/scl/fi/m3x7vb57w9qap4f3qy8gj/20250807_162113-1.jpg?rlkey=bpjr5wv6b4x53umd8niewlpdp&st=et7gi7vv&dl=0')" onclick="updateImage(this)"><div class="movie-card-overlay"></div><div class="movie-card-title">Moments</div></div>
+      <div class="gallery-thumbnail" style="background-image:url('https://www.dropbox.com/scl/fi/o8st9wm631jyrl13uk2ca/20250807_162113.jpg?rlkey=w47ht1gbbp6fb9id02mhatkya&st=ci29jif9&dl=0')" onclick="updateImage(this)"><div class="movie-card-overlay"></div><div class="movie-card-title">Moments</div></div>
+      <div class="gallery-thumbnail" style="background-image:url('https://www.dropbox.com/scl/fi/v60xe7vg0g9igpavzcr2f/20250807_164044.jpg?rlkey=8vznapfq0koee17qwwyt7f1w1&st=1h7tfw16&dl=0')" onclick="updateImage(this)"><div class="movie-card-overlay"></div><div class="movie-card-title">Moments</div></div>
     </div>
+  </div>
+</div>
   </div>
 
   <div id="activity4" class="movie-full">
@@ -997,8 +1004,9 @@
         <p>The 5C’s remind me that education is not only about academics but also about becoming a well-rounded person.</p>
     </div>
   </div>
-  
+
   <!-- About Me Fullscreen -->
+
   <div id="about-me-full" class="movie-full">
     <button class="back-btn" onclick="closeMovie('about-me-full')">←</button>
     <div class="details-content">
@@ -1022,18 +1030,24 @@
     </div>
   </div>
 
-
   <script>
-    // --- Gallery Image Update Function ---
+    // --- Gallery Image Update Function (UPDATED for Netflix-style transition) ---
     function updateImage(thumbnail) {
         const mainImage = document.getElementById('main-gallery-image');
+        // Get the URL from the background-image style, removing 'url(' and ')'
         const newImageUrl = thumbnail.style.backgroundImage.slice(5, -2);
         
+        // 1. Apply a transition-out effect (fade and slight zoom out)
         mainImage.style.opacity = 0;
+        mainImage.style.transform = 'scale(0.98)';
+
+        // 2. Wait for the transition-out to complete (300ms) before changing the source
         setTimeout(() => {
             mainImage.src = newImageUrl;
+            // 3. Apply the transition-in effect (fade in and slight zoom in to 1)
             mainImage.style.opacity = 1;
-        }, 300);
+            mainImage.style.transform = 'scale(1)';
+        }, 300); // This duration matches the CSS transition time
     }
 
     // --- Welcome Screen Script ---
@@ -1149,6 +1163,10 @@
             }
         }, 1500);
     }
+    
+    // Initial call to start the trailer text animation (optional, was not in the original script but is often tied to the hero section)
+    // playTrailer();
   </script>
+
 </body>
 </html>
