@@ -794,6 +794,92 @@ main {
     border-top: 4px solid #e50914;
     font-size: 0.9rem;
 }
+
+/* --- New Achievement Card Styles (Activity 8) --- */
+#activity8 .details-content {
+    max-width: 1100px;
+    transform: translateY(0);
+}
+#activity8 .achievements-header {
+    text-align: center;
+    padding: 40px 20px;
+    background: url('https://i.pinimg.com/1200x/81/b7/5f/81b75f06a48722ed96442e17474b14c3.jpg') no-repeat center center/cover;
+    border-bottom: 4px solid #e50914;
+    margin-bottom: 20px;
+}
+#activity8 .achievements-header h1 {
+    color: #e50914;
+    font-size: 2.5rem;
+    margin-bottom: 8px;
+    text-shadow: 0 0 15px rgba(229, 9, 20, 0.8);
+}
+#activity8 .achievements-header p {
+    color: #ddd;
+    margin: 6px 0;
+    font-size: 1rem;
+}
+#activity8 .section-card {
+    background: #1c1c1c;
+    padding: 20px;
+    margin-bottom: 25px;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.6);
+}
+#activity8 .section-card h3 {
+    color: #e50914;
+    margin-bottom: 20px;
+    border-left: 6px solid #e50914;
+    padding-left: 12px;
+    font-size: 1.6rem;
+    letter-spacing: 1px;
+}
+#activity8 .achievements-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+#activity8 .achievement-card {
+    background: #222;
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.6);
+    transition: transform 0.3s, box-shadow 0.3s;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+}
+#activity8 .achievement-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 20px rgba(229, 9, 20, 0.9);
+}
+#activity8 .achievement-card h4 { /* Changed from h3 to h4 to match modal hierarchy */
+    color: #fff;
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    border: none;
+    padding: 0;
+}
+#activity8 .achievement-card p {
+    color: #ccc;
+    font-size: 0.95rem;
+    line-height: 1.4;
+}
+#activity8 .icon {
+    font-size: 1.3rem;
+    color: #e50914;
+}
+#activity8 .achievements-footer {
+    text-align: center;
+    padding: 25px;
+    margin-top: 40px;
+    background: #000;
+    color: #777;
+    border-top: 4px solid #e50914;
+    font-size: 0.9rem;
+}
   </style>
 </head>
 <body>
@@ -879,6 +965,10 @@ main {
     <div id="card-activity4" class="movie-card" style="background-image:url('https://i.pinimg.com/1200x/71/a6/72/71a6723214d3581dbf0534f98f85675c.jpg');" onclick="openMovie('activity4')">
       <div class="movie-card-overlay"></div><div class="movie-card-title">TOWPEP Convocation</div><div class="movie-card-content"><div class="card-controls"><span>▶</span> <span onclick="toggleMyList(event, 'activity4')">+</span> <span>👍</span></div></div>
     </div>
+    <!-- NEW ACTIVITY 8 - High School Achievements -->
+    <div id="card-activity8" class="movie-card" style="background-image:url('https://i.pinimg.com/1200x/81/b7/5f/81b75f06a48722ed96442e17474b14c3.jpg');" onclick="openMovie('activity8')">
+        <div class="movie-card-overlay"></div><div class="movie-card-title">High School Achievements</div><div class="movie-card-content"><div class="card-controls"><span>▶</span> <span onclick="toggleMyList(event, 'activity8')">+</span> <span>👍</span></div></div>
+      </div>
   </div>
 </div>
 
@@ -1152,7 +1242,7 @@ main {
       <header class="psalm-header">
         <h1>Psalm 23 of My Life</h1>
         <p><strong>Name:</strong> Sophia Rodina G. Sahagun</p>
-        <p><strong>Date:</strong> September 2, 2025</p>
+        <p><strong>Date:</strong> (Shifted to Activity 5)</p>
         <p><strong>Section:</strong> BSIT-1B</p>
       </header>
       <div class="psalm-container">
@@ -1234,6 +1324,67 @@ main {
         <p>Through my activities and reflections in this portfolio, I can see how I have practiced these 5C’s in different ways. Some areas, like creativity and character, feel natural to me, while others, like collaboration and confidence, are things I still need to improve. But that is the point of reflection—to see where I am strong and where I need growth.</p>
         <p>The 5C’s remind me that education is not only about academics but also about becoming a well-rounded person.</p>
     </div>
+  </div>
+
+  <!-- NEW ACTIVITY 8 - High School Achievements -->
+  <div id="activity8" class="movie-full">
+    <button class="back-btn" onclick="closeMovie('activity8')">←</button>
+    <div class="movie-banner" style="background-image:url('https://i.pinimg.com/1200x/81/b7/5f/81b75f06a48722ed96442e17474b14c3.jpg');"><div class="movie-info"><h2>High School Achievements</h2><div class="movie-meta">Accolades • Honors • Extracurriculars</div></div></div>
+    <div class="details-content">
+        <!-- Header Content -->
+        <div class="achievements-header" style="background: none; border: none; padding: 0; text-align: left; margin-bottom: 40px;">
+            <h1>My Achievements</h1>
+            <p><strong>Name:</strong> Sahagun, Sophia Rodina G.</p>
+            <p><strong>Course:</strong> BS Information Technology | <strong>Year Level:</strong> First Year</p>
+        </div>
+
+        <div class="section-card">
+          <h3>Highlight Achievements</h3>
+          <div class="achievements-grid">
+            
+            <div class="achievement-card">
+              <h4><span class="icon">🎓</span> Graduated Salutatorian (Grade 12)</h4>
+              <p>Recognized for exceptional academic performance and dedication.</p>
+            </div>
+
+            <div class="achievement-card">
+              <h4><span class="icon">🏅</span> With Highest Honor</h4>
+              <p>Awarded for consistent excellence across all subjects.</p>
+            </div>
+
+            <div class="achievement-card">
+              <h4><span class="icon">📘</span> Consistent With Honors</h4>
+              <p>Maintained honors every school year during high school.</p>
+            </div>
+
+            <div class="achievement-card">
+              <h4><span class="icon">👩‍💼</span> Consistent Class Officer</h4>
+              <p>Served in leadership roles and represented classmates regularly.</p>
+            </div>
+
+            <div class="achievement-card">
+              <h4><span class="icon">🏆</span> Contest Participation & Wins</h4>
+              <p>Competed and won in Quiz Bees, Cosplay, and various competitions.</p>
+            </div>
+
+            <div class="achievement-card">
+              <h4><span class="icon">🎶</span> Choir Member</h4>
+              <p>Sang and performed as part of the school choir during high school.</p>
+            </div>
+
+            <div class="achievement-card">
+              <h4><span class="icon">📚</span> Literature Club</h4>
+              <p>Joined and contributed to the school’s Literature Club activities.</p>
+            </div>
+
+          </div>
+        </div>
+        
+    </div>
+    <footer class="achievements-footer">
+        <p>Southville International School and Colleges</p>
+        <p>Achievements Section</p>
+    </footer>
   </div>
 
   <!-- About Me Fullscreen -->
