@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-
 <html lang="en">
 <head>
   <meta charset="UTF-8"/>
@@ -737,7 +736,7 @@ main {
   font-size: 1.4rem;
   letter-spacing: 1px;
 }
-#activity4 table {
+#activity4 table, #activityMI table {
     width: 100%;
     border-collapse: collapse;
     margin-bottom: 15px;
@@ -745,26 +744,30 @@ main {
     overflow: hidden;
     box-shadow: 0 2px 5px rgba(0,0,0,0.4);
 }
-#activity4 th, #activity4 td {
+#activity4 th, #activity4 td, #activityMI th, #activityMI td {
     padding: 14px;
     text-align: left;
 }
-#activity4 th {
+#activity4 th, #activityMI th {
     background: #e50914;
     color: #fff;
     font-weight: bold;
     font-size: 1rem;
     letter-spacing: 0.5px;
 }
-#activity4 tr:nth-child(even) {
+#activity4 tr:nth-child(even), #activityMI tr:nth-child(even) {
     background: #222;
 }
-#activity4 tr:nth-child(odd) {
+#activity4 tr:nth-child(odd), #activityMI tr:nth-child(odd) {
     background: #2a2a2a;
 }
-#activity4 td {
+#activity4 td, #activityMI td {
     color: #ddd;
     font-size: 0.95rem;
+}
+#activityMI a {
+    color: #e50914;
+    text-decoration: underline;
 }
 #activity4 .reflection-box { /* Renamed from .reflection to avoid conflict */
     background: #e50914;
@@ -969,6 +972,18 @@ main {
     <div id="card-activity8" class="movie-card" style="background-image:url('https://i.pinimg.com/1200x/81/b7/5f/81b75f06a48722ed96442e17474b14c3.jpg');" onclick="openMovie('activity8')">
         <div class="movie-card-overlay"></div><div class="movie-card-title">High School Achievements</div><div class="movie-card-content"><div class="card-controls"><span>▶</span> <span onclick="toggleMyList(event, 'activity8')">+</span> <span>👍</span></div></div>
       </div>
+    <!-- ADDED: Activity 5 - Multiple Intelligences and Learning Styles -->
+    <div id="card-activityMI" class="movie-card" style="background-image:url('https://i.pinimg.com/1200x/b4/8d/9e/b48d9e65b6d6c08cd03f6529c49fd3b4.jpg');" onclick="openMovie('activityMI')">
+      <div class="movie-card-overlay"></div>
+      <div class="movie-card-title">Multiple Intelligences</div>
+      <div class="movie-card-content">
+        <div class="card-controls">
+          <span title="View Details">▶</span>
+          <span title="Add to My List" onclick="toggleMyList(event, 'activityMI')">+</span>
+          <span title="Like">👍</span>
+        </div>
+      </div>
+    </div>
   </div>
 </div>
 
@@ -1387,8 +1402,67 @@ main {
     </footer>
   </div>
 
-  <!-- About Me Fullscreen -->
+  <!-- ADDED: Fullscreen Modal for Multiple Intelligences -->
+  <div id="activityMI" class="movie-full">
+    <button class="back-btn" onclick="closeMovie('activityMI')">←</button>
+  
+    <div class="movie-banner" style="background-image:url('https://i.pinimg.com/1200x/b4/8d/9e/b48d9e65b6d6c08cd03f6529c49fd3b4.jpg');">
+      <div class="movie-info">
+        <h2>Multiple Intelligences and Learning Styles</h2>
+        <div class="movie-meta">Quiz • Reflection • Self-Discovery</div>
+      </div>
+    </div>
+  
+    <div class="details-content" style="max-width:900px; padding:30px 60px 60px 60px; transform: translateY(0);">
+      <h3>I. Quiz</h3>
+      <p>
+        <strong>Directions:</strong> Accomplish the Multiple Intelligences and Learning Styles quizzes and paste the links of your results below.
+      </p>
+  
+      <table>
+        <tr>
+          <th>Quiz</th>
+          <th>Quiz Link</th>
+          <th>Result Link</th>
+        </tr>
+        <tr>
+          <td>Multiple Intelligences</td>
+          <td><a href="https://personalitymax.com/multiple-intelligences-test/" target="_blank">https://personalitymax.com/multiple-intelligences-test/</a></td>
+          <td><a href="https://personalitymax.com/report/?mi=73-50-57-67-40-47-77-10&name_key=16ffb1fc9f" target="_blank">View Result</a></td>
+        </tr>
+        <tr>
+          <td>Learning Styles</td>
+          <td><a href="https://personalitymax.com/learning-styles-test/" target="_blank">https://personalitymax.com/learning-styles-test/</a></td>
+          <td><a href="https://personalitymax.com/report/?ls=74-64-77&name_key=16ffb1fc9f" target="_blank">View Result</a></td>
+        </tr>
+      </table>
+  
+      <h3>II. Reflection</h3>
+      <p><strong>1. What are your top three (3) multiple intelligences? Do you agree with the results? Why or why not?</strong></p>
+      <p>
+        My top three multiple intelligences are Intrapersonal, Verbal/Linguistic, and Bodily/Kinesthetic, and I strongly agree with these results. I have Intrapersonal intelligence because I often spend time understanding my own thoughts and emotions. I like to reflect, write, and figure out why I feel certain things. My Verbal/Linguistic intelligence shows in how I express myself best through writing. I enjoy putting my feelings into words and explaining ideas clearly. Lastly, my Bodily/Kinesthetic intelligence means I learn and connect better through actions and real experiences. I like doing things rather than just talking about them because it helps me understand and feel more connected. These three intelligences truly describe how I think, learn, and express myself.
+      </p>
+  
+      <p><strong>2. Based on the results of the quiz, what is your dominant learning style? Do you agree? Why or why not?</strong></p>
+      <p>
+        Based on the quiz, my dominant learning style is kinesthetic, which means I learn best by doing and experiencing things firsthand. I agree with this result because I understand and remember things more when I’m actively involved rather than just listening or reading. This also reflects how I connect with people, I value actions more than words. Simple things like spending time together, making something, or showing effort through gestures help me feel the connection more deeply. For me, learning and understanding, whether in school or in relationships, happens best when I can see, touch, and do something real, not just talk about it.
+      </p>
+  
+      <p><strong>3. Based on your knowledge of your Multiple Intelligences and Learning Style, how will you improve your study habits?</strong></p>
+      <p>
+        Based on my strengths in Kinesthetic, Intrapersonal, and Linguistic intelligences, I plan to improve my study habits by making learning more active, personal, and meaningful. Since I learn best through movement and hands-on activities, I will rewrite my notes by hand, walk around while reviewing, and teach lessons out loud to help me remember better. My intrapersonal strength helps me understand myself and connect lessons to my own experiences, so I will keep a study journal, set clear goals, and study in a quiet place where I can focus. Lastly, my linguistic intelligence allows me to learn well through words, so I will summarize lessons in my own words, create stories or acronyms to remember terms, and write glossaries of key concepts. By using these strategies together, I can make studying more engaging, effective, and suited to how I naturally learn best.
+      </p>
+  
+      <h3>III. Reflection Summary</h3>
+      <blockquote>
+        Completing the Multiple Intelligences and Learning Styles activity helped me discover more about how I learn and think. I found that my strengths in Intrapersonal, Linguistic, and Kinesthetic intelligences truly describe how I approach both learning and life. I like to understand myself deeply, express my thoughts clearly, and learn by doing. Knowing that I am a kinesthetic learner motivates me to use more movement and practical activities in my study routine.  
+        <br><br>
+        This experience also taught me that everyone learns differently, and there is no single “right” way to study. What matters is knowing yourself and using your strengths to your advantage. By combining reflection, writing, and active practice, I can continue improving my focus, understanding, and memory in a way that fits my natural learning style.  
+      </blockquote>
+    </div>
+  </div>
 
+  <!-- About Me Fullscreen -->
   <div id="about-me-full" class="movie-full">
     <button class="back-btn" onclick="closeMovie('about-me-full')">←</button>
     <div class="details-content">
