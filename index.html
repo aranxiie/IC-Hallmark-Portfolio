@@ -183,23 +183,60 @@ main {
 }
 
 .section {
-  padding: 20px 40px;
+  padding: 20px 0;
 }
 
 .section h2 {
   font-size: 1.4rem;
   margin-bottom: 15px;
+  padding: 0 40px;
+}
+
+.movies-row-container {
+    position: relative;
 }
 
 .movies-row {
   display: flex;
   overflow-x: auto;
   gap: 15px;
-  padding-bottom: 15px;
+  padding: 0 40px 15px 40px;
   scrollbar-width: none;
+  scroll-behavior: smooth;
 }
 .movies-row::-webkit-scrollbar {
   display: none;
+}
+
+.scroll-btn {
+    position: absolute;
+    top: 0;
+    bottom: 15px;
+    width: 40px;
+    background: rgba(0,0,0,0.5);
+    color: #fff;
+    border: none;
+    font-size: 2rem;
+    cursor: pointer;
+    z-index: 20;
+    opacity: 0;
+    transition: opacity 0.2s;
+}
+
+.movies-row-container:hover .scroll-btn {
+    opacity: 1;
+}
+
+.scroll-btn.left {
+    left: 0;
+}
+
+.scroll-btn.right {
+    right: 0;
+}
+
+.scroll-btn.hidden {
+    display: none;
 }
 
 .movie-card {
@@ -948,60 +985,71 @@ main {
     <!-- My List Section (Initially Hidden) -->
     <div id="myListSection" class="section" style="display:none;">
         <h2>My List</h2>
-        <div class="movies-row" id="my-list-row"></div>
+        <div class="movies-row-container">
+            <div class="movies-row" id="my-list-row"></div>
+            <button class="scroll-btn left"><i class="fas fa-chevron-left"></i></button>
+            <button class="scroll-btn right"><i class="fas fa-chevron-right"></i></button>
+        </div>
     </div>
 
 <!-- Main Sections -->
 <div id="activities" class="section">
   <h2>📚 IC Activities</h2>
-  <div class="movies-row">
-    <div id="card-activity1" class="movie-card" style="background-image:url('https://i.pinimg.com/1200x/b9/59/8e/b9598e398a486e6f3be396e4d913e792.jpg');" onclick="openMovie('activity1')">
-      <div class="movie-card-overlay"></div><div class="movie-card-title">Discussion Forum 1</div><div class="movie-card-content"><div class="card-controls"><span title="View Details">▶</span><span title="Add to My List" onclick="toggleMyList(event, 'activity1')">+</span><span title="Like">👍</span></div></div>
-    </div>
-    <div id="card-activity2" class="movie-card" style="background-image:url('https://i.pinimg.com/1200x/b0/16/3a/b0163a93d05a19fbb79790c751b43927.jpg');" onclick="openMovie('activity2')">
-      <div class="movie-card-overlay"></div><div class="movie-card-title">Needs Assessment</div><div class="movie-card-content"><div class="card-controls"><span>▶</span> <span onclick="toggleMyList(event, 'activity2')">+</span> <span>👍</span></div></div>
-    </div>
-    <div id="card-activity3" class="movie-card" style="background-image:url('https://i.pinimg.com/1200x/31/8d/ed/318dedd6095c9b80f86a8c2b23a91341.jpg');" onclick="openMovie('activity3')">
-      <div class="movie-card-overlay"></div><div class="movie-card-title">TOWPEP Questionnaire</div><div class="movie-card-content"><div class="card-controls"><span>▶</span> <span onclick="toggleMyList(event, 'activity3')">+</span> <span>👍</span></div></div>
-    </div>
-    <div id="card-activity4" class="movie-card" style="background-image:url('https://i.pinimg.com/1200x/71/a6/72/71a6723214d3581dbf0534f98f85675c.jpg');" onclick="openMovie('activity4')">
-      <div class="movie-card-overlay"></div><div class="movie-card-title">TOWPEP Convocation</div><div class="movie-card-content"><div class="card-controls"><span>▶</span> <span onclick="toggleMyList(event, 'activity4')">+</span> <span>👍</span></div></div>
-    </div>
-    <div id="card-activity8" class="movie-card" style="background-image:url('https://i.pinimg.com/1200x/81/b7/5f/81b75f06a48722ed96442e17474b14c3.jpg');" onclick="openMovie('activity8')">
-        <div class="movie-card-overlay"></div><div class="movie-card-title">High School Achievements</div><div class="movie-card-content"><div class="card-controls"><span>▶</span> <span onclick="toggleMyList(event, 'activity8')">+</span> <span>👍</span></div></div>
-      </div>
-    <div id="card-activityMI" class="movie-card" style="background-image:url('https://i.pinimg.com/1200x/b4/8d/9e/b48d9e65b6d6c08cd03f6529c49fd3b4.jpg');" onclick="openMovie('activityMI')">
-      <div class="movie-card-overlay"></div>
-      <div class="movie-card-title">Multiple Intelligences</div>
-      <div class="movie-card-content"><div class="card-controls"><span title="View Details">▶</span><span title="Add to My List" onclick="toggleMyList(event, 'activityMI')">+</span><span title="Like">👍</span></div></div>
-    </div>
-    <!-- ADDED: Activity 6 - Reflect, Research, and Reduce -->
-    <div id="card-activityRRR" class="movie-card" style="background-image:url('https://i.pinimg.com/1200x/72/e7/c0/72e7c0785fd01e8512508e5ef29546bb.jpg');" onclick="openMovie('activityRRR')">
-      <div class="movie-card-overlay"></div>
-      <div class="movie-card-title">Reflect, Research, Reduce</div>
-      <div class="movie-card-content">
-        <div class="card-controls">
-          <span title="View Details">▶</span>
-          <span title="Add to My List" onclick="toggleMyList(event, 'activityRRR')">+</span>
-          <span title="Like">👍</span>
+  <div class="movies-row-container">
+    <div class="movies-row">
+        <div id="card-activity1" class="movie-card" style="background-image:url('https://i.pinimg.com/1200x/b9/59/8e/b9598e398a486e6f3be396e4d913e792.jpg');" onclick="openMovie('activity1')">
+        <div class="movie-card-overlay"></div><div class="movie-card-title">Discussion Forum 1</div><div class="movie-card-content"><div class="card-controls"><span title="View Details">▶</span><span title="Add to My List" onclick="toggleMyList(event, 'activity1')">+</span><span title="Like">👍</span></div></div>
         </div>
-      </div>
+        <div id="card-activity2" class="movie-card" style="background-image:url('https://i.pinimg.com/1200x/b0/16/3a/b0163a93d05a19fbb79790c751b43927.jpg');" onclick="openMovie('activity2')">
+        <div class="movie-card-overlay"></div><div class="movie-card-title">Needs Assessment</div><div class="movie-card-content"><div class="card-controls"><span>▶</span> <span onclick="toggleMyList(event, 'activity2')">+</span> <span>👍</span></div></div>
+        </div>
+        <div id="card-activity3" class="movie-card" style="background-image:url('https://i.pinimg.com/1200x/31/8d/ed/318dedd6095c9b80f86a8c2b23a91341.jpg');" onclick="openMovie('activity3')">
+        <div class="movie-card-overlay"></div><div class="movie-card-title">TOWPEP Questionnaire</div><div class="movie-card-content"><div class="card-controls"><span>▶</span> <span onclick="toggleMyList(event, 'activity3')">+</span> <span>👍</span></div></div>
+        </div>
+        <div id="card-activity4" class="movie-card" style="background-image:url('https://i.pinimg.com/1200x/71/a6/72/71a6723214d3581dbf0534f98f85675c.jpg');" onclick="openMovie('activity4')">
+        <div class="movie-card-overlay"></div><div class="movie-card-title">TOWPEP Convocation</div><div class="movie-card-content"><div class="card-controls"><span>▶</span> <span onclick="toggleMyList(event, 'activity4')">+</span> <span>👍</span></div></div>
+        </div>
+        <div id="card-activity8" class="movie-card" style="background-image:url('https://i.pinimg.com/1200x/81/b7/5f/81b75f06a48722ed96442e17474b14c3.jpg');" onclick="openMovie('activity8')">
+            <div class="movie-card-overlay"></div><div class="movie-card-title">High School Achievements</div><div class="movie-card-content"><div class="card-controls"><span>▶</span> <span onclick="toggleMyList(event, 'activity8')">+</span> <span>👍</span></div></div>
+        </div>
+        <div id="card-activityMI" class="movie-card" style="background-image:url('https://i.pinimg.com/1200x/b4/8d/9e/b48d9e65b6d6c08cd03f6529c49fd3b4.jpg');" onclick="openMovie('activityMI')">
+        <div class="movie-card-overlay"></div>
+        <div class="movie-card-title">Multiple Intelligences</div>
+        <div class="movie-card-content"><div class="card-controls"><span title="View Details">▶</span><span title="Add to My List" onclick="toggleMyList(event, 'activityMI')">+</span><span title="Like">👍</span></div></div>
+        </div>
+        <div id="card-activityRRR" class="movie-card" style="background-image:url('https://i.pinimg.com/1200x/72/e7/c0/72e7c0785fd01e8512508e5ef29546bb.jpg');" onclick="openMovie('activityRRR')">
+        <div class="movie-card-overlay"></div>
+        <div class="movie-card-title">Reflect, Research, Reduce</div>
+        <div class="movie-card-content">
+            <div class="card-controls">
+            <span title="View Details">▶</span>
+            <span title="Add to My List" onclick="toggleMyList(event, 'activityRRR')">+</span>
+            <span title="Like">👍</span>
+            </div>
+        </div>
+        </div>
     </div>
+    <button class="scroll-btn left"><i class="fas fa-chevron-left"></i></button>
+    <button class="scroll-btn right"><i class="fas fa-chevron-right"></i></button>
   </div>
 </div>
 
 <div id="reflections" class="section">
   <h2>🎬 Reflections</h2>
-  <div class="movies-row">
-    <div id="card-activity5" class="movie-card" style="background-image:url('https://i.pinimg.com/1200x/0c/c1/a3/0cc1a3f78c65efaa6c7772deabb922f1.jpg');" onclick="openMovie('activity5')">
-      <div class="movie-card-overlay"></div><div class="movie-card-title">Psalm 23 of My Life</div><div class="movie-card-content"><div class="card-controls"><span>▶</span> <span onclick="toggleMyList(event, 'activity5')">+</span> <span>👍</span></div></div>
+  <div class="movies-row-container">
+    <div class="movies-row">
+        <div id="card-activity5" class="movie-card" style="background-image:url('https://i.pinimg.com/1200x/0c/c1/a3/0cc1a3f78c65efaa6c7772deabb922f1.jpg');" onclick="openMovie('activity5')">
+        <div class="movie-card-overlay"></div><div class="movie-card-title">Psalm 23 of My Life</div><div class="movie-card-content"><div class="card-controls"><span>▶</span> <span onclick="toggleMyList(event, 'activity5')">+</span> <span>👍</span></div></div>
+        </div>
+        <div id="card-activity6" class="movie-card" style="background-image:url('https://i.pinimg.com/1200x/e7/a5/25/e7a525fb5c242f964d563eb373b973fe.jpg');" onclick="openMovie('activity6')">
+        <div class="movie-card-overlay"></div><div class="movie-card-title">5S in My Life</div><div class="movie-card-content"><div class="card-controls"><span>▶</span> <span onclick="toggleMyList(event, 'activity6')">+</span> <span>👍</span></div></div>
+        </div>
+        <div id="card-activity7" class="movie-card" style="background-image:url('https://i.pinimg.com/1200x/aa/44/8c/aa448c70cf77a312d84413d16206ac2f.jpg');" onclick="openMovie('activity7')">
+        <div class="movie-card-overlay"></div><div class="movie-card-title">My 5C's Reflections</div><div class="movie-card-content"><div class="card-controls"><span>▶</span> <span onclick="toggleMyList(event, 'activity7')">+</span> <span>👍</span></div></div>
+        </div>
     </div>
-    <div id="card-activity6" class="movie-card" style="background-image:url('https://i.pinimg.com/1200x/e7/a5/25/e7a525fb5c242f964d563eb373b973fe.jpg');" onclick="openMovie('activity6')">
-      <div class="movie-card-overlay"></div><div class="movie-card-title">5S in My Life</div><div class="movie-card-content"><div class="card-controls"><span>▶</span> <span onclick="toggleMyList(event, 'activity6')">+</span> <span>👍</span></div></div>
-    </div>
-    <div id="card-activity7" class="movie-card" style="background-image:url('https://i.pinimg.com/1200x/aa/44/8c/aa448c70cf77a312d84413d16206ac2f.jpg');" onclick="openMovie('activity7')">
-      <div class="movie-card-overlay"></div><div class="movie-card-title">My 5C's Reflections</div><div class="movie-card-content"><div class="card-controls"><span>▶</span> <span onclick="toggleMyList(event, 'activity7')">+</span> <span>👍</span></div></div>
-    </div>
+    <button class="scroll-btn left"><i class="fas fa-chevron-left"></i></button>
+    <button class="scroll-btn right"><i class="fas fa-chevron-right"></i></button>
   </div>
 </div>
   </main>
@@ -1105,21 +1153,25 @@ main {
   <div class="gallery-container">
     <h3>Event Gallery</h3>
     <div class="main-image-display"><img id="main-gallery-image" src="https://media.discordapp.net/attachments/981254035568996394/1420990687398068224/image-3.png?ex=68ddffb4&is=68dcae34&hm=91dccddf23b5f22b83d2465ded08815cc4152b807429b2283fe5821edcaf625b&=&format=webp&quality=lossless&width=1376&height=771" alt="Main gallery view"></div>
-    <div class="movies-row">
-      <div class="gallery-thumbnail" style="background-image:url('https://media.discordapp.net/attachments/981254035568996394/1420999187549651045/MYXJ_20250926125039544_save.jpg?ex=68dc0d5f&is=68dabbdf&hm=bc18fe9a13b962cac9c5008de464d6b2698e1c3038dc260b88ec505835da2747')" onclick="updateImage(this)"><div class="movie-card-overlay"></div><div class="movie-card-title">My Photo</div></div>
-      <div class="gallery-thumbnail" style="background-image:url('https://cdn.discordapp.com/attachments/981254035568996394/1420991560631324752/20250807_174240.jpg?ex=68de0084&is=68dcaf04&hm=28cf9e0a1062a4872533d70fe77d685b769cc98fbd044b387e97fff680a0cf74&')" onclick="updateImage(this)"><div class="movie-card-overlay"></div><div class="movie-card-title">Freedom Board</div></div>
-      <div class="gallery-thumbnail" style="background-image:url('https://media.discordapp.net/attachments/981254035568996394/1420990808303210527/20250807_133735.jpg?ex=68ddffd1&is=68dcae51&hm=58bade9ea74b6ff9bc0ae46e4f0510388d188a8408f30a4ca8666dbf2273dde6&=&format=webp&width=1275&height=717')" onclick="updateImage(this)"><div class="movie-card-overlay"></div><div class="movie-card-title">Classmates</div></div>
-      <div class="gallery-thumbnail" style="background-image:url('https://media.discordapp.net/attachments/981254035568996394/1420990808789876756/20250807_133730.jpg?ex=68ddffd1&is=68dcae51&hm=0af0e6dc199c2d1620cab2e592d1182effa6ea313e12fab8ac0bddf163b5929e&=&format=webp&width=1275&height=717')" onclick="updateImage(this)"><div class="movie-card-overlay"></div><div class="movie-card-title">Classmates</div></div>
-      <div class="gallery-thumbnail" style="background-image:url('https://media.discordapp.net/attachments/981254035568996394/1420990809230147605/20250807_133724.jpg?ex=68ddffd1&is=68dcae51&hm=a96a63736f6ff6b2af295b7a7f7746c74a705a4721e441331e142289973f8f68&=&format=webp&width=1275&height=717')" onclick="updateImage(this)"><div class="movie-card-overlay"></div><div class="movie-card-title">Classmates</div></div>
-      <div class="gallery-thumbnail" style="background-image:url('https://media.discordapp.net/attachments/981254035568996394/1420991561239494707/20250807_164047.jpg?ex=68de0084&is=68dcaf04&hm=7c2a4e50fed32b0a2c6546835dade58d380d82c41ba990c25883a00aba08e718&=&format=webp&width=1275&height=717')" onclick="updateImage(this)"><div class="movie-card-overlay"></div><div class="movie-card-title">Batchmates</div></div>
-      <div class="gallery-thumbnail" style="background-image:url('https://media.discordapp.net/attachments/981254035568996394/1420991562103525499/20250807_164044.jpg?ex=68de0085&is=68dcaf05&hm=68ce83b54fcf13d696f255e9b1061d99a20f88c7301cfe8df690b8dd4f60163d&=&format=webp&width=1275&height=717')" onclick="updateImage(this)"><div class="movie-card-overlay"></div><div class="movie-card-title">Batchmates</div></div>
-      <div class="gallery-thumbnail" style="background-image:url('https://media.discordapp.net/attachments/981254035568996394/1420991563252629564/20250807_162113.jpg?ex=68de0085&is=68dcaf05&hm=c82b53576fd97edddb5d911ba7ed0b1e9110a9bdff188fcd8fb5649ee654212e&=&format=webp&width=403&height=717')" onclick="updateImage(this)"><div class="movie-card-overlay"></div><div class="movie-card-title">Batchmates</div></div>
-      <div class="gallery-thumbnail" style="background-image:url('https://media.discordapp.net/attachments/981254035568996394/1420991563961733190/20250807_162110.jpg?ex=68de0085&is=68dcaf05&hm=28da67287c94f8fb814e0b9d8225bdd08ff368e3b680294d6b17155d5bcbe52a&=&format=webp&width=403&height=717')" onclick="updateImage(this)"><div class="movie-card-overlay"></div><div class="movie-card-title">Batchmates</div></div>
-      <div class="gallery-thumbnail" style="background-image:url('https://media.discordapp.net/attachments/981254035568996394/1420991564460593242/20250807_162107.jpg?ex=68de0085&is=68dcaf05&hm=ccfe993a9e10545d1ce8db8684a421e9a78f3caefab978df9ca10178316257e4&=&format=webp&width=403&height=717')" onclick="updateImage(this)"><div class="movie-card-overlay"></div><div class="movie-card-title">Batchmates</div></div>
-      <div class="gallery-thumbnail" style="background-image:url('https://media.discordapp.net/attachments/981254035568996394/1420991565366558820/20250807_162104.jpg?ex=68de0085&is=68dcaf05&hm=a943c8d141390ab9b12fd5ab35645c756d14758c23a5bf49513b9235173034c4&=&format=webp&width=403&height=717')" onclick="updateImage(this)"><div class="movie-card-overlay"></div><div class="movie-card-title">Batchmates</div></div>
-      <div class="gallery-thumbnail" style="background-image:url('https://media.discordapp.net/attachments/981254035568996394/1420991566037913650/20250807_160538.jpg?ex=68de0086&is=68dcaf06&hm=377c64938e1fe98a5235bf3d84243eaa94308889f7c817be0dca3b01152cb66a&=&format=webp&width=1275&height=717')" onclick="updateImage(this)"><div class="movie-card-overlay"></div><div class="movie-card-title">Batchmates</div></div>
-      <div class="gallery-thumbnail" style="background-image:url('https://media.discordapp.net/attachments/981254035568996394/1420991566641631252/20250807_160548.jpg?ex=68de0086&is=68dcaf06&hm=21cf8fd52bbbc1fda914cd1cca8eee16e348a3dda83804fee883b5a1345130a4&=&format=webp&width=1275&height=717')" onclick="updateImage(this)"><div class="movie-card-overlay"></div><div class="movie-card-title">Batchmates</div></div>
-      <div class="gallery-thumbnail" style="background-image:url('https://media.discordapp.net/attachments/981254035568996394/1420991567140880384/20250807_173305.jpg?ex=68dc0646&is=68dab4c6&hm=8464c558410b3829958ba16d80fef5cba7c621147c95a4739fb324832ca264b9&')" onclick="updateImage(this)"><div class="movie-card-overlay"></div><div class="movie-card-title">Certificate</div></div>
+    <div class="movies-row-container">
+        <div class="movies-row">
+            <div class="gallery-thumbnail" style="background-image:url('https://media.discordapp.net/attachments/981254035568996394/1420999187549651045/MYXJ_20250926125039544_save.jpg?ex=68dc0d5f&is=68dabbdf&hm=bc18fe9a13b962cac9c5008de464d6b2698e1c3038dc260b88ec505835da2747')" onclick="updateImage(this)"><div class="movie-card-overlay"></div><div class="movie-card-title">My Photo</div></div>
+            <div class="gallery-thumbnail" style="background-image:url('https://cdn.discordapp.com/attachments/981254035568996394/1420991560631324752/20250807_174240.jpg?ex=68de0084&is=68dcaf04&hm=28cf9e0a1062a4872533d70fe77d685b769cc98fbd044b387e97fff680a0cf74&')" onclick="updateImage(this)"><div class="movie-card-overlay"></div><div class="movie-card-title">Freedom Board</div></div>
+            <div class="gallery-thumbnail" style="background-image:url('https://media.discordapp.net/attachments/981254035568996394/1420990808303210527/20250807_133735.jpg?ex=68ddffd1&is=68dcae51&hm=58bade9ea74b6ff9bc0ae46e4f0510388d188a8408f30a4ca8666dbf2273dde6&=&format=webp&width=1275&height=717')" onclick="updateImage(this)"><div class="movie-card-overlay"></div><div class="movie-card-title">Classmates</div></div>
+            <div class="gallery-thumbnail" style="background-image:url('https://media.discordapp.net/attachments/981254035568996394/1420990808789876756/20250807_133730.jpg?ex=68ddffd1&is=68dcae51&hm=0af0e6dc199c2d1620cab2e592d1182effa6ea313e12fab8ac0bddf163b5929e&=&format=webp&width=1275&height=717')" onclick="updateImage(this)"><div class="movie-card-overlay"></div><div class="movie-card-title">Classmates</div></div>
+            <div class="gallery-thumbnail" style="background-image:url('https://media.discordapp.net/attachments/981254035568996394/1420990809230147605/20250807_133724.jpg?ex=68ddffd1&is=68dcae51&hm=a96a63736f6ff6b2af295b7a7f7746c74a705a4721e441331e142289973f8f68&=&format=webp&width=1275&height=717')" onclick="updateImage(this)"><div class="movie-card-overlay"></div><div class="movie-card-title">Classmates</div></div>
+            <div class="gallery-thumbnail" style="background-image:url('https://media.discordapp.net/attachments/981254035568996394/1420991561239494707/20250807_164047.jpg?ex=68de0084&is=68dcaf04&hm=7c2a4e50fed32b0a2c6546835dade58d380d82c41ba990c25883a00aba08e718&=&format=webp&width=1275&height=717')" onclick="updateImage(this)"><div class="movie-card-overlay"></div><div class="movie-card-title">Batchmates</div></div>
+            <div class="gallery-thumbnail" style="background-image:url('https://media.discordapp.net/attachments/981254035568996394/1420991562103525499/20250807_164044.jpg?ex=68de0085&is=68dcaf05&hm=68ce83b54fcf13d696f255e9b1061d99a20f88c7301cfe8df690b8dd4f60163d&=&format=webp&width=1275&height=717')" onclick="updateImage(this)"><div class="movie-card-overlay"></div><div class="movie-card-title">Batchmates</div></div>
+            <div class="gallery-thumbnail" style="background-image:url('https://media.discordapp.net/attachments/981254035568996394/1420991563252629564/20250807_162113.jpg?ex=68de0085&is=68dcaf05&hm=c82b53576fd97edddb5d911ba7ed0b1e9110a9bdff188fcd8fb5649ee654212e&=&format=webp&width=403&height=717')" onclick="updateImage(this)"><div class="movie-card-overlay"></div><div class="movie-card-title">Batchmates</div></div>
+            <div class="gallery-thumbnail" style="background-image:url('https://media.discordapp.net/attachments/981254035568996394/1420991563961733190/20250807_162110.jpg?ex=68de0085&is=68dcaf05&hm=28da67287c94f8fb814e0b9d8225bdd08ff368e3b680294d6b17155d5bcbe52a&=&format=webp&width=403&height=717')" onclick="updateImage(this)"><div class="movie-card-overlay"></div><div class="movie-card-title">Batchmates</div></div>
+            <div class="gallery-thumbnail" style="background-image:url('https://media.discordapp.net/attachments/981254035568996394/1420991564460593242/20250807_162107.jpg?ex=68de0085&is=68dcaf05&hm=ccfe993a9e10545d1ce8db8684a421e9a78f3caefab978df9ca10178316257e4&=&format=webp&width=403&height=717')" onclick="updateImage(this)"><div class="movie-card-overlay"></div><div class="movie-card-title">Batchmates</div></div>
+            <div class="gallery-thumbnail" style="background-image:url('https://media.discordapp.net/attachments/981254035568996394/1420991565366558820/20250807_162104.jpg?ex=68de0085&is=68dcaf05&hm=a943c8d141390ab9b12fd5ab35645c756d14758c23a5bf49513b9235173034c4&=&format=webp&width=403&height=717')" onclick="updateImage(this)"><div class="movie-card-overlay"></div><div class="movie-card-title">Batchmates</div></div>
+            <div class="gallery-thumbnail" style="background-image:url('https://media.discordapp.net/attachments/981254035568996394/1420991566037913650/20250807_160538.jpg?ex=68de0086&is=68dcaf06&hm=377c64938e1fe98a5235bf3d84243eaa94308889f7c817be0dca3b01152cb66a&=&format=webp&width=1275&height=717')" onclick="updateImage(this)"><div class="movie-card-overlay"></div><div class="movie-card-title">Batchmates</div></div>
+            <div class="gallery-thumbnail" style="background-image:url('https://media.discordapp.net/attachments/981254035568996394/1420991566641631252/20250807_160548.jpg?ex=68de0086&is=68dcaf06&hm=21cf8fd52bbbc1fda914cd1cca8eee16e348a3dda83804fee883b5a1345130a4&=&format=webp&width=1275&height=717')" onclick="updateImage(this)"><div class="movie-card-overlay"></div><div class="movie-card-title">Batchmates</div></div>
+            <div class="gallery-thumbnail" style="background-image:url('https://media.discordapp.net/attachments/981254035568996394/1420991567140880384/20250807_173305.jpg?ex=68dc0646&is=68dab4c6&hm=8464c558410b3829958ba16d80fef5cba7c621147c95a4739fb324832ca264b9&')" onclick="updateImage(this)"><div class="movie-card-overlay"></div><div class="movie-card-title">Certificate</div></div>
+        </div>
+        <button class="scroll-btn left"><i class="fas fa-chevron-left"></i></button>
+        <button class="scroll-btn right"><i class="fas fa-chevron-right"></i></button>
     </div>
   </div>
 </div>
@@ -1522,6 +1574,39 @@ main {
             setTimeout(() => {
                 welcomeOverlay.style.display = 'none';
             }, 500);
+        });
+
+        // --- NEW: Scroll Button Functionality ---
+        const rowContainers = document.querySelectorAll('.movies-row-container');
+
+        rowContainers.forEach(container => {
+            const row = container.querySelector('.movies-row');
+            const leftBtn = container.querySelector('.scroll-btn.left');
+            const rightBtn = container.querySelector('.scroll-btn.right');
+
+            const updateButtonState = () => {
+                const scrollLeft = row.scrollLeft;
+                const scrollWidth = row.scrollWidth;
+                const clientWidth = row.clientWidth;
+
+                leftBtn.classList.toggle('hidden', scrollLeft <= 0);
+                rightBtn.classList.toggle('hidden', scrollLeft >= scrollWidth - clientWidth - 1);
+            };
+
+            leftBtn.addEventListener('click', () => {
+                const scrollAmount = row.clientWidth * 0.8;
+                row.scrollLeft -= scrollAmount;
+            });
+
+            rightBtn.addEventListener('click', () => {
+                const scrollAmount = row.clientWidth * 0.8;
+                row.scrollLeft += scrollAmount;
+            });
+
+            row.addEventListener('scroll', updateButtonState);
+            
+            // Check state on load
+            updateButtonState();
         });
     });
   
