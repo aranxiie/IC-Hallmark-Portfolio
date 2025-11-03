@@ -736,7 +736,7 @@ main {
   font-size: 1.4rem;
   letter-spacing: 1px;
 }
-#activity4 table, #activityMI table {
+#activity4 table, #activityMI table, #activityRRR table {
     width: 100%;
     border-collapse: collapse;
     margin-bottom: 15px;
@@ -744,28 +744,28 @@ main {
     overflow: hidden;
     box-shadow: 0 2px 5px rgba(0,0,0,0.4);
 }
-#activity4 th, #activity4 td, #activityMI th, #activityMI td {
+#activity4 th, #activity4 td, #activityMI th, #activityMI td, #activityRRR th, #activityRRR td {
     padding: 14px;
     text-align: left;
 }
-#activity4 th, #activityMI th {
+#activity4 th, #activityMI th, #activityRRR th {
     background: #e50914;
     color: #fff;
     font-weight: bold;
     font-size: 1rem;
     letter-spacing: 0.5px;
 }
-#activity4 tr:nth-child(even), #activityMI tr:nth-child(even) {
+#activity4 tr:nth-child(even), #activityMI tr:nth-child(even), #activityRRR tr:nth-child(even) {
     background: #222;
 }
-#activity4 tr:nth-child(odd), #activityMI tr:nth-child(odd) {
+#activity4 tr:nth-child(odd), #activityMI tr:nth-child(odd), #activityRRR tr:nth-child(odd) {
     background: #2a2a2a;
 }
-#activity4 td, #activityMI td {
+#activity4 td, #activityMI td, #activityRRR td {
     color: #ddd;
     font-size: 0.95rem;
 }
-#activityMI a {
+#activityMI a, #activityRRR a {
     color: #e50914;
     text-decoration: underline;
 }
@@ -964,22 +964,25 @@ main {
     <div id="card-activity3" class="movie-card" style="background-image:url('https://i.pinimg.com/1200x/31/8d/ed/318dedd6095c9b80f86a8c2b23a91341.jpg');" onclick="openMovie('activity3')">
       <div class="movie-card-overlay"></div><div class="movie-card-title">TOWPEP Questionnaire</div><div class="movie-card-content"><div class="card-controls"><span>▶</span> <span onclick="toggleMyList(event, 'activity3')">+</span> <span>👍</span></div></div>
     </div>
-    <!-- NEW ACTIVITY 4 - TOWPEP Convocation -->
     <div id="card-activity4" class="movie-card" style="background-image:url('https://i.pinimg.com/1200x/71/a6/72/71a6723214d3581dbf0534f98f85675c.jpg');" onclick="openMovie('activity4')">
       <div class="movie-card-overlay"></div><div class="movie-card-title">TOWPEP Convocation</div><div class="movie-card-content"><div class="card-controls"><span>▶</span> <span onclick="toggleMyList(event, 'activity4')">+</span> <span>👍</span></div></div>
     </div>
-    <!-- NEW ACTIVITY 8 - High School Achievements -->
     <div id="card-activity8" class="movie-card" style="background-image:url('https://i.pinimg.com/1200x/81/b7/5f/81b75f06a48722ed96442e17474b14c3.jpg');" onclick="openMovie('activity8')">
         <div class="movie-card-overlay"></div><div class="movie-card-title">High School Achievements</div><div class="movie-card-content"><div class="card-controls"><span>▶</span> <span onclick="toggleMyList(event, 'activity8')">+</span> <span>👍</span></div></div>
       </div>
-    <!-- ADDED: Activity 5 - Multiple Intelligences and Learning Styles -->
     <div id="card-activityMI" class="movie-card" style="background-image:url('https://i.pinimg.com/1200x/b4/8d/9e/b48d9e65b6d6c08cd03f6529c49fd3b4.jpg');" onclick="openMovie('activityMI')">
       <div class="movie-card-overlay"></div>
       <div class="movie-card-title">Multiple Intelligences</div>
+      <div class="movie-card-content"><div class="card-controls"><span title="View Details">▶</span><span title="Add to My List" onclick="toggleMyList(event, 'activityMI')">+</span><span title="Like">👍</span></div></div>
+    </div>
+    <!-- ADDED: Activity 6 - Reflect, Research, and Reduce -->
+    <div id="card-activityRRR" class="movie-card" style="background-image:url('https://i.pinimg.com/1200x/72/e7/c0/72e7c0785fd01e8512508e5ef29546bb.jpg');" onclick="openMovie('activityRRR')">
+      <div class="movie-card-overlay"></div>
+      <div class="movie-card-title">Reflect, Research, Reduce</div>
       <div class="movie-card-content">
         <div class="card-controls">
           <span title="View Details">▶</span>
-          <span title="Add to My List" onclick="toggleMyList(event, 'activityMI')">+</span>
+          <span title="Add to My List" onclick="toggleMyList(event, 'activityRRR')">+</span>
           <span title="Like">👍</span>
         </div>
       </div>
@@ -990,15 +993,12 @@ main {
 <div id="reflections" class="section">
   <h2>🎬 Reflections</h2>
   <div class="movies-row">
-    <!-- SHIFTED: Old Activity 4 -> New Activity 5 -->
     <div id="card-activity5" class="movie-card" style="background-image:url('https://i.pinimg.com/1200x/0c/c1/a3/0cc1a3f78c65efaa6c7772deabb922f1.jpg');" onclick="openMovie('activity5')">
       <div class="movie-card-overlay"></div><div class="movie-card-title">Psalm 23 of My Life</div><div class="movie-card-content"><div class="card-controls"><span>▶</span> <span onclick="toggleMyList(event, 'activity5')">+</span> <span>👍</span></div></div>
     </div>
-    <!-- SHIFTED: Old Activity 5 -> New Activity 6 -->
     <div id="card-activity6" class="movie-card" style="background-image:url('https://i.pinimg.com/1200x/e7/a5/25/e7a525fb5c242f964d563eb373b973fe.jpg');" onclick="openMovie('activity6')">
       <div class="movie-card-overlay"></div><div class="movie-card-title">5S in My Life</div><div class="movie-card-content"><div class="card-controls"><span>▶</span> <span onclick="toggleMyList(event, 'activity6')">+</span> <span>👍</span></div></div>
     </div>
-    <!-- SHIFTED: Old Activity 6 -> New Activity 7 -->
     <div id="card-activity7" class="movie-card" style="background-image:url('https://i.pinimg.com/1200x/aa/44/8c/aa448c70cf77a312d84413d16206ac2f.jpg');" onclick="openMovie('activity7')">
       <div class="movie-card-overlay"></div><div class="movie-card-title">My 5C's Reflections</div><div class="movie-card-content"><div class="card-controls"><span>▶</span> <span onclick="toggleMyList(event, 'activity7')">+</span> <span>👍</span></div></div>
     </div>
@@ -1102,13 +1102,10 @@ main {
   <p>This reflection gave me a sense of pride because it showed that I am aware of my personal strengths. At the same time, it reminded me that there is always room for growth. For example, while I scored myself high in adaptability and perseverance, I know that real-life challenges may test these traits, and I must continue to practice them in different situations.</p>
   <p>Another insight I gained is that personal effectiveness is not only about academic performance but also about character and attitude. It is about how I treat others, how I manage challenges, and how I stay true to my values. This activity encouraged me to keep nurturing these qualities so I can be more resilient, compassionate, and effective both in school and in life.</p>
   
-  <!-- GALLERY SECTION (UPDATED LINKS) -->
   <div class="gallery-container">
     <h3>Event Gallery</h3>
-    <!-- MAIN IMAGE with updated link -->
     <div class="main-image-display"><img id="main-gallery-image" src="https://media.discordapp.net/attachments/981254035568996394/1420990687398068224/image-3.png?ex=68ddffb4&is=68dcae34&hm=91dccddf23b5f22b83d2465ded08815cc4152b807429b2283fe5821edcaf625b&=&format=webp&quality=lossless&width=1376&height=771" alt="Main gallery view"></div>
     <div class="movies-row">
-      <!-- THUMBNAILS with updated links -->
       <div class="gallery-thumbnail" style="background-image:url('https://media.discordapp.net/attachments/981254035568996394/1420999187549651045/MYXJ_20250926125039544_save.jpg?ex=68dc0d5f&is=68dabbdf&hm=bc18fe9a13b962cac9c5008de464d6b2698e1c3038dc260b88ec505835da2747')" onclick="updateImage(this)"><div class="movie-card-overlay"></div><div class="movie-card-title">My Photo</div></div>
       <div class="gallery-thumbnail" style="background-image:url('https://cdn.discordapp.com/attachments/981254035568996394/1420991560631324752/20250807_174240.jpg?ex=68de0084&is=68dcaf04&hm=28cf9e0a1062a4872533d70fe77d685b769cc98fbd044b387e97fff680a0cf74&')" onclick="updateImage(this)"><div class="movie-card-overlay"></div><div class="movie-card-title">Freedom Board</div></div>
       <div class="gallery-thumbnail" style="background-image:url('https://media.discordapp.net/attachments/981254035568996394/1420990808303210527/20250807_133735.jpg?ex=68ddffd1&is=68dcae51&hm=58bade9ea74b6ff9bc0ae46e4f0510388d188a8408f30a4ca8666dbf2273dde6&=&format=webp&width=1275&height=717')" onclick="updateImage(this)"><div class="movie-card-overlay"></div><div class="movie-card-title">Classmates</div></div>
@@ -1128,20 +1125,16 @@ main {
 </div>
   </div>
 
-  <!-- NEW ACTIVITY 4 - TOWPEP Convocation -->
   <div id="activity4" class="movie-full">
     <button class="back-btn" onclick="closeMovie('activity4')">←</button>
-    <!-- Use a simple banner for the convocation, and put the detailed header inside details-content for structure -->
     <div class="movie-banner" style="background-image:url('https://i.pinimg.com/1200x/71/a6/72/71a6723214d3581dbf0534f98f85675c.jpg');"><div class="movie-info"><h2>TOWPEP Convocation: The 5C's Journey</h2><div class="movie-meta">Event Documentation • Achievement • Self-Assessment</div></div></div>
     <div class="details-content">
-        <!-- Header Content -->
         <div class="convocation-header" style="background: none; border: none; padding: 0; text-align: left;">
             <h1>TOWPEP Convocation Documentation</h1>
             <p><strong>Name:</strong> Sahagun, Sophia Rodina G. | <strong>Course:</strong> BS Information Technology | <strong>Year Level:</strong> First Year</p>
             <p><strong>Date:</strong> July 22, 2025</p>
         </div>
 
-        <!-- Convocation Overview -->
         <div class="section-card">
           <h3>Convocation Experience</h3>
           <p>
@@ -1151,7 +1144,6 @@ main {
           </p>
         </div>
 
-        <!-- TOWPEP Tables -->
         <div class="section-card">
           <h3>A. Growth Mindset</h3>
           <table>
@@ -1206,7 +1198,6 @@ main {
           </table>
         </div>
 
-        <!-- Achievements Section -->
         <div class="section-card">
           <h3>Achievements</h3>
           <p>
@@ -1227,7 +1218,6 @@ main {
           </p>
         </div>
 
-        <!-- Reflection Box -->
         <div class="reflection-box">
           <h3>Overall Reflection</h3>
           <p>
@@ -1341,12 +1331,10 @@ main {
     </div>
   </div>
 
-  <!-- NEW ACTIVITY 8 - High School Achievements -->
   <div id="activity8" class="movie-full">
     <button class="back-btn" onclick="closeMovie('activity8')">←</button>
     <div class="movie-banner" style="background-image:url('https://i.pinimg.com/1200x/81/b7/5f/81b75f06a48722ed96442e17474b14c3.jpg');"><div class="movie-info"><h2>Achievements</h2><div class="movie-meta">Accolades • Honors • Extracurriculars</div></div></div>
     <div class="details-content">
-        <!-- Header Content -->
         <div class="achievements-header" style="background: none; border: none; padding: 0; text-align: left; margin-bottom: 40px;">
             <h1>My Achievements</h1>
             <p><strong>Name:</strong> Sahagun, Sophia Rodina G.</p>
@@ -1356,45 +1344,36 @@ main {
         <div class="section-card">
           <h3>Highlight Achievements</h3>
           <div class="achievements-grid">
-            
             <div class="achievement-card">
               <h4><span class="icon">🎓</span> Graduated Salutatorian (Grade 12)</h4>
               <p>Recognized for exceptional academic performance and dedication.</p>
             </div>
-
             <div class="achievement-card">
               <h4><span class="icon">🏅</span> With Highest Honor</h4>
               <p>Awarded for consistent excellence across all subjects.</p>
             </div>
-
             <div class="achievement-card">
               <h4><span class="icon">📘</span> Consistent With Honors</h4>
               <p>Maintained honors every school year during high school.</p>
             </div>
-
             <div class="achievement-card">
               <h4><span class="icon">👩‍💼</span> Consistent Class Officer</h4>
               <p>Served in leadership roles and represented classmates regularly.</p>
             </div>
-
             <div class="achievement-card">
               <h4><span class="icon">🏆</span> Contest Participation & Wins</h4>
               <p>Competed and won in Quiz Bees, Cosplay, and various competitions.</p>
             </div>
-
             <div class="achievement-card">
               <h4><span class="icon">🎶</span> Choir Member</h4>
               <p>Sang and performed as part of the school choir during high school.</p>
             </div>
-
             <div class="achievement-card">
               <h4><span class="icon">📚</span> Literature Club</h4>
               <p>Joined and contributed to the school’s Literature Club activities.</p>
             </div>
-
           </div>
         </div>
-        
     </div>
     <footer class="achievements-footer">
         <p>Southville International School and Colleges</p>
@@ -1402,29 +1381,19 @@ main {
     </footer>
   </div>
 
-  <!-- ADDED: Fullscreen Modal for Multiple Intelligences -->
   <div id="activityMI" class="movie-full">
     <button class="back-btn" onclick="closeMovie('activityMI')">←</button>
-  
     <div class="movie-banner" style="background-image:url('https://i.pinimg.com/1200x/b4/8d/9e/b48d9e65b6d6c08cd03f6529c49fd3b4.jpg');">
       <div class="movie-info">
         <h2>Multiple Intelligences and Learning Styles</h2>
         <div class="movie-meta">Quiz • Reflection • Self-Discovery</div>
       </div>
     </div>
-  
     <div class="details-content" style="max-width:900px; padding:30px 60px 60px 60px; transform: translateY(0);">
       <h3>I. Quiz</h3>
-      <p>
-        <strong>Directions:</strong> Accomplish the Multiple Intelligences and Learning Styles quizzes and paste the links of your results below.
-      </p>
-  
+      <p><strong>Directions:</strong> Accomplish the Multiple Intelligences and Learning Styles quizzes and paste the links of your results below.</p>
       <table>
-        <tr>
-          <th>Quiz</th>
-          <th>Quiz Link</th>
-          <th>Result Link</th>
-        </tr>
+        <tr><th>Quiz</th><th>Quiz Link</th><th>Result Link</th></tr>
         <tr>
           <td>Multiple Intelligences</td>
           <td><a href="https://personalitymax.com/multiple-intelligences-test/" target="_blank">https://personalitymax.com/multiple-intelligences-test/</a></td>
@@ -1436,28 +1405,68 @@ main {
           <td><a href="https://personalitymax.com/report/?ls=74-64-77&name_key=16ffb1fc9f" target="_blank">View Result</a></td>
         </tr>
       </table>
-  
       <h3>II. Reflection</h3>
       <p><strong>1. What are your top three (3) multiple intelligences? Do you agree with the results? Why or why not?</strong></p>
-      <p>
-        My top three multiple intelligences are Intrapersonal, Verbal/Linguistic, and Bodily/Kinesthetic, and I strongly agree with these results. I have Intrapersonal intelligence because I often spend time understanding my own thoughts and emotions. I like to reflect, write, and figure out why I feel certain things. My Verbal/Linguistic intelligence shows in how I express myself best through writing. I enjoy putting my feelings into words and explaining ideas clearly. Lastly, my Bodily/Kinesthetic intelligence means I learn and connect better through actions and real experiences. I like doing things rather than just talking about them because it helps me understand and feel more connected. These three intelligences truly describe how I think, learn, and express myself.
-      </p>
-  
+      <p>My top three multiple intelligences are Intrapersonal, Verbal/Linguistic, and Bodily/Kinesthetic, and I strongly agree with these results. I have Intrapersonal intelligence because I often spend time understanding my own thoughts and emotions. I like to reflect, write, and figure out why I feel certain things. My Verbal/Linguistic intelligence shows in how I express myself best through writing. I enjoy putting my feelings into words and explaining ideas clearly. Lastly, my Bodily/Kinesthetic intelligence means I learn and connect better through actions and real experiences. I like doing things rather than just talking about them because it helps me understand and feel more connected. These three intelligences truly describe how I think, learn, and express myself.</p>
       <p><strong>2. Based on the results of the quiz, what is your dominant learning style? Do you agree? Why or why not?</strong></p>
-      <p>
-        Based on the quiz, my dominant learning style is kinesthetic, which means I learn best by doing and experiencing things firsthand. I agree with this result because I understand and remember things more when I’m actively involved rather than just listening or reading. This also reflects how I connect with people, I value actions more than words. Simple things like spending time together, making something, or showing effort through gestures help me feel the connection more deeply. For me, learning and understanding, whether in school or in relationships, happens best when I can see, touch, and do something real, not just talk about it.
-      </p>
-  
+      <p>Based on the quiz, my dominant learning style is kinesthetic, which means I learn best by doing and experiencing things firsthand. I agree with this result because I understand and remember things more when I’m actively involved rather than just listening or reading. This also reflects how I connect with people, I value actions more than words. Simple things like spending time together, making something, or showing effort through gestures help me feel the connection more deeply. For me, learning and understanding, whether in school or in relationships, happens best when I can see, touch, and do something real, not just talk about it.</p>
       <p><strong>3. Based on your knowledge of your Multiple Intelligences and Learning Style, how will you improve your study habits?</strong></p>
-      <p>
-        Based on my strengths in Kinesthetic, Intrapersonal, and Linguistic intelligences, I plan to improve my study habits by making learning more active, personal, and meaningful. Since I learn best through movement and hands-on activities, I will rewrite my notes by hand, walk around while reviewing, and teach lessons out loud to help me remember better. My intrapersonal strength helps me understand myself and connect lessons to my own experiences, so I will keep a study journal, set clear goals, and study in a quiet place where I can focus. Lastly, my linguistic intelligence allows me to learn well through words, so I will summarize lessons in my own words, create stories or acronyms to remember terms, and write glossaries of key concepts. By using these strategies together, I can make studying more engaging, effective, and suited to how I naturally learn best.
-      </p>
-  
+      <p>Based on my strengths in Kinesthetic, Intrapersonal, and Linguistic intelligences, I plan to improve my study habits by making learning more active, personal, and meaningful. Since I learn best through movement and hands-on activities, I will rewrite my notes by hand, walk around while reviewing, and teach lessons out loud to help me remember better. My intrapersonal strength helps me understand myself and connect lessons to my own experiences, so I will keep a study journal, set clear goals, and study in a quiet place where I can focus. Lastly, my linguistic intelligence allows me to learn well through words, so I will summarize lessons in my own words, create stories or acronyms to remember terms, and write glossaries of key concepts. By using these strategies together, I can make studying more engaging, effective, and suited to how I naturally learn best.</p>
       <h3>III. Reflection Summary</h3>
       <blockquote>
         Completing the Multiple Intelligences and Learning Styles activity helped me discover more about how I learn and think. I found that my strengths in Intrapersonal, Linguistic, and Kinesthetic intelligences truly describe how I approach both learning and life. I like to understand myself deeply, express my thoughts clearly, and learn by doing. Knowing that I am a kinesthetic learner motivates me to use more movement and practical activities in my study routine.  
         <br><br>
         This experience also taught me that everyone learns differently, and there is no single “right” way to study. What matters is knowing yourself and using your strengths to your advantage. By combining reflection, writing, and active practice, I can continue improving my focus, understanding, and memory in a way that fits my natural learning style.  
+      </blockquote>
+    </div>
+  </div>
+
+  <!-- ADDED: Fullscreen Modal for Reflect, Research, and Reduce -->
+  <div id="activityRRR" class="movie-full">
+    <button class="back-btn" onclick="closeMovie('activityRRR')">←</button>
+  
+    <div class="movie-banner" style="background-image:url('https://i.pinimg.com/1200x/72/e7/c0/72e7c0785fd01e8512508e5ef29546bb.jpg');">
+      <div class="movie-info">
+        <h2>Reflect, Research, and Reduce</h2>
+        <div class="movie-meta">Environmental Awareness • Research • Reflection</div>
+      </div>
+    </div>
+  
+    <div class="details-content" style="max-width:900px; padding:30px 60px 60px 60px; transform: translateY(0);">
+      <h3>Part I – Research</h3>
+      <p><strong>Instructions:</strong> Research and define each type of waste. Provide at least 5 examples for each category that can be found in your home, school, or community.</p>
+      <table>
+        <tr><th>Type of Waste</th><th>Definition</th><th>5 Examples Found in Your Surroundings</th></tr>
+        <tr>
+          <td>Recyclable</td>
+          <td>Things that can be remade into something new.</td>
+          <td>Newspapers, Plastic water bottles, Cardboard boxes, Soda cans, Empty milk cartons</td>
+        </tr>
+        <tr>
+          <td>Biodegradable</td>
+          <td>Things that rot and break down into soil all by themselves.</td>
+          <td>Eggshells, Fruit peels, Vegetable scraps, Leaves, Leftover foods</td>
+        </tr>
+        <tr>
+          <td>Non-biodegradable</td>
+          <td>Things that do not rot. They stay as is for a very long time.</td>
+          <td>Plastic, Batteries, Styrofoam cup, Used pen, Old CDs</td>
+        </tr>
+      </table>
+      <h3>Part II – Reflection</h3>
+      <p><strong>1. What small actions can I start doing to reduce my plastic use?</strong></p>
+      <p>To reduce my plastic use, I can choose to dine in instead of taking out food, bring my own tumbler and utensils, and use reusable containers instead of one-time use plastics.</p>
+      <p><strong>2. How can I influence my classmates, friends, or family to recycle and dispose of waste properly?</strong></p>
+      <p>I can influence my classmates, friends, and family by encouraging them to recycle like I do and making it fun, like turning it into a group activity or a small challenge with rewards to keep everyone motivated.</p>
+      <p><strong>3. What challenges might I face in practicing waste segregation — and how can I overcome them?</strong></p>
+      <p>One challenge is not knowing which bin to throw the trash in, especially when the labels use pictures instead of words, which can be confusing. Sometimes, when I’m in a hurry, I might also throw waste in the wrong bin by mistake. To overcome this, I can take time to learn what each bin means and make sure my trash goes to the right place.</p>
+      <p><strong>4. Imagine the Philippines 10 years from now — what do you hope to see if everyone starts acting responsibly today?</strong></p>
+      <p>I hope to see cleaner streets and fresher air. It would be wonderful to live in a place with less pollution because people have learned to be responsible, disciplined, and caring toward the environment.</p>
+      <h3>Reflection Summary</h3>
+      <blockquote>
+        Doing the “Reflect, Research, and Reduce” activity helped me understand more about waste and my role in taking care of the environment. I realized that even small actions—like using less plastic, recycling properly, and knowing what kind of waste I’m throwing away—can make a big difference.  
+        <br><br>
+        I also learned that influencing others starts with setting an example. When people see me being mindful with waste, they might do the same. Most of all, I hope that if everyone becomes more responsible today, the future Philippines will be cleaner, greener, and a much healthier place to live in.
       </blockquote>
     </div>
   </div>
@@ -1487,23 +1496,19 @@ main {
   </div>
 
   <script>
-    // --- Gallery Image Update Function (UPDATED for Netflix-style transition) ---
+    // --- Gallery Image Update Function ---
     function updateImage(thumbnail) {
         const mainImage = document.getElementById('main-gallery-image');
-        // Get the URL from the background-image style, removing 'url(' and ')'
         const newImageUrl = thumbnail.style.backgroundImage.slice(5, -2);
         
-        // 1. Apply a transition-out effect (fade and slight zoom out)
         mainImage.style.opacity = 0;
         mainImage.style.transform = 'scale(0.98)';
 
-        // 2. Wait for the transition-out to complete (300ms) before changing the source
         setTimeout(() => {
             mainImage.src = newImageUrl;
-            // 3. Apply the transition-in effect (fade in and slight zoom in to 1)
             mainImage.style.opacity = 1;
             mainImage.style.transform = 'scale(1)';
-        }, 300); // This duration matches the CSS transition time
+        }, 300);
     }
 
     // --- Welcome Screen Script ---
@@ -1520,7 +1525,7 @@ main {
         });
     });
   
-    // --- Rest of the Site's JavaScript ---
+    // --- Main Site JavaScript ---
     const hoverSound = document.getElementById('hover-sound');
     const allCards = document.querySelectorAll('.movie-card, .gallery-thumbnail');
 
@@ -1619,9 +1624,6 @@ main {
             }
         }, 1500);
     }
-    
-    // Initial call to start the trailer text animation (optional, was not in the original script but is often tied to the hero section)
-    // playTrailer();
   </script>
 
 </body>
