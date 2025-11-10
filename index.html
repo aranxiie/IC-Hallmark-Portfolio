@@ -1052,6 +1052,25 @@ main {
     <button class="scroll-btn right"><i class="fas fa-chevron-right"></i></button>
   </div>
 </div>
+
+<div id="galleries" class="section">
+    <h2>📷 Image Galleries</h2>
+    <div class="movies-row-container">
+      <div class="movies-row">
+          <div id="card-gallery-towpep" class="movie-card" style="background-image:url('https://i.pinimg.com/1200x/a2/35/62/a235625e987fee1a4c203713009412d2.jpg');" onclick="openMovie('gallery-towpep')">
+              <div class="movie-card-overlay"></div><div class="movie-card-title">TOWPEP Gallery</div><div class="movie-card-content"><div class="card-controls"><span>▶</span><span onclick="toggleMyList(event, 'gallery-towpep')">+</span><span>👍</span></div></div>
+          </div>
+          <div id="card-gallery-mufti" class="movie-card" style="background-image:url('https://i.pinimg.com/1200x/cb/19/f6/cb19f6d8bc04767b908f9f5248c8e824.jpg');" onclick="openMovie('gallery-mufti')">
+              <div class="movie-card-overlay"></div><div class="movie-card-title">Mufti Day Gallery</div><div class="movie-card-content"><div class="card-controls"><span>▶</span><span onclick="toggleMyList(event, 'gallery-mufti')">+</span><span>👍</span></div></div>
+          </div>
+          <div id="card-gallery-pmo" class="movie-card" style="background-image:url('https://i.pinimg.com/1200x/71/df/53/71df53feb1a0a8833908e34201b0ba04.jpg');" onclick="openMovie('gallery-pmo')">
+              <div class="movie-card-overlay"></div><div class="movie-card-title">PMO General Assembly</div><div class="movie-card-content"><div class="card-controls"><span>▶</span><span onclick="toggleMyList(event, 'gallery-pmo')">+</span><span>👍</span></div></div>
+          </div>
+      </div>
+      <button class="scroll-btn left"><i class="fas fa-chevron-left"></i></button>
+      <button class="scroll-btn right"><i class="fas fa-chevron-right"></i></button>
+    </div>
+  </div>
   </main>
 
   <!-- Activity Fullscreen Views -->
@@ -1149,31 +1168,6 @@ main {
   <p>Completing the TOWPEP Questionnaire made me realize the importance of self-assessment and self-awareness. By rating myself, I was able to see how I value qualities like honesty, perseverance, gratitude, and responsibility. I noticed that I often strive to give my best in every task, show respect to others, and remain truthful even in difficult situations.</p>
   <p>This reflection gave me a sense of pride because it showed that I am aware of my personal strengths. At the same time, it reminded me that there is always room for growth. For example, while I scored myself high in adaptability and perseverance, I know that real-life challenges may test these traits, and I must continue to practice them in different situations.</p>
   <p>Another insight I gained is that personal effectiveness is not only about academic performance but also about character and attitude. It is about how I treat others, how I manage challenges, and how I stay true to my values. This activity encouraged me to keep nurturing these qualities so I can be more resilient, compassionate, and effective both in school and in life.</p>
-  
-  <div class="gallery-container">
-    <h3>Event Gallery</h3>
-    <div class="main-image-display"><img id="main-gallery-image" src="https://media.discordapp.net/attachments/981254035568996394/1420990687398068224/image-3.png?ex=68ddffb4&is=68dcae34&hm=91dccddf23b5f22b83d2465ded08815cc4152b807429b2283fe5821edcaf625b&=&format=webp&quality=lossless&width=1376&height=771" alt="Main gallery view"></div>
-    <div class="movies-row-container">
-        <div class="movies-row">
-            <div class="gallery-thumbnail" style="background-image:url('https://media.discordapp.net/attachments/981254035568996394/1420999187549651045/MYXJ_20250926125039544_save.jpg?ex=68dc0d5f&is=68dabbdf&hm=bc18fe9a13b962cac9c5008de464d6b2698e1c3038dc260b88ec505835da2747')" onclick="updateImage(this)"><div class="movie-card-overlay"></div><div class="movie-card-title">My Photo</div></div>
-            <div class="gallery-thumbnail" style="background-image:url('https://cdn.discordapp.com/attachments/981254035568996394/1420991560631324752/20250807_174240.jpg?ex=68de0084&is=68dcaf04&hm=28cf9e0a1062a4872533d70fe77d685b769cc98fbd044b387e97fff680a0cf74&')" onclick="updateImage(this)"><div class="movie-card-overlay"></div><div class="movie-card-title">Freedom Board</div></div>
-            <div class="gallery-thumbnail" style="background-image:url('https://media.discordapp.net/attachments/981254035568996394/1420990808303210527/20250807_133735.jpg?ex=68ddffd1&is=68dcae51&hm=58bade9ea74b6ff9bc0ae46e4f0510388d188a8408f30a4ca8666dbf2273dde6&=&format=webp&width=1275&height=717')" onclick="updateImage(this)"><div class="movie-card-overlay"></div><div class="movie-card-title">Classmates</div></div>
-            <div class="gallery-thumbnail" style="background-image:url('https://media.discordapp.net/attachments/981254035568996394/1420990808789876756/20250807_133730.jpg?ex=68ddffd1&is=68dcae51&hm=0af0e6dc199c2d1620cab2e592d1182effa6ea313e12fab8ac0bddf163b5929e&=&format=webp&width=1275&height=717')" onclick="updateImage(this)"><div class="movie-card-overlay"></div><div class="movie-card-title">Classmates</div></div>
-            <div class="gallery-thumbnail" style="background-image:url('https://media.discordapp.net/attachments/981254035568996394/1420990809230147605/20250807_133724.jpg?ex=68ddffd1&is=68dcae51&hm=a96a63736f6ff6b2af295b7a7f7746c74a705a4721e441331e142289973f8f68&=&format=webp&width=1275&height=717')" onclick="updateImage(this)"><div class="movie-card-overlay"></div><div class="movie-card-title">Classmates</div></div>
-            <div class="gallery-thumbnail" style="background-image:url('https://media.discordapp.net/attachments/981254035568996394/1420991561239494707/20250807_164047.jpg?ex=68de0084&is=68dcaf04&hm=7c2a4e50fed32b0a2c6546835dade58d380d82c41ba990c25883a00aba08e718&=&format=webp&width=1275&height=717')" onclick="updateImage(this)"><div class="movie-card-overlay"></div><div class="movie-card-title">Batchmates</div></div>
-            <div class="gallery-thumbnail" style="background-image:url('https://media.discordapp.net/attachments/981254035568996394/1420991562103525499/20250807_164044.jpg?ex=68de0085&is=68dcaf05&hm=68ce83b54fcf13d696f255e9b1061d99a20f88c7301cfe8df690b8dd4f60163d&=&format=webp&width=1275&height=717')" onclick="updateImage(this)"><div class="movie-card-overlay"></div><div class="movie-card-title">Batchmates</div></div>
-            <div class="gallery-thumbnail" style="background-image:url('https://media.discordapp.net/attachments/981254035568996394/1420991563252629564/20250807_162113.jpg?ex=68de0085&is=68dcaf05&hm=c82b53576fd97edddb5d911ba7ed0b1e9110a9bdff188fcd8fb5649ee654212e&=&format=webp&width=403&height=717')" onclick="updateImage(this)"><div class="movie-card-overlay"></div><div class="movie-card-title">Batchmates</div></div>
-            <div class="gallery-thumbnail" style="background-image:url('https://media.discordapp.net/attachments/981254035568996394/1420991563961733190/20250807_162110.jpg?ex=68de0085&is=68dcaf05&hm=28da67287c94f8fb814e0b9d8225bdd08ff368e3b680294d6b17155d5bcbe52a&=&format=webp&width=403&height=717')" onclick="updateImage(this)"><div class="movie-card-overlay"></div><div class="movie-card-title">Batchmates</div></div>
-            <div class="gallery-thumbnail" style="background-image:url('https://media.discordapp.net/attachments/981254035568996394/1420991564460593242/20250807_162107.jpg?ex=68de0085&is=68dcaf05&hm=ccfe993a9e10545d1ce8db8684a421e9a78f3caefab978df9ca10178316257e4&=&format=webp&width=403&height=717')" onclick="updateImage(this)"><div class="movie-card-overlay"></div><div class="movie-card-title">Batchmates</div></div>
-            <div class="gallery-thumbnail" style="background-image:url('https://media.discordapp.net/attachments/981254035568996394/1420991565366558820/20250807_162104.jpg?ex=68de0085&is=68dcaf05&hm=a943c8d141390ab9b12fd5ab35645c756d14758c23a5bf49513b9235173034c4&=&format=webp&width=403&height=717')" onclick="updateImage(this)"><div class="movie-card-overlay"></div><div class="movie-card-title">Batchmates</div></div>
-            <div class="gallery-thumbnail" style="background-image:url('https://media.discordapp.net/attachments/981254035568996394/1420991566037913650/20250807_160538.jpg?ex=68de0086&is=68dcaf06&hm=377c64938e1fe98a5235bf3d84243eaa94308889f7c817be0dca3b01152cb66a&=&format=webp&width=1275&height=717')" onclick="updateImage(this)"><div class="movie-card-overlay"></div><div class="movie-card-title">Batchmates</div></div>
-            <div class="gallery-thumbnail" style="background-image:url('https://media.discordapp.net/attachments/981254035568996394/1420991566641631252/20250807_160548.jpg?ex=68de0086&is=68dcaf06&hm=21cf8fd52bbbc1fda914cd1cca8eee16e348a3dda83804fee883b5a1345130a4&=&format=webp&width=1275&height=717')" onclick="updateImage(this)"><div class="movie-card-overlay"></div><div class="movie-card-title">Batchmates</div></div>
-            <div class="gallery-thumbnail" style="background-image:url('https://media.discordapp.net/attachments/981254035568996394/1420991567140880384/20250807_173305.jpg?ex=68dc0646&is=68dab4c6&hm=8464c558410b3829958ba16d80fef5cba7c621147c95a4739fb324832ca264b9&')" onclick="updateImage(this)"><div class="movie-card-overlay"></div><div class="movie-card-title">Certificate</div></div>
-        </div>
-        <button class="scroll-btn left"><i class="fas fa-chevron-left"></i></button>
-        <button class="scroll-btn right"><i class="fas fa-chevron-right"></i></button>
-    </div>
-  </div>
 </div>
   </div>
 
@@ -1546,11 +1540,90 @@ main {
       </div>
     </div>
   </div>
+  
+  <!-- Gallery Fullscreen Views -->
+  <div id="gallery-towpep" class="movie-full">
+    <button class="back-btn" onclick="closeMovie('gallery-towpep')">←</button>
+    <div class="movie-banner" style="background-image:url('https://i.pinimg.com/1200x/a2/35/62/a235625e987fee1a4c203713009412d2.jpg');"><div class="movie-info"><h2>TOWPEP Gallery</h2><div class="movie-meta">Event • Student Life • Memories</div></div></div>
+    <div class="details-content">
+      <div class="gallery-container">
+        <h3>Event Gallery</h3>
+        <div class="main-image-display"><img id="main-gallery-image-towpep" src="https://media.discordapp.net/attachments/981254035568996394/1420990687398068224/image-3.png?ex=6912bbb4&is=69116a34&hm=19e5f268374c739b802eb1fef10981ad39cd249fea935b814eb5a47e9a404970&=&format=webp&quality=lossless&width=1240&height=695" alt="Main gallery view"></div>
+        <div class="movies-row-container">
+            <div class="movies-row">
+                <div class="gallery-thumbnail" style="background-image:url('https://media.discordapp.net/attachments/981254035568996394/1420990687398068224/image-3.png?ex=6912bbb4&is=69116a34&hm=19e5f268374c739b802eb1fef10981ad39cd249fea935b814eb5a47e9a404970&=&format=webp&quality=lossless&width=1240&height=695')" onclick="updateImage(this, 'main-gallery-image-towpep')"><div class="movie-card-overlay"></div><div class="movie-card-title">TOWPEP</div></div>
+                <div class="gallery-thumbnail" style="background-image:url('https://media.discordapp.net/attachments/981254035568996394/1420990808303210527/20250807_133735.jpg?ex=6912bbd1&is=69116a51&hm=059c86059cc1ae8b20f462267c9eca372aa5010a31cc74d2be347cd74cfeaeb5&=&format=webp&width=1230&height=693')" onclick="updateImage(this, 'main-gallery-image-towpep')"><div class="movie-card-overlay"></div><div class="movie-card-title">Classmates</div></div>
+                <div class="gallery-thumbnail" style="background-image:url('https://media.discordapp.net/attachments/981254035568996394/1420990808789876756/20250807_133730.jpg?ex=6912bbd1&is=69116a51&hm=3503d8d8c93bdd06a6f3e7bc04555a125ad3c46fdf91a10e72987c672ebebbb8&=&format=webp&width=1230&height=693')" onclick="updateImage(this, 'main-gallery-image-towpep')"><div class="movie-card-overlay"></div><div class="movie-card-title">Classmates</div></div>
+                <div class="gallery-thumbnail" style="background-image:url('https://media.discordapp.net/attachments/981254035568996394/1420991561239494707/20250807_164047.jpg?ex=6912bc84&is=69116b04&hm=b84adfaf21e56033a2e2bef9962f30c819890f4a98958a964efd69edee10ddbe&=&format=webp&width=1230&height=693')" onclick="updateImage(this, 'main-gallery-image-towpep')"><div class="movie-card-overlay"></div><div class="movie-card-title">Batchmates</div></div>
+                <div class="gallery-thumbnail" style="background-image:url('https://media.discordapp.net/attachments/981254035568996394/1420991562103525499/20250807_164044.jpg?ex=6912bc85&is=69116b05&hm=24fdf7e1162eed3eaae54dbb8b27b9398841f8bf6f9ff60a7dfa9822f4d1fb96&=&format=webp&width=1230&height=693')" onclick="updateImage(this, 'main-gallery-image-towpep')"><div class="movie-card-overlay"></div><div class="movie-card-title">Batchmates</div></div>
+                <div class="gallery-thumbnail" style="background-image:url('https://media.discordapp.net/attachments/981254035568996394/1420991563252629564/20250807_162113.jpg?ex=6912bc85&is=69116b05&hm=6759219c2ae623328b34c25cae68ccfcbf367cd2835bf7f61f12639656d28678&=&format=webp&width=390&height=693')" onclick="updateImage(this, 'main-gallery-image-towpep')"><div class="movie-card-overlay"></div><div class="movie-card-title">Batchmates</div></div>
+                <div class="gallery-thumbnail" style="background-image:url('https://media.discordapp.net/attachments/981254035568996394/1420991563961733190/20250807_162110.jpg?ex=6912bc85&is=69116b05&hm=cbcf031dcc5dac1fcd7d5d4c6c9fea48de01d31ba65a78f083e19f7b16bd7c90&=&format=webp&width=390&height=693')" onclick="updateImage(this, 'main-gallery-image-towpep')"><div class="movie-card-overlay"></div><div class="movie-card-title">Batchmates</div></div>
+                <div class="gallery-thumbnail" style="background-image:url('https://media.discordapp.net/attachments/981254035568996394/1420991565366558820/20250807_162104.jpg?ex=6912bc85&is=69116b05&hm=1e69928dc146cd99e96d472e3cdc485c6313b1a5a1fcc24de4f6703f168d8233&=&format=webp&width=390&height=693')" onclick="updateImage(this, 'main-gallery-image-towpep')"><div class="movie-card-overlay"></div><div class="movie-card-title">Batchmates</div></div>
+                <div class="gallery-thumbnail" style="background-image:url('https://media.discordapp.net/attachments/981254035568996394/1420991566037913650/20250807_160538.jpg?ex=6912bc86&is=69116b06&hm=bb058022ebf9ecb5a8df05f2fa8888b73308c69a546dbf3b0df86a91b5ff28d8&=&format=webp&width=1230&height=693')" onclick="updateImage(this, 'main-gallery-image-towpep')"><div class="movie-card-overlay"></div><div class="movie-card-title">Batchmates</div></div>
+                <div class="gallery-thumbnail" style="background-image:url('https://media.discordapp.net/attachments/981254035568996394/1420999187549651045/MYXJ_20250926125039544_save.jpg?ex=6912c39f&is=6911721f&hm=ab1ad28e59f17f737a173f3616579258073991d9f16c2f6003a0dda21ef313fa&=&format=webp&width=1240&height=698')" onclick="updateImage(this, 'main-gallery-image-towpep')"><div class="movie-card-overlay"></div><div class="movie-card-title">My Photo</div></div>
+                <div class="gallery-thumbnail" style="background-image:url('https://media.discordapp.net/attachments/981254035568996394/1420991567140880384/20250807_173305.jpg?ex=6912bc86&is=69116b06&hm=e9871e939f008572ef39c600c599bc99275205762394f1bafdd6d24a38c408a1&=&format=webp&width=926&height=693')" onclick="updateImage(this, 'main-gallery-image-towpep')"><div class="movie-card-overlay"></div><div class="movie-card-title">Certificate</div></div>
+            </div>
+            <button class="scroll-btn left"><i class="fas fa-chevron-left"></i></button>
+            <button class="scroll-btn right"><i class="fas fa-chevron-right"></i></button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="gallery-mufti" class="movie-full">
+    <button class="back-btn" onclick="closeMovie('gallery-mufti')">←</button>
+    <div class="movie-banner" style="background-image:url('https://i.pinimg.com/1200x/cb/19/f6/cb19f6d8bc04767b908f9f5248c8e824.jpg');"><div class="movie-info"><h2>Mufti Day Gallery</h2><div class="movie-meta">Campus Life • Fun • Friends</div></div></div>
+    <div class="details-content">
+      <div class="gallery-container">
+        <h3>Event Gallery</h3>
+        <div class="main-image-display"><img id="main-gallery-image-mufti" src="https://media.discordapp.net/attachments/981254035568996394/1437411424942166049/20250918_172613000_iOS.jpg?ex=69132535&is=6911d3b5&hm=8962215c8dd2f4b2d20b8cf44c940f9358d1a6d0d2c271fb360330d5ae9eb25c&=&format=webp&width=1231&height=693" alt="Main gallery view"></div>
+        <div class="movies-row-container">
+            <div class="movies-row">
+                <div class="gallery-thumbnail" style="background-image:url('https://media.discordapp.net/attachments/981254035568996394/1437411424942166049/20250918_172613000_iOS.jpg?ex=69132535&is=6911d3b5&hm=8962215c8dd2f4b2d20b8cf44c940f9358d1a6d0d2c271fb360330d5ae9eb25c&=&format=webp&width=1231&height=693')" onclick="updateImage(this, 'main-gallery-image-mufti')"><div class="movie-card-overlay"></div><div class="movie-card-title">Friends</div></div>
+                <div class="gallery-thumbnail" style="background-image:url('https://media.discordapp.net/attachments/981254035568996394/1437411426779005041/20250918_170704000_iOS.jpg?ex=69132535&is=6911d3b5&hm=b1bf52be1708bfec7f066876412886cce4f7c2742559178e573ce14a9acc2a8b&=&format=webp&width=1231&height=693')" onclick="updateImage(this, 'main-gallery-image-mufti')"><div class="movie-card-overlay"></div><div class="movie-card-title">Group Photo</div></div>
+                <div class="gallery-thumbnail" style="background-image:url('https://media.discordapp.net/attachments/981254035568996394/1437412608218234880/20250918_162738000_iOS.jpg?ex=6913264f&is=6911d4cf&hm=42b196434131bdae7d2a6761b5093819951e84feb2fe6c7080c92905c642c638&=&format=webp&width=1231&height=693')" onclick="updateImage(this, 'main-gallery-image-mufti')"><div class="movie-card-overlay"></div><div class="movie-card-title">More Friends</div></div>
+                <div class="gallery-thumbnail" style="background-image:url('https://media.discordapp.net/attachments/981254035568996394/1437411423989923922/20250918_172732000_iOS.jpg?ex=69132535&is=6911d3b5&hm=352b50adf84a42e8ee1645c6de7a6628b6a84f7c844b873db5091df6b5b88976&=&format=webp&width=1231&height=693')" onclick="updateImage(this, 'main-gallery-image-mufti')"><div class="movie-card-overlay"></div><div class="movie-card-title">Groupfie</div></div>
+                <div class="gallery-thumbnail" style="background-image:url('https://media.discordapp.net/attachments/981254035568996394/1437411423209656370/20250919_140739.jpg?ex=69132535&is=6911d3b5&hm=ce839851bf8f4b57113022507f4d8b29598021f4f879f99bf8a509f9e8b854ce&=&format=webp&width=390&height=693')" onclick="updateImage(this, 'main-gallery-image-mufti')"><div class="movie-card-overlay"></div><div class="movie-card-title">Friends</div></div>
+                <div class="gallery-thumbnail" style="background-image:url('https://media.discordapp.net/attachments/981254035568996394/1437411425969508413/20250918_172657000_iOS.jpg?ex=69132535&is=6911d3b5&hm=22bb90311775ee4bcf5d1f9816a82cb83aecda319bb204d7482b378145b2b44a&=&format=webp&width=389&height=693')" onclick="updateImage(this, 'main-gallery-image-mufti')"><div class="movie-card-overlay"></div><div class="movie-card-title">Selfie</div></div>
+            </div>
+            <button class="scroll-btn left"><i class="fas fa-chevron-left"></i></button>
+            <button class="scroll-btn right"><i class="fas fa-chevron-right"></i></button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="gallery-pmo" class="movie-full">
+    <button class="back-btn" onclick="closeMovie('gallery-pmo')">←</button>
+    <div class="movie-banner" style="background-image:url('https://i.pinimg.com/1200x/71/df/53/71df53feb1a0a8833908e34201b0ba04.jpg');"><div class="movie-info"><h2>PMO General Assembly</h2><div class="movie-meta">Organization • Leadership • Assembly</div></div></div>
+    <div class="details-content">
+      <div class="gallery-container">
+        <h3>Event Gallery</h3>
+        <div class="main-image-display"><img id="main-gallery-image-pmo" src="https://media.discordapp.net/attachments/981254035568996394/1437412603847770272/FB_IMG_1758808683316.jpg?ex=6913264e&is=6911d4ce&hm=dd3acf5d8e9114d12f5b4342d1f794de3934a2551e88eaec55c7e616b66948d5&=&format=webp&width=1039&height=693" alt="Main gallery view"></div>
+        <div class="movies-row-container">
+            <div class="movies-row">
+                <div class="gallery-thumbnail" style="background-image:url('https://media.discordapp.net/attachments/981254035568996394/1437412603847770272/FB_IMG_1758808683316.jpg?ex=6913264e&is=6911d4ce&hm=dd3acf5d8e9114d12f5b4342d1f794de3934a2551e88eaec55c7e616b66948d5&=&format=webp&width=1039&height=693')" onclick="updateImage(this, 'main-gallery-image-pmo')"><div class="movie-card-overlay"></div><div class="movie-card-title">Audience</div></div>
+                <div class="gallery-thumbnail" style="background-image:url('https://media.discordapp.net/attachments/981254035568996394/1437412602727764029/FB_IMG_1758808769929.jpg?ex=6913264e&is=6911d4ce&hm=e66d1c778fd4e29daadc1c6b71995a6eaeaa6de125980e72a83509c801928da0&=&format=webp&width=1039&height=693')" onclick="updateImage(this, 'main-gallery-image-pmo')"><div class="movie-card-overlay"></div><div class="movie-card-title">Group Photo</div></div>
+                <div class="gallery-thumbnail" style="background-image:url('https://media.discordapp.net/attachments/981254035568996394/1437412603369623633/FB_IMG_1758808674728.jpg?ex=6913264e&is=6911d4ce&hm=f550c94d950eb13f3d7b4f411c3f81c8bbfd3e5510f70236cf1913d013f9c35e&=&format=webp&width=1039&height=693')" onclick="updateImage(this, 'main-gallery-image-pmo')"><div class="movie-card-overlay"></div><div class="movie-card-title">The Team</div></div>
+                <div class="gallery-thumbnail" style="background-image:url('https://media.discordapp.net/attachments/981254035568996394/1437412604224995348/FB_IMG_1758808668701.jpg?ex=6913264e&is=6911d4ce&hm=b119dbb1d26039d6f985682ab6de4cf8414080aed8845cbc78bfd3f766cf89c8&=&format=webp&width=1039&height=693')" onclick="updateImage(this, 'main-gallery-image-pmo')"><div class="movie-card-overlay"></div><div class="movie-card-title">The Team</div></div>
+                <div class="gallery-thumbnail" style="background-image:url('https://media.discordapp.net/attachments/981254035568996394/1437412604732772412/20250925_125734.jpg?ex=6913264e&is=6911d4ce&hm=33265519c8c47fcfb96696a726240d5af53992fdffd98f0a43726c442a4ab6ba&=&format=webp&width=519&height=693')" onclick="updateImage(this, 'main-gallery-image-pmo')"><div class="movie-card-overlay"></div><div class="movie-card-title">Friends</div></div>
+                <div class="gallery-thumbnail" style="background-image:url('https://media.discordapp.net/attachments/981254035568996394/1437412605328101427/20250925_125742.jpg?ex=6913264e&is=6911d4ce&hm=6ed8b5abafb0f7f8b65b039cd6b061c31cd71e6b85aba8ba4b42222c2e0c93e1&=&format=webp&width=519&height=693')" onclick="updateImage(this, 'main-gallery-image-pmo')"><div class="movie-card-overlay"></div><div class="movie-card-title">Friends</div></div>
+                <div class="gallery-thumbnail" style="background-image:url('https://media.discordapp.net/attachments/981254035568996394/1437412606347579402/20250925_125650.jpg?ex=6913264f&is=6911d4cf&hm=53f81dc58361ade824cdba2f54393d698ddf332e2ad9749c565c49927f2c01c4&=&format=webp&width=519&height=693')" onclick="updateImage(this, 'main-gallery-image-pmo')"><div class="movie-card-overlay"></div><div class="movie-card-title">Friends</div></div>
+                <div class="gallery-thumbnail" style="background-image:url('https://media.discordapp.net/attachments/981254035568996394/1437412606917738577/20250925_125730.jpg?ex=6913264f&is=6911d4cf&hm=5985a8fff7eec16862893b2eb25923bd1905af62e0bdfed67b98c145c9c5c649&=&format=webp&width=519&height=693')" onclick="updateImage(this, 'main-gallery-image-pmo')"><div class="movie-card-overlay"></div><div class="movie-card-title">Friends</div></div>
+                <div class="gallery-thumbnail" style="background-image:url('https://media.discordapp.net/attachments/981254035568996394/1437412607488294983/20250925_125645.jpg?ex=6913264f&is=6911d4cf&hm=b7e414270f2c6ef0fb5a4956a85c1766a5257d381e6c51a8de1b9a1c2f0b0f66&=&format=webp&width=519&height=693')" onclick="updateImage(this, 'main-gallery-image-pmo')"><div class="movie-card-overlay"></div><div class="movie-card-title">Friends</div></div>
+            </div>
+            <button class="scroll-btn left"><i class="fas fa-chevron-left"></i></button>
+            <button class="scroll-btn right"><i class="fas fa-chevron-right"></i></button>
+        </div>
+      </div>
+    </div>
+  </div>
+
 
   <script>
     // --- Gallery Image Update Function ---
-    function updateImage(thumbnail) {
-        const mainImage = document.getElementById('main-gallery-image');
+    function updateImage(thumbnail, mainImageId) {
+        const mainImage = document.getElementById(mainImageId);
         const newImageUrl = thumbnail.style.backgroundImage.slice(5, -2);
         
         mainImage.style.opacity = 0;
