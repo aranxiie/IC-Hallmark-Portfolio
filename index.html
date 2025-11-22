@@ -1,3 +1,4 @@
+html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -920,6 +921,27 @@ main {
     border-top: 4px solid #e50914;
     font-size: 0.9rem;
 }
+
+/* --- 5-Year Strategic Plan Styles --- */
+.nav-buttons {
+    display: flex; 
+    justify-content: space-between; 
+    flex-wrap: wrap; 
+    gap: 10px;
+    margin-top: 30px;
+}
+.nav-buttons button {
+    background: #e50914; 
+    border: none; 
+    color: white;
+    padding: 10px 20px; 
+    border-radius: 6px; 
+    cursor: pointer; 
+    transition: 0.2s;
+}
+.nav-buttons button:hover { 
+    background: #b00610; 
+}
   </style>
 </head>
 <body>
@@ -1027,6 +1049,18 @@ main {
             <span title="Like">👍</span>
             </div>
         </div>
+        </div>
+        <!-- 5-Year Strategic Plan Card -->
+        <div id="card-strat-full" class="movie-card" style="background-image:url('https://i.pinimg.com/1200x/d6/4f/d1/d64fd1419a443b77fccad4d3443a67c4.jpg');" onclick="openMovie('strat-full')">
+            <div class="movie-card-overlay"></div>
+            <div class="movie-card-title">5-Year Strategic Plan</div>
+            <div class="movie-card-content">
+                <div class="card-controls">
+                <span title="View Details">▶</span>
+                <span title="Add to My List" onclick="toggleMyList(event, 'strat-full')">+</span>
+                <span title="Like">👍</span>
+                </div>
+            </div>
         </div>
     </div>
     <button class="scroll-btn left"><i class="fas fa-chevron-left"></i></button>
@@ -1516,6 +1550,89 @@ main {
       </blockquote>
     </div>
   </div>
+  
+  <!-- NEW: 5-Year Strategic Plan Modal -->
+<div id="strat-full" class="movie-full">
+  <button class="back-btn" onclick="closeMovie('strat-full')">←</button>
+
+  <div class="movie-banner"
+       style="background-image:url('https://i.pinimg.com/1200x/d6/4f/d1/d64fd1419a443b77fccad4d3443a67c4.jpg');">
+    <div class="movie-info">
+      <h2>5-Year Strategic Plan (2029–2033)</h2>
+      <div class="movie-meta">Career Development • Personal Growth • Future Planning</div>
+    </div>
+  </div>
+
+  <div class="details-content">
+
+    <div class="section">
+      <h3>Year 1 — 2029<br>Entry Into Professional Service</h3>
+      <p>
+        After graduation, I will immediately begin my required return service as a scholar. 
+        If accepted into the teaching program, I will handle both teaching and office duties, 
+        just like other scholars before me. My first year will focus on adjusting to the work environment, 
+        building strong work habits, and forming positive relationships with colleagues.  
+        I will start contributing financially to my family while practicing budgeting and saving.
+      </p>
+    </div>
+
+    <div class="section">
+      <h3>Year 2 — 2030<br>Skills Enhancement and Increased Responsibility</h3>
+      <p>
+        In my second year, I aim to strengthen my abilities in teaching and administrative tasks. 
+        I will join seminars and workshops to improve my communication, leadership, and technical skills.  
+        As I gain more experience, I want to handle more tasks with less supervision.  
+        I will also increase my financial support for my family and continue growing my savings.
+      </p>
+    </div>
+
+    <div class="section">
+      <h3>Year 3 — 2031<br>Leadership Growth and Family Support</h3>
+      <p>
+        By my third year, I plan to take on minor leadership roles or participate in special school projects.  
+        I hope to guide younger scholars or newly hired staff, following the example of those who helped me.  
+        For my family, I aim to support them more in household needs and plan simple trips as signs of gratitude.  
+        I will also prepare for opportunities beyond my return service.
+      </p>
+    </div>
+
+    <div class="section">
+      <h3>Year 4 — 2032<br>Completion of Return Service & Career Preparation</h3>
+      <p>
+        During my fourth year, I will complete my required service with commitment and professionalism.  
+        I will begin exploring job opportunities outside the institution to broaden my experience.  
+        I will update my résumé, request recommendations, and choose the career path that fits my long-term goals.  
+        I hope to celebrate this milestone with my family through a simple trip or gathering.
+      </p>
+    </div>
+
+    <div class="section">
+      <h3>Year 5 — 2033<br>Transition to New Opportunities</h3>
+      <p>
+        After completing my service, I will pursue new job opportunities to expand my skills and improve financially.  
+        I plan to take additional courses or certifications to strengthen my qualifications.  
+        With better financial stability, I want to bring my family on international trips and create meaningful experiences.  
+        My goal is to support my family while building a stable and fulfilling career.
+      </p>
+    </div>
+
+    <div class="section">
+      <h3>Long-Term Vision (Beyond 2033)</h3>
+      <p>
+        Beyond the five-year plan, my goal is to maintain a stable career, continue improving professionally, 
+        and consistently give back to my family.  
+        I want to travel with them, support them long-term, and build a secure life rooted in gratitude, effort, and purpose.
+      </p>
+    </div>
+
+    <!-- Buttons -->
+    <div class="nav-buttons">
+      <button onclick="scrollToTopStrat()">⬆ Back to Top</button>
+      <button onclick="closeMovie('strat-full')">⏪ Back to Activities</button>
+    </div>
+
+  </div>
+</div>
 
   <!-- About Me Fullscreen -->
   <div id="about-me-full" class="movie-full">
@@ -1781,6 +1898,11 @@ main {
                  setTimeout(() => { trailerText.innerHTML = "<b>Welcome!</b> Feel free to look around."; }, 1000);
             }
         }, 1500);
+    }
+
+    // Helper for 5-Year Plan Scroll to Top
+    function scrollToTopStrat() {
+        document.querySelector('#strat-full').scrollTo({ top: 0, behavior: 'smooth' });
     }
   </script>
 
